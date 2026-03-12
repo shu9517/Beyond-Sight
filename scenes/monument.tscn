@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ci1skjrw1j37a"]
 
 [ext_resource type="Texture2D" uid="uid://bk8rb4mt65glj" path="res://pic/monument/map.png" id="1_r0tja"]
-[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://player.tscn" id="2_rpsm2"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://scenes/player.tscn" id="2_rpsm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpsm2"]
 size = Vector2(29.616459, 1549.4662)
@@ -27,7 +27,7 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=308773001]
 position = Vector2(99, 25)
 scale = Vector2(1.2554624, 1.4033964)
-zoom = Vector2(0.535, 0.535)
+zoom = Vector2(0.515, 0.515)
 
 [node name="player" parent="." unique_id=2135659133 instance=ExtResource("2_rpsm2")]
 move_speed = 300.0
@@ -40,6 +40,7 @@ metadata/_edit_lock_ = true
 [node name="StaticBody2D2" type="StaticBody2D" parent="wall" unique_id=675264059]
 position = Vector2(-668.83746, -199.90355)
 rotation = 0.001591031
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="wall/StaticBody2D2" unique_id=1287228611]
 position = Vector2(772.9958, -5.6148863)
