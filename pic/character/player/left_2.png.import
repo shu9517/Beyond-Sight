@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cybqfugtffyao"
-path="res://.godot/imported/black.png-25bdaff3374ba7d749ab153e11a3cc55.ctex"
+uid="uid://do2gefnt4asq7"
+path="res://.godot/imported/left_2.png-669d93e2f11192e043fd231e56d31dc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pic/monument/black.png"
-dest_files=["res://.godot/imported/black.png-25bdaff3374ba7d749ab153e11a3cc55.ctex"]
+source_file="res://pic/character/player/left_2.png"
+dest_files=["res://.godot/imported/left_2.png-669d93e2f11192e043fd231e56d31dc7.ctex"]
 
 [params]
 

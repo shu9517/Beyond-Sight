@@ -1,15 +1,41 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 50
+@export var move_speed : float = 1000
 @export var animator : AnimatedSprite2D
+
+var last_direction = Vector2.DOWN
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	velocity = Input.get_vector("left", "right", "up", "down") * move_speed
-	
-	if velocity == Vector2.ZERO:
-		animator.play("idle_down")
-	else:
-		animator.play("walk_down")
-	
+	var direction = velocity
 	move_and_slide()
+	
+	if direction != Vector2.ZERO:
+		last_direction = direction
+		play_walk(direction)
+	else:
+		play_idle()	
+	
+func play_walk(dir):
+
+	if abs(dir.x) > abs(dir.y):
+		animator.play("walk_left")
+		animator.flip_h = dir.x < 0
+	else:
+		if dir.y < 0:
+			animator.play("walk_down") #改這
+		else:
+			animator.play("walk_down")
+
+
+func play_idle():
+
+	if abs(last_direction.x) > abs(last_direction.y):
+		animator.play("idle_left")
+		animator.flip_h = last_direction.x < 0
+	else:
+		if last_direction.y < 0:
+			animator.play("idle_down") #改這
+		else:
+			animator.play("idle_down")
