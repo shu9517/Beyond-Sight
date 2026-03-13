@@ -18,24 +18,25 @@ func _physics_process(delta: float) -> void:
 		play_idle()	
 	
 func play_walk(dir):
-
 	if abs(dir.x) > abs(dir.y):
-		animator.play("walk_left")
-		animator.flip_h = dir.x < 0
+		if dir.x < 0:
+			animator.play("walk_left")
+		else:
+			animator.play("walk_right")
 	else:
 		if dir.y < 0:
-			animator.play("walk_down") #改這
+			animator.play("walk_up")
 		else:
 			animator.play("walk_down")
 
-
 func play_idle():
-
 	if abs(last_direction.x) > abs(last_direction.y):
-		animator.play("idle_left")
-		animator.flip_h = last_direction.x < 0
+		if last_direction.x < 0:
+			animator.play("idle_left")
+		else:
+			animator.play("idle_right")
 	else:
 		if last_direction.y < 0:
-			animator.play("idle_down") #改這
+			animator.play("idle_up")
 		else:
 			animator.play("idle_down")

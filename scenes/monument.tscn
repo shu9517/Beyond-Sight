@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://ci1skjrw1j37a"]
 
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_18f3d"]
 [ext_resource type="Texture2D" uid="uid://bk8rb4mt65glj" path="res://pic/monument/map.png" id="1_r0tja"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://scenes/player.tscn" id="2_rpsm2"]
+[ext_resource type="Texture2D" uid="uid://ci438u3t6npgl" path="res://pic/monument/road.png" id="3_80bfl"]
 [ext_resource type="Texture2D" uid="uid://d0htjh2pokbba" path="res://pic/monument/tree.png" id="3_uwq0p"]
 [ext_resource type="Texture2D" uid="uid://d0psr64buy58j" path="res://pic/monument/tree_up.png" id="4_t3axa"]
 [ext_resource type="Texture2D" uid="uid://cwj716tky0rt5" path="res://pic/monument/statue.png" id="5_b8lci"]
 [ext_resource type="Texture2D" uid="uid://b76yeag88idck" path="res://pic/monument/fence.png" id="5_k7no3"]
 [ext_resource type="Texture2D" uid="uid://c5l818qkbshly" path="res://pic/monument/filter.png" id="7_18f3d"]
+[ext_resource type="Script" uid="uid://do4qsalhnooxv" path="res://scripts/statue.gd" id="7_jryhg"]
+[ext_resource type="PackedScene" uid="uid://beeuoimbndaxd" path="res://Dialog/dialog_box.tscn" id="11_y3air"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jryhg"]
+size = Vector2(273.76563, 153.72992)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8lci"]
 size = Vector2(153.37842, 126.35149)
@@ -17,38 +24,54 @@ size = Vector2(730.11646, 27.383728)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51hww"]
 size = Vector2(47.500122, 2470.0625)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18f3d"]
+size = Vector2(908.6931, 99.37494)
+
 [node name="monument" type="Node2D" unique_id=905791269]
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1306482601]
+scale = Vector2(1.88, 1.2799995)
+texture = ExtResource("1_18f3d")
+
 [node name="background" type="Sprite2D" parent="." unique_id=1660035156]
-scale = Vector2(1.5629394, 1.5629394)
 texture = ExtResource("1_r0tja")
 
+[node name="road" type="Sprite2D" parent="." unique_id=2038293496]
+position = Vector2(170, 785)
+texture = ExtResource("3_80bfl")
+
 [node name="tree" type="Sprite2D" parent="." unique_id=178257864]
-scale = Vector2(1.5600007, 1.5600007)
 texture = ExtResource("3_uwq0p")
 
 [node name="order" type="Node2D" parent="." unique_id=46221690]
 y_sort_enabled = true
+scale = Vector2(0.6417013, 0.6417013)
 
 [node name="player" parent="order" unique_id=2135659133 instance=ExtResource("2_rpsm2")]
-position = Vector2(-141, 292)
 move_speed = 300.0
 
 [node name="statue" type="Sprite2D" parent="order" unique_id=398509452]
-position = Vector2(-138, 138)
+position = Vector2(-3.116684, -51.425827)
 scale = Vector2(1.4799995, 1.4799995)
 texture = ExtResource("5_b8lci")
 offset = Vector2(4.729744, -108.10815)
+script = ExtResource("7_jryhg")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="order/statue" unique_id=508049806]
+[node name="Area2D" type="Area2D" parent="order/statue" unique_id=651044576]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="order/statue/StaticBody2D" unique_id=1084017306]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/statue/Area2D" unique_id=1076015816]
+position = Vector2(-4.2118015, 42.1178)
+shape = SubResource("RectangleShape2D_jryhg")
+
+[node name="staticBody2D" type="StaticBody2D" parent="order/statue" unique_id=1751370077]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/statue/staticBody2D" unique_id=332130024]
 position = Vector2(-5.067566, 2.7027054)
 shape = SubResource("RectangleShape2D_b8lci")
 
 [node name="fence" type="Sprite2D" parent="order" unique_id=858659342]
-position = Vector2(636, 797.00006)
-scale = Vector2(1.2080266, 1.2080266)
+position = Vector2(864.8884, 813.4626)
+scale = Vector2(1.3740048, 1.3740048)
 texture = ExtResource("5_k7no3")
 offset = Vector2(8.278015, 6.6223145)
 
@@ -60,38 +83,41 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_k7no3")
 
 [node name="tree_up" type="Sprite2D" parent="." unique_id=1296633470]
-scale = Vector2(1.5600007, 1.5600007)
 texture = ExtResource("4_t3axa")
 
 [node name="wall_tree" type="Node2D" parent="." unique_id=686727873]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_tree" unique_id=185775065]
-position = Vector2(-33, 234)
-scale = Vector2(1.0714623, 1.1029485)
+position = Vector2(56, -62)
+scale = Vector2(0.80115056, 0.89536494)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=903860626]
-position = Vector2(-1263, -1)
+position = Vector2(-1238.2192, -1)
 shape = SubResource("RectangleShape2D_51hww")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=447518287]
 position = Vector2(1092.8989, 0.90665865)
 shape = SubResource("RectangleShape2D_51hww")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=910100192]
-position = Vector2(3, 1187)
+position = Vector2(3, 1198.394)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_51hww")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=149618972]
-position = Vector2(-54.13163, -956.527)
+position = Vector2(-54.131626, -541.6786)
 rotation = -1.5707963
 shape = SubResource("RectangleShape2D_51hww")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1186628506]
-position = Vector2(14.500092, 15.499863)
-scale = Vector2(1.6216094, 1.684131)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=216417302]
+position = Vector2(-835.049, -461.8099)
+shape = SubResource("RectangleShape2D_18f3d")
+
+[node name="框" type="Sprite2D" parent="." unique_id=272127674]
+position = Vector2(0, -8)
+scale = Vector2(1.179, 1.18)
 texture = ExtResource("7_18f3d")
-metadata/_edit_lock_ = true
+
+[node name="DialogUI" parent="." unique_id=2098325896 instance=ExtResource("11_y3air")]
+scale = Vector2(0.48920363, 0.48920363)
+transform = Transform2D(0.48920363, 0, 0, 0.48920363, 0, 0)

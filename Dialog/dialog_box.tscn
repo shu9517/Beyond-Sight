@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://beeuoimbndaxd"]
+
+[ext_resource type="Texture2D" uid="uid://hucbfk4j6fls" path="res://pic/對話框/player.png" id="1_0k4bc"]
+[ext_resource type="Script" uid="uid://k3hgbvi30wa6" path="res://scripts/dialog_box.gd" id="1_a4k21"]
+[ext_resource type="FontFile" uid="uid://41sxvdyf4mvj" path="res://other/Su-Regular.ttf" id="1_on6d1"]
+
+[node name="DialogUI" type="CanvasLayer" unique_id=318698428]
+scale = Vector2(0.32000017, 0.32000017)
+transform = Transform2D(0.32000017, 0, 0, 0.32000017, 0, 0)
+script = ExtResource("1_a4k21")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1536066234]
+offset_left = -124.999886
+offset_top = 553.12476
+offset_right = 2595.0
+offset_bottom = 1489.1249
+scale = Vector2(0.5658748, 0.5658748)
+pivot_offset = Vector2(1311.9529, 618.705)
+texture = ExtResource("1_0k4bc")
+
+[node name="content" type="Label" parent="TextureRect" unique_id=1434968512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 134.17699
+offset_top = 228.59772
+offset_right = 134.177
+offset_bottom = -188.71521
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9006096, 0.9006096)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("1_on6d1")
+theme_override_font_sizes/font_size = 200
+text = "hi"
+autowrap_mode = 2
+
+[node name="name" type="Label" parent="TextureRect" unique_id=604562253]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HintLabel" type="Label" parent="TextureRect" unique_id=22875063]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
