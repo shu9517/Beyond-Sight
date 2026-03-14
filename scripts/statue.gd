@@ -1,35 +1,35 @@
 extends Node2D
-@onready var dialog = get_tree().current_scene.get_node("DialogUI")
 
-var player_in_range = false
+@export var dialogue_resource: DialogueResource
+@onready var player = get_tree().get_first_node_in_group("player")
+
+var player_in_range := false
+var is_talking := false
 
 func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
 
-func _process(delta):
-	if player_in_range and Input.is_action_just_pressed("interact"):
-		if dialog.active:
-			dialog.next_line()
-		else:
-			dialog.start_dialog([
-				"It's an angle statue.",
-				"Half of the wings is broke.",
-				"It has something write on it...",
-				"\"Guarding the truth,",
-				"Holding the hope,",
-				"Immortality is all alone.\""
-			])
+func _process(_delta):
+	if player_in_range and Input.is_action_just_pressed("interact") and not is_talking:
+		start_statue_dialogue()
 
-func interact():
-	print("一個雕像")
+func start_statue_dialogue():
+	player.can_move = false
+	is_talking = true
+	
+	var balloon = DialogueManager.show_dialogue_balloon(dialogue_resource, "statue")
+	if balloon:
+		balloon.tree_exited.connect(_on_dialogue_closed)
+
+func _on_dialogue_closed():
+	player.can_move = true
+	is_talking = false
 
 func _on_body_entered(body):
 	if body.name == "player":
 		player_in_range = true
-		print("player in range")
 
 func _on_body_exited(body):
 	if body.name == "player":
 		player_in_range = false
-		print("player left")

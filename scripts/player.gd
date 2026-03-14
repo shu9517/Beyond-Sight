@@ -4,9 +4,16 @@ extends CharacterBody2D
 @export var animator : AnimatedSprite2D
 
 var last_direction = Vector2.DOWN
+var can_move = true
+
+func _ready():
+	add_to_group("player")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if not can_move:
+		return
+		
 	velocity = Input.get_vector("left", "right", "up", "down") * move_speed
 	var direction = velocity
 	move_and_slide()

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b76yeag88idck" path="res://pic/monument/fence.png" id="5_k7no3"]
 [ext_resource type="Texture2D" uid="uid://c5l818qkbshly" path="res://pic/monument/filter.png" id="7_18f3d"]
 [ext_resource type="Script" uid="uid://do4qsalhnooxv" path="res://scripts/statue.gd" id="7_jryhg"]
-[ext_resource type="PackedScene" uid="uid://beeuoimbndaxd" path="res://Dialog/dialog_box.tscn" id="11_y3air"]
+[ext_resource type="Resource" uid="uid://xd1vh7qx7k1y" path="res://Dialog/monument.dialogue" id="9_xy20g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jryhg"]
 size = Vector2(273.76563, 153.72992)
@@ -56,6 +56,7 @@ scale = Vector2(1.4799995, 1.4799995)
 texture = ExtResource("5_b8lci")
 offset = Vector2(4.729744, -108.10815)
 script = ExtResource("7_jryhg")
+dialogue_resource = ExtResource("9_xy20g")
 
 [node name="Area2D" type="Area2D" parent="order/statue" unique_id=651044576]
 
@@ -117,7 +118,3 @@ shape = SubResource("RectangleShape2D_18f3d")
 position = Vector2(0, -8)
 scale = Vector2(1.179, 1.18)
 texture = ExtResource("7_18f3d")
-
-[node name="DialogUI" parent="." unique_id=2098325896 instance=ExtResource("11_y3air")]
-scale = Vector2(0.48920363, 0.48920363)
-transform = Transform2D(0.48920363, 0, 0, 0.48920363, 0, 0)

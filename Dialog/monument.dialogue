@@ -1,0 +1,13 @@
+~ statue
+It's an angle statue.
+Half of the wings is broke.
+It has something write on it...
+"Guarding the truth,
+Holding the hope,
+Immortality is all alone."
+(Touch the statue?)
+- Touch
+	Nothing happened.
+- Leave
+	=> END
+=> END

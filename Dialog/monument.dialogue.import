@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://xd1vh7qx7k1y"
+path="res://.godot/imported/monument.dialogue-c7d9143569b437d8f3b0efe29c46555f.tres"
+
+[deps]
+
+source_file="res://Dialog/monument.dialogue"
+dest_files=["res://.godot/imported/monument.dialogue-c7d9143569b437d8f3b0efe29c46555f.tres"]
+
+[params]
+
+defaults=true
