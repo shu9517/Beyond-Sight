@@ -11,3 +11,37 @@ Immortality is all alone."
 - Leave
 	=> END
 => END
+
+~ opening
+Hey little one? Are you okay?
+This is not a good place to sleep, isn't it?
+- Who are you?
+	Elvic: I am Elvic.
+	Elvic: Don't worry, I'm not a bad guy. Just a normal person who wants to visit the statue.
+Elvic: But, hey, I never see you before? Where did you come from?
+- I don't know
+	Elvic: Umm... Did you lost your memory?
+	Elvic: What a classic plot for a story.
+	Elvic: Sorry, never mind.
+- I am not from this world
+	Elvic: Oh...?
+	Elvic: Your brain has to be so broke to say something like this...
+	Elvic: Sorry, I know it's a joke, don't mind me.
+Elvic: Why don't you go visit our village?
+Elvic: You might remember something while you walk around.
+Elvic: I still have something to do here, so see you then.
+=> END
+
+~ elvic_first_met
+Elvic: Do you still have questions?
+
+- Talk about the statue [if !State.elvic_statue ]
+	Elvic: It's an angel statue. The villagers usually come here to pray for peace.
+	Elvic: Isn't it absurd?
+	Elvic: Well, there haven't be something bad happened here...
+	Elvic: ...At least for now.
+	Elvic: I think the pray would not be useless, right?
+	do State.elvic_statue = true
+- Where is the village?
+	Elvic: Can you see the trail over there? Go straight and you will see it.
+=> END

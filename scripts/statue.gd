@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var dialogue_resource: DialogueResource
-@onready var player = get_tree().get_first_node_in_group("player")
 
 var player_in_range := false
 var is_talking := false
@@ -12,24 +11,25 @@ func _ready():
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact") and not is_talking:
-		start_statue_dialogue()
+		await start_statue_dialogue()
 
 func start_statue_dialogue():
+	var player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
+
 	player.can_move = false
 	is_talking = true
-	
-	var balloon = DialogueManager.show_dialogue_balloon(dialogue_resource, "statue")
-	if balloon:
-		balloon.tree_exited.connect(_on_dialogue_closed)
 
-func _on_dialogue_closed():
+	await DialogueHelper.player(dialogue_resource, "statue")
+
 	player.can_move = true
 	is_talking = false
 
 func _on_body_entered(body):
-	if body.name == "player":
+	if body.is_in_group("player"):
 		player_in_range = true
 
 func _on_body_exited(body):
-	if body.name == "player":
+	if body.is_in_group("player"):
 		player_in_range = false

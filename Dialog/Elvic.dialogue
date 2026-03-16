@@ -1,0 +1,8 @@
+~ start
+Elvic: Hey little one? Are you okay?
+Elvic: This is not a good place to sleep, isn't it?
+- Who are you?
+	Elvic: I am Elvic, I came across here and find you lied here.
+- Where am I?
+	Elvic: Well, it's a monmument. Just beside our village
+=> END

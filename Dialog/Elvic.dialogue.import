@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dehosrtkr84t4"
+path="res://.godot/imported/Elvic.dialogue-c6f2304c0d6f0abfb7c6dac3bd7811ab.tres"
+
+[deps]
+
+source_file="res://Dialog/Elvic.dialogue"
+dest_files=["res://.godot/imported/Elvic.dialogue-c6f2304c0d6f0abfb7c6dac3bd7811ab.tres"]
+
+[params]
+
+defaults=true
