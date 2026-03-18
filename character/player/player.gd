@@ -9,7 +9,6 @@ var talk := false
 
 func _ready():
 	add_to_group("player")
-	$Camera2D.make_current()
 
 func _physics_process(_delta: float) -> void:
 	#can_move=false時強制暫停
@@ -63,6 +62,8 @@ func lie_down():
 	play_idle()
 
 func face_target(target: Node2D):
+	
+
 	var dir = target.global_position - global_position
 	last_direction = dir
 
@@ -76,3 +77,9 @@ func face_target(target: Node2D):
 			animator.play("idle_up")
 		else:
 			animator.play("idle_down")
+
+func set_camera_limits(left: int, top: int, right: int, bottom: int):
+	$Camera2D.limit_left = left
+	$Camera2D.limit_top = top
+	$Camera2D.limit_right = right
+	$Camera2D.limit_bottom = bottom

@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://do4qsalhnooxv" path="res://scripts/statue.gd" id="7_jryhg"]
 [ext_resource type="Resource" uid="uid://dehosrtkr84t4" path="res://Dialog/Elvic.dialogue" id="9_a2r8a"]
 [ext_resource type="Resource" uid="uid://xd1vh7qx7k1y" path="res://Dialog/monument.dialogue" id="9_xy20g"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="15_gmwgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jryhg"]
 size = Vector2(176.8947, 153.72992)
@@ -127,3 +128,14 @@ shape = SubResource("RectangleShape2D_18f3d")
 position = Vector2(0, -8)
 scale = Vector2(1.179, 1.18)
 texture = ExtResource("7_18f3d")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=298087743]
+
+[node name="from_trail" type="Marker2D" parent="SpawnPoints" unique_id=632659512]
+position = Vector2(801, 810)
+
+[node name="Portal" parent="." unique_id=1891912080 instance=ExtResource("15_gmwgv")]
+position = Vector2(905, 813.99994)
+scale = Vector2(4.08, 19.320004)
+target_scene = "res://scenes/trail.tscn"
+target_spawn = "from_monument"
