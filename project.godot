@@ -22,6 +22,7 @@ EventManager="*uid://cdeyn04wtay47"
 DialogueHelper="*uid://c3d2bfhnijong"
 GameManager="*uid://ddtvgfru0qri7"
 State="*uid://cmauxfonrt4cl"
+PlotManager="*uid://b3qsh4qcme70r"
 
 [dialogue_manager]
 

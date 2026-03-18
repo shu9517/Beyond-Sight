@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var can_interact := true #可互動: 可
 var player_in_range := false #玩家範圍內?: 沒有
-var saved_animation := ""
+var saved_animation := "" #調整站姿用
 
 func _ready():	
 	if click_area != null:
@@ -30,8 +30,8 @@ func interact():
 	player.can_move = false
 	can_interact = false
 	
-	#要改成劇本
-	await DialogueHelper.elvic(dialogue_resource, "elvic_first_met")
+	#劇本
+	await DialogueHelper.elvic(dialogue_resource, PlotManager.elvic_plot())
 	
 	player.can_move = true
 	can_interact = true

@@ -2,6 +2,7 @@ extends Node
 
 var current_event := ""
 
+#主要是強制劇情動畫
 func play_opening(player, npc, entrance_point, dialogue_resource: DialogueResource):
 	current_event = "opening"
 
