@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c5l818qkbshly" path="res://pic/monument/filter.png" id="7_18f3d"]
 [ext_resource type="PackedScene" uid="uid://b2ecr3rdgkro1" path="res://character/Elvic/Elvic.tscn" id="7_cn87m"]
 [ext_resource type="Script" uid="uid://do4qsalhnooxv" path="res://scripts/statue.gd" id="7_jryhg"]
+[ext_resource type="Resource" uid="uid://dehosrtkr84t4" path="res://Dialog/Elvic.dialogue" id="9_a2r8a"]
 [ext_resource type="Resource" uid="uid://xd1vh7qx7k1y" path="res://Dialog/monument.dialogue" id="9_xy20g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jryhg"]
@@ -52,10 +53,11 @@ y_sort_enabled = true
 scale = Vector2(0.6417013, 0.6417013)
 
 [node name="player" parent="order" unique_id=2135659133 instance=ExtResource("2_rpsm2")]
-position = Vector2(0, 180.76947)
+position = Vector2(6.23343, 96.618164)
 
 [node name="Elvic" parent="order" unique_id=557349221 instance=ExtResource("7_cn87m")]
-position = Vector2(168.30261, 183.88618)
+position = Vector2(191.67796, 95.05981)
+dialogue_resource = ExtResource("9_a2r8a")
 
 [node name="statue" type="Sprite2D" parent="order" unique_id=398509452]
 position = Vector2(-3.116684, -51.425827)
@@ -125,6 +127,3 @@ shape = SubResource("RectangleShape2D_18f3d")
 position = Vector2(0, -8)
 scale = Vector2(1.179, 1.18)
 texture = ExtResource("7_18f3d")
-
-[node name="EntrancePoint" type="Marker2D" parent="." unique_id=1671538724]
-position = Vector2(292, 0)

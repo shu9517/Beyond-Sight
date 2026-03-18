@@ -1,8 +1,15 @@
-~ start
-Elvic: Hey little one? Are you okay?
-Elvic: This is not a good place to sleep, isn't it?
-- Who are you?
-	Elvic: I am Elvic, I came across here and find you lied here.
-- Where am I?
-	Elvic: Well, it's a monmument. Just beside our village
+~ elvic_first_met
+Elvic: Do you still have questions?
+
+- Talk about the statue [if !State.elvic_statue ]
+	Elvic: It's an angel statue. The villagers usually come here to pray for peace.
+	Elvic: Isn't it absurd?
+	Elvic: Well, there haven't be something bad happened here...
+	Elvic: ...At least for now.
+	Elvic: I think the pray would not be useless, right?
+	do State.elvic_statue = true
+- Where is the village?
+	Elvic: Can you see the trail over there? Go straight and you will see it.
+- Nothing
+	Elvic: Then, hope you can find what you want.
 => END

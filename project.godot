@@ -18,11 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
-EventManager="*uid://cdeyn04wtay47"
 DialogueHelper="*uid://c3d2bfhnijong"
 GameManager="*uid://ddtvgfru0qri7"
 State="*uid://cmauxfonrt4cl"
 PlotManager="*uid://b3qsh4qcme70r"
+EventManager="*uid://byk387nar1rw3"
 
 [dialogue_manager]
 

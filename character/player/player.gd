@@ -5,10 +5,11 @@ extends CharacterBody2D
 
 var last_direction = Vector2.DOWN
 var can_move := true #玩家可移動
-
+var talk := false
 
 func _ready():
 	add_to_group("player")
+	$Camera2D.make_current()
 
 func _physics_process(_delta: float) -> void:
 	#can_move=false時強制暫停
@@ -16,7 +17,7 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-
+	
 	velocity = Input.get_vector("left", "right", "up", "down") * move_speed
 	var direction = velocity
 	move_and_slide()

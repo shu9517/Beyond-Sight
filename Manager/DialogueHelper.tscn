@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dxjrwnb4d2epg"]
-
-[ext_resource type="Script" uid="uid://c3d2bfhnijong" path="res://Manager/dialogue_helper.gd" id="1_rvhpl"]
-
-[node name="DialogueHelper" type="Node2D" unique_id=1036826223]
-script = ExtResource("1_rvhpl")

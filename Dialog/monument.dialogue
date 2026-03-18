@@ -1,20 +1,6 @@
 ~ default
 It's default
 
-~ statue
-It's an angle statue.
-Half of the wings is broke.
-It has something write on it...
-"Guarding the truth,
-Holding the hope,
-Immortality is all alone."
-(Touch the statue?)
-- Touch
-	Nothing happened.
-- Leave
-	=> END
-=> END
-
 ~ opening
 Hey little one? Are you okay?
 This is not a good place to sleep, isn't it?
@@ -35,16 +21,16 @@ Elvic: You might remember something while you walk around.
 Elvic: I still have something to do here, so see you then.
 => END
 
-~ elvic_first_met
-Elvic: Do you still have questions?
-
-- Talk about the statue [if !State.elvic_statue ]
-	Elvic: It's an angel statue. The villagers usually come here to pray for peace.
-	Elvic: Isn't it absurd?
-	Elvic: Well, there haven't be something bad happened here...
-	Elvic: ...At least for now.
-	Elvic: I think the pray would not be useless, right?
-	do State.elvic_statue = true
-- Where is the village?
-	Elvic: Can you see the trail over there? Go straight and you will see it.
+~ statue
+It's an angle statue.
+Half of the wings is broke.
+It has something write on it...
+"Guarding the truth,
+Holding the hope,
+Immortality is all alone."
+(Touch the statue?)
+- Touch
+	Nothing happened.
+- Leave
+	=> END
 => END

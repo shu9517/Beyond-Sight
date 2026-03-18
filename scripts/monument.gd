@@ -3,7 +3,6 @@ extends Node2D
 @onready var player = $order/player
 @onready var npc = $order/Elvic
 @onready var entrance_point = $EntrancePoint
-
 @export var dialogue: DialogueResource
 
 func _ready():
