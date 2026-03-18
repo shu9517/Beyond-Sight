@@ -4,40 +4,39 @@ extends CharacterBody2D
 @onready var click_area: Area2D = get_node_or_null("Area2D")
 @onready var animator: AnimatedSprite2D = get_node_or_null("AnimatedSprite2D")
 
-var can_interact := false
-var is_talking := false
-var player_in_range := false
+var can_interact := true #可互動: 可
+var player_in_range := false #玩家範圍內?: 沒有
 var saved_animation := ""
 
-func _ready():
+func _ready():	
 	if click_area != null:
-		click_area.body_entered.connect(_on_body_entered)
+		click_area.body_entered.connect(_on_body_entered) #物件進2d範圍時呼叫_on_body_entered
 		click_area.body_exited.connect(_on_body_exited)
 
 func _process(_delta):
-	if player_in_range and Input.is_action_just_pressed("interact") and not is_talking:
+	if player_in_range and can_interact and Input.is_action_just_pressed("interact"):
 		interact()
 
+#主要是玩家點擊時的步驟
 func interact():
-	if not can_interact or is_talking:
-		return
-
+	saved_animation = animator.animation
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
 		return
 
-	player.can_move = false
-	is_talking = true
-	saved_animation = animator.animation
-
 	face_target(player)
 	player.face_target(self)
-
+	
+	player.can_move = false
+	can_interact = false
+	
+	#要改成劇本
 	await DialogueHelper.elvic(dialogue_resource, "elvic_first_met")
-
+	
 	player.can_move = true
-	is_talking = false
+	can_interact = true
 
+#動畫需要
 func move_to_point(target_pos: Vector2):
 	var speed = 120
 
@@ -49,6 +48,7 @@ func move_to_point(target_pos: Vector2):
 
 	velocity = Vector2.ZERO
 
+#面朝向(目前功能ok)
 func face_target(target: Node2D):
 	var dir = target.global_position - global_position
 
@@ -63,10 +63,12 @@ func face_target(target: Node2D):
 		else:
 			animator.play("idle_front")
 
+#玩家進範圍
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		player_in_range = true
 
+#玩家離開範圍
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false

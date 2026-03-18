@@ -8,9 +8,11 @@ func elvic(dialogue_resource: DialogueResource, title: String):
 	var balloon = elvic_balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	await balloon.start(dialogue_resource, title)
+	await balloon.tree_exited
 
 
 func player(dialogue_resource: DialogueResource, title: String):
 	var balloon = player_balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	await balloon.start(dialogue_resource, title)
+	await balloon.tree_exited

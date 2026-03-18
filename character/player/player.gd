@@ -1,15 +1,22 @@
 extends CharacterBody2D
 
-@export var move_speed: float = 1000
+@export var move_speed: float = 100
 @onready var animator: AnimatedSprite2D = $AnimatedSprite2D
 
 var last_direction = Vector2.DOWN
-var can_move = true
+var can_move = true #玩家可移動
+
 
 func _ready():
 	add_to_group("player")
+	
+func stop():
+	velocity = Vector2.ZERO
+	move_and_slide()
+	print("stop but not stop")
 
 func _physics_process(_delta: float) -> void:
+	#can_move=false時強制暫停
 	if not can_move:
 		velocity = Vector2.ZERO
 		move_and_slide()
