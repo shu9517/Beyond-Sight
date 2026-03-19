@@ -5,10 +5,10 @@ extends Node2D
 @onready var entrance_point = $EntrancePoint
 @export var dialogue: DialogueResource
 
-@export var cam_left := -1200
-@export var cam_top := -1250
-@export var cam_right := 1200
-@export var cam_bottom := 1250
+@export var cam_left := -900
+@export var cam_top := -910
+@export var cam_right := 893
+@export var cam_bottom := 986
 
 func _ready():
 	player.set_camera_limits(cam_left, cam_top, cam_right, cam_bottom)

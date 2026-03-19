@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://byihcox28p0fm"]
+
+[ext_resource type="Texture2D" uid="uid://c2vkkwmv6m32q" path="res://pic/monument/intersection.png" id="1_4ifye"]
+[ext_resource type="Script" uid="uid://uptf53radgy5" path="res://scripts/intersect.gd" id="1_782sq"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_5dd0w"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_dt2vt"]
+[ext_resource type="Texture2D" uid="uid://btt8dedp4hghd" path="res://pic/monument/fence_inter.png" id="3_jblet"]
+[ext_resource type="Texture2D" uid="uid://bbbjangw2g45p" path="res://pic/monument/sign.png" id="4_b1u5x"]
+[ext_resource type="Script" uid="uid://8hsga0yai8od" path="res://scripts/sign.gd" id="5_8s8y3"]
+[ext_resource type="Resource" uid="uid://xd1vh7qx7k1y" path="res://Dialog/monument.dialogue" id="6_q3ych"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="7_q3ych"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx1s8"]
+size = Vector2(1046.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jblet"]
+size = Vector2(24.5, 456.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1u5x"]
+size = Vector2(19, 904.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s8y3"]
+size = Vector2(14.266256, 216.41043)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_782sq"]
+size = Vector2(560.63666, 34.12607)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3ych"]
+size = Vector2(364, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dd0w"]
+size = Vector2(77, 46.16664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n6pa"]
+size = Vector2(137.5, 115.5)
+
+[node name="intersect" type="Node2D" unique_id=779080874]
+script = ExtResource("1_782sq")
+
+[node name="black" type="Sprite2D" parent="." unique_id=1362552214]
+scale = Vector2(1.3200009, 1)
+texture = ExtResource("2_5dd0w")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=2029751189]
+texture = ExtResource("1_4ifye")
+
+[node name="wall" type="StaticBody2D" parent="." unique_id=1686696449]
+position = Vector2(-349, 341)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=1601235363]
+position = Vector2(352, 261)
+shape = SubResource("RectangleShape2D_fx1s8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall" unique_id=373849062]
+position = Vector2(651, -492)
+scale = Vector2(0.5980522, 1)
+shape = SubResource("RectangleShape2D_fx1s8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="wall" unique_id=344866246]
+position = Vector2(-172, 64)
+shape = SubResource("RectangleShape2D_jblet")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="wall" unique_id=1538738940]
+position = Vector2(862.5, -122.25)
+shape = SubResource("RectangleShape2D_b1u5x")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="wall" unique_id=1904080694]
+position = Vector2(688.5064, 93.56189)
+rotation = 0.8464604
+scale = Vector2(1.2908697, 1.9199988)
+shape = SubResource("RectangleShape2D_8s8y3")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="wall" unique_id=78682121]
+position = Vector2(79.33505, -262.37073)
+rotation = -0.8219971
+shape = SubResource("RectangleShape2D_782sq")
+
+[node name="order" type="Node2D" parent="." unique_id=2001500248]
+y_sort_enabled = true
+
+[node name="player" parent="order" unique_id=2135659133 instance=ExtResource("2_dt2vt")]
+position = Vector2(-349.5064, 329.43808)
+
+[node name="fence" type="Sprite2D" parent="order" unique_id=1084160193]
+position = Vector2(-311, 270)
+texture = ExtResource("3_jblet")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="order/fence" unique_id=2105687280]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/fence/StaticBody2D" unique_id=314341284]
+position = Vector2(-14, 79.5)
+shape = SubResource("RectangleShape2D_q3ych")
+
+[node name="sign" type="Sprite2D" parent="order" unique_id=638113410]
+position = Vector2(-66, 170)
+scale = Vector2(1.1999997, 1.1999997)
+texture = ExtResource("4_b1u5x")
+script = ExtResource("5_8s8y3")
+dialogue_resource = ExtResource("6_q3ych")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="order/sign" unique_id=22297387]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/sign/StaticBody2D" unique_id=783792111]
+position = Vector2(-29.500004, 121.41673)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_5dd0w")
+
+[node name="Area2D" type="Area2D" parent="order/sign" unique_id=1745319159]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/sign/Area2D" unique_id=1887820654]
+position = Vector2(-2, 146)
+shape = SubResource("RectangleShape2D_5n6pa")
+
+[node name="Portal" parent="." unique_id=1891912080 instance=ExtResource("7_q3ych")]
+position = Vector2(-519.00006, 516)
+scale = Vector2(-1.8630468, 16.59162)
+target_scene = "res://scenes/trail.tscn"
+target_spawn = "from_inter"
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1630033338]
+position = Vector2(-513, 483)
+rotation = 3.1415927
+scale = Vector2(1.8630468, -16.59162)
+
+[node name="from_trail" type="Marker2D" parent="SpawnPoints" unique_id=1127160372]
+position = Vector2(-51.5285, -5.484697)

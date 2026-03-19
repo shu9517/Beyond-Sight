@@ -146,7 +146,7 @@ size = Vector2(624.5969, 50.42546)
 
 [node name="player" type="CharacterBody2D" unique_id=2135659133]
 script = ExtResource("1_hqtel")
-move_speed = 500.0
+move_speed = 300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1049095053]
 scale = Vector2(0.935, 0.935)

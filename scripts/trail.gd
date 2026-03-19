@@ -1,10 +1,10 @@
 extends Node2D
 
 @onready var player = $player
-@export var cam_left := -1720
-@export var cam_top := -600
-@export var cam_right := 1720
-@export var cam_bottom := 603
+@export var cam_left := -1225
+@export var cam_top := -500
+@export var cam_right := 1225
+@export var cam_bottom := 560
 
 func _ready():
 	player.set_camera_limits(cam_left, cam_top, cam_right, cam_bottom)

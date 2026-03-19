@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://ci1skjrw1j37a"]
 
-[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_18f3d"]
 [ext_resource type="Texture2D" uid="uid://bk8rb4mt65glj" path="res://pic/monument/map.png" id="1_r0tja"]
 [ext_resource type="Script" uid="uid://cebg8gyb1wdux" path="res://scripts/monument.gd" id="1_xy20g"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_rpsm2"]
@@ -35,10 +34,6 @@ size = Vector2(908.6931, 99.37494)
 script = ExtResource("1_xy20g")
 dialogue = ExtResource("9_xy20g")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1306482601]
-scale = Vector2(1.88, 1.2799995)
-texture = ExtResource("1_18f3d")
-
 [node name="background" type="Sprite2D" parent="." unique_id=1660035156]
 texture = ExtResource("1_r0tja")
 
@@ -54,15 +49,17 @@ y_sort_enabled = true
 scale = Vector2(0.6417013, 0.6417013)
 
 [node name="player" parent="order" unique_id=2135659133 instance=ExtResource("2_rpsm2")]
-position = Vector2(6.23343, 96.618164)
+position = Vector2(3.116715, 63.89266)
+scale = Vector2(1.3740067, 1.3740067)
 
 [node name="Elvic" parent="order" unique_id=557349221 instance=ExtResource("7_cn87m")]
-position = Vector2(191.67796, 95.05981)
+position = Vector2(191.67796, 59.217594)
+scale = Vector2(1.3740077, 1.3740077)
 dialogue_resource = ExtResource("9_a2r8a")
 
 [node name="statue" type="Sprite2D" parent="order" unique_id=398509452]
 position = Vector2(-3.116684, -51.425827)
-scale = Vector2(1.4799995, 1.4799995)
+scale = Vector2(1.7916732, 1.7916732)
 texture = ExtResource("5_b8lci")
 offset = Vector2(4.729744, -108.10815)
 script = ExtResource("7_jryhg")
@@ -97,6 +94,7 @@ shape = SubResource("RectangleShape2D_k7no3")
 texture = ExtResource("4_t3axa")
 
 [node name="wall_tree" type="Node2D" parent="." unique_id=686727873]
+metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_tree" unique_id=185775065]
 position = Vector2(56, -62)
@@ -107,7 +105,7 @@ position = Vector2(-1238.2192, -1)
 shape = SubResource("RectangleShape2D_51hww")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=447518287]
-position = Vector2(1092.8989, 0.90665865)
+position = Vector2(1092.899, 0.906662)
 shape = SubResource("RectangleShape2D_51hww")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=910100192]
@@ -130,11 +128,12 @@ scale = Vector2(1.179, 1.18)
 texture = ExtResource("7_18f3d")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=298087743]
+position = Vector2(4, -45)
 
 [node name="from_trail" type="Marker2D" parent="SpawnPoints" unique_id=632659512]
 position = Vector2(801, 810)
 
-[node name="Portal" parent="." unique_id=1891912080 instance=ExtResource("15_gmwgv")]
+[node name="EntrancePoint" parent="." unique_id=1891912080 instance=ExtResource("15_gmwgv")]
 position = Vector2(905, 813.99994)
 scale = Vector2(4.08, 19.320004)
 target_scene = "res://scenes/trail.tscn"

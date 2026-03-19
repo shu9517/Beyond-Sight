@@ -6,47 +6,60 @@
 [ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="4_fb56t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fv6i"]
-size = Vector2(3591, 54)
+size = Vector2(4241.5, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fb56t"]
-size = Vector2(40, 402)
+size = Vector2(53, 503)
 
 [node name="Trail" type="Node2D" unique_id=1160719607]
 script = ExtResource("1_5fv6i")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1858912922]
-scale = Vector2(1.72, 1.72)
 texture = ExtResource("1_2tjbc")
 
 [node name="player" parent="." unique_id=2135659133 instance=ExtResource("2_5fv6i")]
-position = Vector2(-1637, 334)
+position = Vector2(-1122.0001, 348.00003)
+scale = Vector2(0.84, 0.84)
 
-[node name="Portal" parent="." unique_id=1891912080 instance=ExtResource("4_fb56t")]
-position = Vector2(-1758.9999, 420.00003)
+[node name="EntrancePoint_2" parent="." unique_id=1891912080 instance=ExtResource("4_fb56t")]
+position = Vector2(1239.0001, 420)
+scale = Vector2(-3.5117967, 21.89342)
+target_scene = "res://scenes/intersect.tscn"
+target_spawn = "from_trail"
+
+[node name="EntrancePoint_1" parent="." unique_id=1808471586 instance=ExtResource("4_fb56t")]
+position = Vector2(-1242, 444)
 scale = Vector2(4.0590935, 23.381596)
 target_scene = "res://scenes/monument.tscn"
 target_spawn = "from_trail"
 
 [node name="wall" type="StaticBody2D" parent="." unique_id=1679663853]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=1495769852]
-position = Vector2(-53.5, 627)
+position = Vector2(-4, 585)
+scale = Vector2(0.59999985, 1)
 shape = SubResource("RectangleShape2D_5fv6i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="wall" unique_id=1657024854]
-position = Vector2(-53.5, 219)
+position = Vector2(-1, 264)
+scale = Vector2(0.5999999, 1)
 shape = SubResource("RectangleShape2D_5fv6i")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="wall" unique_id=187270732]
-position = Vector2(-1799, 417)
+position = Vector2(-1271, 408)
 shape = SubResource("RectangleShape2D_fb56t")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="wall" unique_id=966262733]
-position = Vector2(1765, 417)
+position = Vector2(1272, 429)
 shape = SubResource("RectangleShape2D_fb56t")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1857696546]
+position = Vector2(-6, -19)
 
 [node name="from_monument" type="Marker2D" parent="SpawnPoints" unique_id=1078130654]
-position = Vector2(-1609.0001, 408)
-scale = Vector2(-1.3459336, 0.55079556)
+position = Vector2(-1140, 412)
+scale = Vector2(-1.3459336, 2.0394642)
+
+[node name="from_inter" type="Marker2D" parent="SpawnPoints" unique_id=1217140361]
+position = Vector2(1129, 386)
