@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://vcjtvhucwivc"]
+
+[ext_resource type="Script" uid="uid://dklwmfykytjb5" path="res://scripts/village.gd" id="1_0xiww"]
+[ext_resource type="Texture2D" uid="uid://7ofrqt2bqsda" path="res://pic/monument/插圖2.png" id="1_e5asd"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_eexne"]
+
+[node name="village" type="Node2D" unique_id=523305455]
+script = ExtResource("1_0xiww")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1858055522]
+texture = ExtResource("1_e5asd")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("2_eexne")]
+position = Vector2(-1705, 1527)

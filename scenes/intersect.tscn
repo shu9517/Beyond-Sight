@@ -83,7 +83,7 @@ y_sort_enabled = true
 position = Vector2(-349.5064, 329.43808)
 
 [node name="fence" type="Sprite2D" parent="order" unique_id=1084160193]
-position = Vector2(-311, 270)
+position = Vector2(-308, 270)
 texture = ExtResource("3_jblet")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="order/fence" unique_id=2105687280]

@@ -19,7 +19,7 @@
 size = Vector2(176.8947, 153.72992)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8lci"]
-size = Vector2(153.37842, 126.35149)
+size = Vector2(181.78354, 126.35149)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7no3"]
 size = Vector2(730.11646, 27.383728)
@@ -49,11 +49,11 @@ y_sort_enabled = true
 scale = Vector2(0.6417013, 0.6417013)
 
 [node name="player" parent="order" unique_id=2135659133 instance=ExtResource("2_rpsm2")]
-position = Vector2(3.116715, 63.89266)
+position = Vector2(3.116715, 149.60233)
 scale = Vector2(1.3740067, 1.3740067)
 
 [node name="Elvic" parent="order" unique_id=557349221 instance=ExtResource("7_cn87m")]
-position = Vector2(191.67796, 59.217594)
+position = Vector2(191.67796, 144.92725)
 scale = Vector2(1.3740077, 1.3740077)
 dialogue_resource = ExtResource("9_a2r8a")
 
@@ -74,7 +74,8 @@ shape = SubResource("RectangleShape2D_jryhg")
 [node name="staticBody2D" type="StaticBody2D" parent="order/statue" unique_id=1751370077]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="order/statue/staticBody2D" unique_id=332130024]
-position = Vector2(-5.067566, 2.7027054)
+position = Vector2(-3.0442348, 13.046687)
+scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_b8lci")
 
 [node name="fence" type="Sprite2D" parent="order" unique_id=858659342]

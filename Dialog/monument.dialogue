@@ -2,37 +2,39 @@
 It's default
 
 ~ opening
-Hey little one? Are you okay?
-This is not a good place to sleep, isn't it?
+Hey... little one. Are you alright??
+This isn’t exactly a good place to fall asleep, you know.
 - Who are you?
 	Elvic: I am Elvic.
-	Elvic: Don't worry, I'm not a bad guy. Just a normal person who wants to visit the statue.
-Elvic: But, hey, I never see you before? Where did you come from?
+	Elvic: Don’t worry… I’m not a bad person.
+	Elvic: Just someone passing by. I came to see the statue.
+Elvic: But, hey, I don’t think I’ve seen you around before.
+Elvic: Where did you come from?
+
 - I don't know
-	Elvic: Umm... Did you lost your memory?
-	Elvic: What a classic plot for a story.
-	Elvic: Sorry, never mind.
+	Elvic: Umm... Did you lose your memory?
+	Elvic: Hm. That’s a rather classic story, isn’t it?
+	Elvic: ...Sorry. Forget I said that.
+	
 - I am not from this world
 	Elvic: Oh...?
-	Elvic: Your brain has to be so broke to say something like this...
-	Elvic: Sorry, I know it's a joke, don't mind me.
-Elvic: Why don't you go visit our village?
-Elvic: You might remember something while you walk around.
-Elvic: I still have something to do here, so see you then.
+	Elvic: ...That’s an interesting way to put it.
+	Elvic: You’ve got quite an imagination.
+	Elvic: Well, it’s okay. I’ve heard all kinds of things before.
+Elvic: Why don’t you take a walk through the village?
+Elvic: It’s just up ahead. You might find something interesting there.
+Elvic: Or... you could just go back to sleep here. I wouldn’t mind.
+Elvic: I still have something I need to take care of here.
+Elvic: See you around.
 => END
 
 ~ statue
-It's an angle statue.
-Half of the wings is broke.
-It has something write on it...
+It’s an angel statue.
+One of its wings is broken.
+There is something written on it.
 "Guarding the truth,
-Holding the hope,
-Immortality is all alone."
-(Touch the statue?)
-- Touch
-	Nothing happened.
-- Leave
-	=> END
+Carry the hope.
+To be eternal is to be alone."
 => END
 
 ~ sign
@@ -40,3 +42,4 @@ It's a wooden signpost.
 Northeast\: Village
 So--hwes-\: --i--d M----
 The words on the lower sign are almost unreadable, as though they were deliberately scratched out
+=> END
