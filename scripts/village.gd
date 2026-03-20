@@ -1,11 +1,11 @@
 extends Node2D
 
-@onready var player = get_node_or_null("player")
+@onready var player = get_node_or_null("order/player")
 #@onready var spawn_points = get_node_or_null("SpawnPoints")
-@export var cam_left := -20000
-@export var cam_top := -20000
-@export var cam_right := 20000
-@export var cam_bottom := 20000
+@export var cam_left := -1850
+@export var cam_top := -1950
+@export var cam_right := 1850
+@export var cam_bottom := 1950
 
 func _ready():
 	player.set_camera_limits(cam_left, cam_top, cam_right, cam_bottom)
