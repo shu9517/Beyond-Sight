@@ -21,17 +21,17 @@ texture = ExtResource("1_2tjbc")
 position = Vector2(-1122.0001, 348.00003)
 scale = Vector2(0.84, 0.84)
 
-[node name="EntrancePoint_2" parent="." unique_id=1891912080 instance=ExtResource("4_fb56t")]
+[node name="Portal to inter" parent="." unique_id=1891912080 instance=ExtResource("4_fb56t")]
 position = Vector2(1239.0001, 420)
 scale = Vector2(-3.5117967, 21.89342)
 target_scene = "res://scenes/intersect.tscn"
-target_spawn = "from_trail"
+target_spawn = "trail"
 
-[node name="EntrancePoint_1" parent="." unique_id=1808471586 instance=ExtResource("4_fb56t")]
+[node name="Portal to Mon" parent="." unique_id=1808471586 instance=ExtResource("4_fb56t")]
 position = Vector2(-1242, 444)
 scale = Vector2(4.0590935, 23.381596)
 target_scene = "res://scenes/monument.tscn"
-target_spawn = "from_trail"
+target_spawn = "trail"
 
 [node name="wall" type="StaticBody2D" parent="." unique_id=1679663853]
 metadata/_edit_lock_ = true
@@ -57,9 +57,9 @@ shape = SubResource("RectangleShape2D_fb56t")
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1857696546]
 position = Vector2(-6, -19)
 
-[node name="from_monument" type="Marker2D" parent="SpawnPoints" unique_id=1078130654]
+[node name="monument" type="Marker2D" parent="SpawnPoints" unique_id=1078130654]
 position = Vector2(-1140, 412)
 scale = Vector2(-1.3459336, 2.0394642)
 
-[node name="from_inter" type="Marker2D" parent="SpawnPoints" unique_id=1217140361]
+[node name="inter" type="Marker2D" parent="SpawnPoints" unique_id=1217140361]
 position = Vector2(1129, 386)

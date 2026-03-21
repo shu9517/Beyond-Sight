@@ -18,6 +18,7 @@ func start_statue_dialogue():
 	if player == null:
 		return
 
+	player.stop_move()
 	player.can_move = false
 	is_talking = true
 

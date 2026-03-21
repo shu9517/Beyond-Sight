@@ -11,13 +11,14 @@ func _ready():
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact") and not is_talking:
-		await start_statue_dialogue()
+		await sign_read()
 
-func start_statue_dialogue():
+func sign_read():
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
 		return
 
+	player.stop_move()
 	player.can_move = false
 	is_talking = true
 

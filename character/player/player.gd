@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed: float = 100
+@export var move_speed: float = 400
 @onready var animator: AnimatedSprite2D = $AnimatedSprite2D
 
 var last_direction = Vector2.DOWN
@@ -55,10 +55,17 @@ func play_get_up():
 	animator.play("get_up")
 	await animator.animation_finished
 	play_idle()
-	
+
+func play_up():
+	animator.play("idle_up")
+
 func lie_down():
 	animator.play("lie_down")
 	await animator.animation_finished
+	play_idle()
+
+func stop_move():
+	velocity = Vector2.ZERO
 	play_idle()
 
 func face_target(target: Node2D):
@@ -83,3 +90,26 @@ func set_camera_limits(left: int, top: int, right: int, bottom: int):
 	$Camera2D.limit_top = top
 	$Camera2D.limit_right = right
 	$Camera2D.limit_bottom = bottom
+
+#Auto move
+func auto_move_towards(target_pos: Vector2, follow_speed := 120.0, stop_distance := 20.0):
+	var dir = target_pos - global_position
+
+	if dir.length() <= stop_distance:
+		velocity = Vector2.ZERO
+		play_idle()
+		move_and_slide()
+		return true
+
+	velocity = dir.normalized() * follow_speed
+	
+	last_direction = velocity
+	play_walk(velocity)
+	
+	move_and_slide()
+	return false
+
+func stop_auto_move():
+	velocity = Vector2.ZERO
+	play_idle()
+	move_and_slide()

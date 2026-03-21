@@ -6,6 +6,7 @@ extends Node2D
 @export var cam_top := -1950
 @export var cam_right := 1850
 @export var cam_bottom := 1950
+@export var dialogue: DialogueResource
 
 func _ready():
 	player.set_camera_limits(cam_left, cam_top, cam_right, cam_bottom)

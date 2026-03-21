@@ -1,0 +1,54 @@
+~ chair
+This is a chair.
+Get some rest?
+- Sit
+	The creator didn't implement a sitting function.
+	=> END
+- Leave => END
+
+~ well
+A well.
+Is there something inside, like in a horror movie?
+Take a look?
+- Why not?
+	...
+	...
+	There's nothing. => END
+- NO => END
+
+~ house
+Wowww, a villager's house in a rpg game!
+Enter?
+- Yes
+	Hold on... this isn’t that kind of game.
+	You can’t just walk into someone’s house without their permission.
+- No
+	A true law-abiding citizen. How rare!
+=> END
+
+~ fountain
+Water keeps flowing gently.
+=> END
+
+~ farm
+A field.
+It’s filled with straw.
+One row has already been harvested.
+=> END
+
+~ follow
+Elvic: I think I know where is he...
+=> END
+
+~ hi_to_elvic
+Helloooo!
+Wow, Elvic, nice to see you!
+How's your "left" hand?
+=> END
+
+~ chat_with_Luke
+Elvic: Ha ha, how funny Luke.
+Luke: I know you will like it!
+Luke: Ha, no offense!
+Luke: You came to see me, what's happened?
+=>ENDE

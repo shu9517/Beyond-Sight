@@ -131,11 +131,11 @@ texture = ExtResource("7_18f3d")
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=298087743]
 position = Vector2(4, -45)
 
-[node name="from_trail" type="Marker2D" parent="SpawnPoints" unique_id=632659512]
+[node name="trail" type="Marker2D" parent="SpawnPoints" unique_id=632659512]
 position = Vector2(801, 810)
 
-[node name="EntrancePoint" parent="." unique_id=1891912080 instance=ExtResource("15_gmwgv")]
+[node name="Portal_to_trail" parent="." unique_id=1891912080 instance=ExtResource("15_gmwgv")]
 position = Vector2(905, 813.99994)
 scale = Vector2(4.08, 19.320004)
 target_scene = "res://scenes/trail.tscn"
-target_spawn = "from_monument"
+target_spawn = "monument"

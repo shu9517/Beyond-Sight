@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cfxex2maxfjwg"
+path="res://.godot/imported/Luke.dialogue-2542d819c4b19eeec9cda0aa7cb97375.tres"
+
+[deps]
+
+source_file="res://Dialog/Luke.dialogue"
+dest_files=["res://.godot/imported/Luke.dialogue-2542d819c4b19eeec9cda0aa7cb97375.tres"]
+
+[params]
+
+defaults=true

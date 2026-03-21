@@ -9,8 +9,8 @@ extends Node2D
 
 func _ready():
 	player.set_camera_limits(cam_left, cam_top, cam_right, cam_bottom)
+	
 	var spawn_node = null
-
 	if GameManager.next_spawn != "" and spawn_points.has_node(GameManager.next_spawn):
 		spawn_node = spawn_points.get_node(GameManager.next_spawn)
 	else:
@@ -19,5 +19,4 @@ func _ready():
 	if spawn_node == null:
 		push_error("Spawn node not found: " + GameManager.next_spawn + " and no default spawn exists")
 		return
-
 	player.global_position = spawn_node.global_position
