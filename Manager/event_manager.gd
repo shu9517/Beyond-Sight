@@ -73,15 +73,17 @@ func enter_village1_with_spawn_and_exit(
 	GameManager.set_flag("left_mon")
 	current_event = ""
 
+#Talk to Luke
 func first_met_luke(
 	player,
 	npc,
-	npc2,
 	dialogue_resource,
 	spawn_point,
+	walk0,
 	walk1,
 	walk2,
-	walk3):
+	walk3,
+	leave1):
 
 	player.stop_move()
 	player.can_move = false
@@ -95,39 +97,44 @@ func first_met_luke(
 	
 	await DialogueHelper.elvic(dialogue_resource, "follow")
 
-	await auto_walk(player, npc, walk1)
-	await auto_walk(player, npc, walk2)
-	await auto_walk(player, npc, walk3)
+	await ExtraAction.auto_walk(player, npc, walk0)
+	await ExtraAction.auto_walk(player, npc, walk1)
+	await ExtraAction.auto_walk(player, npc, walk2)
+	await ExtraAction.auto_walk(player, npc, walk3)
 	
 	npc.play_up()
 	player.play_up()
 	await DialogueHelper.luke(dialogue_resource, "hi_to_elvic")
-	await DialogueHelper.chat(dialogue_resource, "chat_with_Luke")
+	await DialogueHelper.elvic(dialogue_resource, "elvic_0")
+	await DialogueHelper.luke(dialogue_resource, "luke1")
+	await DialogueHelper.elvic(dialogue_resource, "elvic_2")
+	await DialogueHelper.luke(dialogue_resource, "luke_3")
+	await DialogueHelper.elvic(dialogue_resource, "elvic_4")
+	await DialogueHelper.luke(dialogue_resource, "luke_5")
+	await DialogueHelper.elvic(dialogue_resource, "elvic_6")
+	
+	npc.face_target(player)
+	player.face_target(npc)
+	await DialogueHelper.elvic(dialogue_resource, "to_player")
+	npc.play_up()
+	player.play_up()
+	
+	await DialogueHelper.luke(dialogue_resource, "luke_7")
+	await DialogueHelper.elvic(dialogue_resource, "elvic_8")
+	await DialogueHelper.luke(dialogue_resource, "luke_9")
+	await DialogueHelper.elvic(dialogue_resource, "elvic_10")
+	
+	npc.face_target(player)
+	player.face_target(npc)
+	await DialogueHelper.elvic(dialogue_resource, "elvic_leave")
+	await npc.move_to_point(leave1)
+	player.play_up()
+	
+	await DialogueHelper.luke(dialogue_resource, "luke_11")
+	await DialogueHelper.luke(dialogue_resource, "ask_0")
+	
+	GameManager.set_flag("luke_met_finished")
+	GameManager.set_flag("left_vill")
 
 	player.can_move = true
 	npc.can_interact = true
-
-
-func auto_walk(player, npc, target_pos: Vector2, follow_distance := 28.0):
-	npc.move_speed = 400
-	player.move_speed = 400
-
-	while npc.global_position.distance_to(target_pos) > 6.0:
-		var npc_dir = target_pos - npc.global_position
-
-		if npc_dir.length() > 0.1:
-			npc.velocity = npc_dir.normalized() * npc.move_speed
-			npc.move_and_slide()
-			npc.update_animation(npc.velocity)
-
-		var follow_target = npc.global_position - npc_dir.normalized() * follow_distance
-		player.auto_move_towards(follow_target, 400.0, 12.0)
-
-		if player.get_tree() == null or npc.get_tree() == null:
-			break
-
-		await player.get_tree().process_frame
-
-	npc.velocity = Vector2.ZERO
-	npc.update_animation(Vector2.ZERO)
-	player.stop_auto_move()

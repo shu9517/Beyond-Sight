@@ -59,6 +59,9 @@ func play_get_up():
 func play_up():
 	animator.play("idle_up")
 
+func play_down():
+	animator.play("idle_down")
+
 func lie_down():
 	animator.play("lie_down")
 	await animator.animation_finished
@@ -92,7 +95,7 @@ func set_camera_limits(left: int, top: int, right: int, bottom: int):
 	$Camera2D.limit_bottom = bottom
 
 #Auto move
-func auto_move_towards(target_pos: Vector2, follow_speed := 120.0, stop_distance := 20.0):
+func auto_move_towards(target_pos: Vector2, follow_speed := 120.0, stop_distance := 10.0):
 	var dir = target_pos - global_position
 
 	if dir.length() <= stop_distance:

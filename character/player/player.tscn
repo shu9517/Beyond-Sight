@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://vulw6ngq0uad" path="res://character/player/pic/left_3.png" id="7_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://bf3hxrrkxjvin" path="res://character/player/pic/right_2.png" id="9_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://cyr6tda2rkhr3" path="res://character/player/pic/right_3.png" id="10_3v2ag"]
+[ext_resource type="Script" uid="uid://d1fpst80073ik" path="res://character/player/camera_2d.gd" id="16_fkbv7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2hs0m"]
 animations = [{
@@ -165,3 +166,4 @@ limit_left = -1200
 limit_top = -1250
 limit_right = 1200
 limit_bottom = 1250
+script = ExtResource("16_fkbv7")

@@ -1,0 +1,129 @@
+~ follow
+Elvic: Follow me.
+=> END
+
+~ hi_to_elvic
+Helloooo!
+Wow, Elvic, nice to see you!
+How's your "left" hand these days?
+=> END
+
+~ elvic_0
+Elvic: ...Same as ever. Heh... yeah.
+Elvic: You never change.
+=> END
+
+~ luke1
+Luke: Ha, my bad.
+Luke: No offense! Didn’t mean anything by it.
+Luke: But, wow! Elvic came to see me?
+Luke: Must be something important.
+=> END
+
+~ elvic_2
+Elvic: I came here for—
+=> END
+
+~ luke_3
+Luke: Whoa, hold on!
+Luke: Look at this! Mr. Elvic brought someone with him!
+Luke: Hiiiii! I’m Luke!
+Luke: The most knowledgeable person in this entire village!
+Luke: I work for the administration... sort of?
+Luke: Well, never mind that!
+Luke: Our village may be small, but it’s full of life!
+Luke: So, welcome!!!
+=> END
+
+~ elvic_4
+Elvic: ...
+Elvic: Well... he already said everything I was going to say.
+Elvic: If you have any questions, you can ask him.
+Elvic: He’s... enthusiastic. As always.
+=> END
+
+~ luke_5
+Luke: That’s called being hospitable, Elvic!!!
+=> END
+
+~ elvic_6
+Elvic: ...Right. Hospitable.
+=> END
+
+~ to_player
+Elvic: He’s always like this. Don’t worry about it.
+=> END
+
+~ luke_7
+Luke: Hey! I can still hear you two!
+=> END
+
+~ elvic_8
+Elvic: Nothing.
+Elvic: I was just telling them how friendly and helpful you are.
+=> END
+
+~ luke_9
+Luke: Huh... I’m not entirely convinced,
+Luke: but I’ll take that as a compliment.
+=> END
+
+~ elvic_10
+Elvic: Of course you will.
+=> END
+
+~ elvic_leave
+Elvic: Anyway, feel free to look around.
+Elvic: If you need anything, just ask Luke.
+Elvic: I still have something to take care of.
+Elvic: See you later.
+=> END
+
+~ luke_11
+Luke: Busy as always...
+Luke: But hey—don’t mind him!
+Luke: I’m way more fun anyway!
+Luke: I’ll help you with whatever you need!
+=> END
+
+~ ask_0
+Luke: So? Anything you want to know?
+- About the village [if !State.luke_village_ask ]
+	Luke: The village is pretty small, so there’s not that much to tell.
+	Luke: But the people here are super kind! Super friendly!
+	Luke: If there’s one place you should check out,
+	Luke: it’s the church!
+	Luke: Just right behind me!
+	Luke: There’s an old story about it.
+	Luke: They say an angel once lived here, a long time ago.
+	Luke: Protecting the village from whatever lay beyond.
+	Luke: I’m not sure how true that is,
+	Luke: but apparently, the angel disappeared after the last great conflict.
+	Luke: Have you seen the statue?
+	Luke: It was built in their honor.
+	Luke: Elvic spends a lot of time there.
+	Luke: Maybe it means something to him.
+	do State.luke_village_ask = true
+	=> ask_0
+
+- What is Elvic's doing? [if !State.luke_elvic_ask ]
+	Luke: You should probably ask him directly.
+	Luke: I don’t really know the details.
+	Luke: I just know he helps people.
+	Luke: Sometimes... with things that are actually dangerous?
+	Luke: Ummm, I mean—
+	Luke: He’s probably the most capable person in this village?
+	Luke: Akira often sends him off to do things.
+	Luke: Maybe guarding the village? 
+	Luke: Somthing like that... I guess? I don't know.
+	Luke: Anyway, he’s always busy.
+	Luke: But hey— don’t mind him, he’s boring anyway.
+	do State.luke_elvic_ask = true
+	=> ask_0
+- Nothing.
+	Luke: Alright!
+	Luke: Just come find me anytime if you have questions!
+	Luke: Oh yeah! one more thing!
+	Luke: [color=red]Don’t go into the forest up north.[/color]
+	Luke: I don’t know why... but I always get a bad feeling when I go there.
+	=> END

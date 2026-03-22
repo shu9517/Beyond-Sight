@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cscrf3a27a1av"
+path="res://.godot/imported/chat_with_luke.dialogue-3cd3acb408bbe4317b117473a8a8cc46.tres"
+
+[deps]
+
+source_file="res://Dialog/chat_with_luke.dialogue"
+dest_files=["res://.godot/imported/chat_with_luke.dialogue-3cd3acb408bbe4317b117473a8a8cc46.tres"]
+
+[params]
+
+defaults=true

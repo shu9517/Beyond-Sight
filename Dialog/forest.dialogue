@@ -1,0 +1,19 @@
+~ block
+...
+......
+.........
+The road seems block.
+There is no way back there.
+Have to find a way out...
+=> END
+
+~ no_way
+The road has been block.
+There is no way out there.
+=> END
+
+~ broken_sign
+A broken sign. The words are almost gone.
+Only a few letters can still be made out...
+-o--- d--l --u-e
+---t ---e

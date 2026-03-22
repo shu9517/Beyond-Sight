@@ -36,19 +36,10 @@ It’s filled with straw.
 One row has already been harvested.
 => END
 
-~ follow
-Elvic: I think I know where is he...
-=> END
-
-~ hi_to_elvic
-Helloooo!
-Wow, Elvic, nice to see you!
-How's your "left" hand?
-=> END
-
-~ chat_with_Luke
-Elvic: Ha ha, how funny Luke.
-Luke: I know you will like it!
-Luke: Ha, no offense!
-Luke: You came to see me, what's happened?
-=>ENDE
+~ tree_path
+It seems like there is a path inside...
+Continue enter?
+- Enter
+	do State.enter_forest = true
+	=> END
+- No => END

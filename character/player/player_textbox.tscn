@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://hucbfk4j6fls" path="res://pic/對話框/player.png" id="2_qm4kr"]
 [ext_resource type="FontFile" uid="uid://41sxvdyf4mvj" path="res://font/Su-Regular.ttf" id="3_3slag"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_di5j0"]
-[ext_resource type="Texture2D" uid="uid://ce8nrljdwfyo5" path="res://pic/對話框/player_choice.png" id="6_3slag"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -109,13 +108,6 @@ _data = {
 &"progress": SubResource("Animation_qkmqt")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qm4kr"]
-content_margin_top = 12.0
-content_margin_bottom = 12.0
-texture = ExtResource("6_3slag")
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
 [node name="PlayerBalloon" type="CanvasLayer" unique_id=571828243]
 layer = 100
 script = ExtResource("1_6f01a")
@@ -199,13 +191,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 183.0
-offset_top = -22.0
-offset_right = 387.00006
-offset_bottom = 28.0
+offset_left = -102.00003
+offset_top = -25.0
+offset_right = 102.00003
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.6937243, 1.6937243)
 size_flags_vertical = 8
 theme_override_constants/separation = 2
 alignment = 1
@@ -215,8 +206,7 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=443821367]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_3slag")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/normal = SubResource("StyleBoxTexture_qm4kr")
+theme_override_font_sizes/font_size = 47
 text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1044133728]

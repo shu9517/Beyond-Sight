@@ -1,0 +1,47 @@
+~ luke_chat_1
+Luke: Having a question?
+- About the village [if !State.luke_village_ask ]
+	Luke: The village is pretty small, so there’s not that much to tell.
+	Luke: But the people here are super kind! Super friendly!
+	Luke: If there’s one place you should check out,
+	Luke: it’s the church!
+	Luke: Just right behind me!
+	Luke: There’s an old story about it.
+	Luke: They say an angel once lived here, a long time ago.
+	Luke: Protecting the village from whatever lay beyond.
+	Luke: I’m not sure how true that is,
+	Luke: but apparently, the angel disappeared after the last great conflict.
+	Luke: Have you seen the statue?
+	Luke: It was built in their honor.
+	Luke: Elvic spends a lot of time there.
+	Luke: Maybe it means something to him.
+	do State.luke_village_ask = true
+	=> luke_chat_1
+
+- What is Elvic's doing? [if !State.luke_elvic_ask ]
+	Luke: You should probably ask him directly.
+	Luke: I don’t really know the details.
+	Luke: I just know he helps people.
+	Luke: Sometimes... with things that are actually dangerous?
+	Luke: Ummm, I mean—
+	Luke: He’s probably the most capable person in this village?
+	Luke: Akira often sends him off to do things.
+	Luke: Maybe guarding the village? 
+	Luke: Somthing like that... I guess? I don't know.
+	Luke: Anyway, he’s always busy.
+	Luke: But hey— don’t mind him, he’s boring anyway.
+	do State.luke_elvic_ask = true
+	=> luke_chat_1
+
+- About the forest
+	Luke: I’ve been there for only twice, but never made it all the way through.
+	Luke: There’s... something off about that place...
+	Luke: I can’t really explain it...
+	Luke: Sorry, I don’t know much more than that.
+	Luke: But if there’s one thing I can tell you—
+	Luke: [color=red]just don’t go.[/color]
+	=> luke_chat_1
+	
+- Nothing
+	Luke: Alrighty then see ya! Byyyyyye!
+=> END

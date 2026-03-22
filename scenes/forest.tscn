@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://jhdnfr8xeir3"]
+
+[ext_resource type="Script" uid="uid://de7djsl6mnuco" path="res://scripts/forest.gd" id="1_i1yi8"]
+[ext_resource type="Texture2D" uid="uid://n1mxry7jydsi" path="res://pic/doll house/intersect2.png" id="1_xr56k"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_ercsu"]
+[ext_resource type="Texture2D" uid="uid://cwn52qvqt0idv" path="res://pic/doll house/forest.png" id="2_sek5r"]
+[ext_resource type="Texture2D" uid="uid://sk3y3unet1xp" path="res://pic/doll house/forest_up.png" id="3_i1yi8"]
+[ext_resource type="Texture2D" uid="uid://b0ahqrh2d8fhw" path="res://pic/doll house/broken_sign.png" id="4_qm7rg"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="5_0nboi"]
+[ext_resource type="Script" uid="uid://cdys2gsotptiq" path="res://scripts/forest/sign.gd" id="5_j3csf"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="7_i1yi8"]
+[ext_resource type="Script" uid="uid://dpa1apbj5fhvs" path="res://scripts/forest/block_road.gd" id="8_qm7rg"]
+[ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="9_0nboi"]
+[ext_resource type="Script" uid="uid://3mua55k87poc" path="res://scripts/forest/dialog.gd" id="10_3knxq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ercsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm7rg"]
+size = Vector2(1479, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1yi8"]
+size = Vector2(4371.51, 14.982361)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ercsu"]
+size = Vector2(786.5, 62)
+
+[node name="forest" type="Node2D" unique_id=1799944804]
+script = ExtResource("1_i1yi8")
+
+[node name="black" type="Sprite2D" parent="." unique_id=809422377]
+scale = Vector2(1.1550632, 1)
+texture = ExtResource("2_ercsu")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=976485975]
+texture = ExtResource("1_xr56k")
+
+[node name="sign" type="Sprite2D" parent="." unique_id=1145452779]
+position = Vector2(188, -84)
+scale = Vector2(0.92, 0.92)
+texture = ExtResource("4_qm7rg")
+script = ExtResource("5_j3csf")
+dialogue_resource = ExtResource("9_0nboi")
+
+[node name="Area2D" type="Area2D" parent="sign" unique_id=1995308071]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sign/Area2D" unique_id=1087711386]
+position = Vector2(1.0869565, 0)
+scale = Vector2(21.451006, 24.869564)
+shape = SubResource("CircleShape2D_ercsu")
+
+[node name="tree" type="Sprite2D" parent="." unique_id=1753266781]
+texture = ExtResource("2_sek5r")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("5_0nboi")]
+position = Vector2(-2, 551)
+
+[node name="tree_up" type="Sprite2D" parent="." unique_id=42211616]
+texture = ExtResource("3_i1yi8")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1647327674]
+
+[node name="house" type="Marker2D" parent="SpawnPoints" unique_id=96395252]
+position = Vector2(-185, -639)
+
+[node name="stair" type="Marker2D" parent="SpawnPoints" unique_id=1094332498]
+position = Vector2(-143, 571)
+
+[node name="cave" type="Marker2D" parent="SpawnPoints" unique_id=1680474857]
+position = Vector2(589, 31)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1376425456]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=425013742]
+position = Vector2(7.5, -707)
+shape = SubResource("RectangleShape2D_qm7rg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1749624352]
+position = Vector2(7.5, 706)
+shape = SubResource("RectangleShape2D_qm7rg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1269248394]
+position = Vector2(-708, -2)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_qm7rg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1835502305]
+position = Vector2(708, -2)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_qm7rg")
+
+[node name="Portal_house" parent="." unique_id=1891912080 instance=ExtResource("7_i1yi8")]
+position = Vector2(-192.99998, -693.99994)
+scale = Vector2(35.321476, 1.4831107)
+
+[node name="block_road" type="Area2D" parent="." unique_id=1598829129]
+script = ExtResource("8_qm7rg")
+dialogue = ExtResource("9_0nboi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block_road" unique_id=126608355]
+position = Vector2(-3.991516, 355.5)
+scale = Vector2(0.3307743, 1.4016489)
+shape = SubResource("RectangleShape2D_i1yi8")
+
+[node name="No_way" type="Node2D" parent="." unique_id=2061830406]
+script = ExtResource("10_3knxq")
+dialogue_resource = ExtResource("9_0nboi")
+
+[node name="Area2D" type="Area2D" parent="No_way" unique_id=962110962]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="No_way/Area2D" unique_id=1160945108]
+position = Vector2(-63, 695)
+shape = SubResource("RectangleShape2D_ercsu")

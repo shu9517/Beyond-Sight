@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://41sxvdyf4mvj" path="res://font/Su-Regular.ttf" id="4_0nknv"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="5_1pbeg"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="6_q720e"]
-[ext_resource type="Texture2D" uid="uid://ce8nrljdwfyo5" path="res://pic/對話框/player_choice.png" id="7_cd6nb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -67,7 +66,6 @@ MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_156gu"]
-content_margin_left = 95.0
 texture = ExtResource("2_mka57")
 texture_margin_left = 47.0
 
@@ -107,14 +105,7 @@ _data = {
 &"progress": SubResource("Animation_qkmqt")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qm4kr"]
-content_margin_top = 12.0
-content_margin_bottom = 12.0
-texture = ExtResource("7_cd6nb")
-expand_margin_top = 5.0
-expand_margin_bottom = 5.0
-
-[node name="Elvic_Balloon" type="CanvasLayer" unique_id=571828243]
+[node name="Luke_Balloon" type="CanvasLayer" unique_id=571828243]
 layer = 100
 script = ExtResource("1_upm2f")
 
@@ -142,9 +133,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 94.0
+offset_left = -57.0
 offset_top = -208.0
-offset_right = 94.0
+offset_right = -57.0
 offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -157,8 +148,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_156gu")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=458971283]
 layout_mode = 2
-theme_override_constants/margin_top = 23
-theme_override_constants/margin_right = 120
+theme_override_constants/margin_left = 44
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 156
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=2107450268]
 layout_mode = 2
@@ -210,14 +202,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 129.0
-offset_top = -65.0
-offset_right = 333.0
-offset_bottom = -15.0
+offset_left = -178.5
+offset_top = -35.5
+offset_right = 116.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.9599988, 1.9599988)
 size_flags_vertical = 8
+theme_override_constants/separation = 2
 alignment = 1
 script = ExtResource("6_q720e")
 response_template = NodePath("ResponseExample")
@@ -225,8 +217,7 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=443821367]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_0nknv")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_qm4kr")
+theme_override_font_sizes/font_size = 47
 text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1044133728]
