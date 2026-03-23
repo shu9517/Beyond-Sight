@@ -17,3 +17,64 @@ A broken sign. The words are almost gone.
 Only a few letters can still be made out...
 -o--- d--l --u-e
 ---t ---e
+=> END
+
+~ enter
+The door is old and weathered.
+Seems like it can be opened easily.
+Enter?
+- Yes
+	do State.enter_dollHouse = true
+	=> END
+- No => END
+
+~ portrait
+A portrait of a man.
+He looks like a noble?
+There are some notes on the table in front of it.
+
+- Read
+	"I've begun to notice something strange about this world..."
+	"There are things that seem to exist, yet cannot be seen."
+	"There must be something we all fail to perceive..."
+	"I have to uncover the truth."
+
+	...
+	"xx32 06/14"
+	"It must be my fault... does my experiment went wrong?"
+	"How could this happen...?"
+
+	...
+	"xx33 11/23"
+	"[shake rate=40 level=10]THIS CAN'T BE REAL[/shake]"
+	"[shake rate=40 level=10]OUR LIVES... THEY'RE JUST A GAME[/shake]"
+	"[shake rate=40 level=10]SOMETHING IS TERRIBLY WRONG[/shake]"
+	"[shake rate=40 level=10]I WON'T LET THEM CONTROL ME[/shake]"
+
+	The handwriting becomes distorted. The lower half is unreadable.
+
+	...
+	"xx34 02/18"
+	"You are our hope... please, save us..."
+
+	...
+	"I'll just give up..."
+	"It doesn't matter anymore."
+	"I left the device at the back of this room..."
+	"...for those who still want to seek the truth."
+	=> END
+- Leave
+	=> END
+
+~ room
+A big hole on the wall, seems like it can reach the room behind.
+Walk in?
+- Yes
+	do State.enter_room = true
+	=> END
+- No => END
+
+~ faint
+The world seems like being collasp...
+The vision gradually blurred...
+=> END

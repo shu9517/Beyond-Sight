@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bf3hxrrkxjvin" path="res://character/player/pic/right_2.png" id="9_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://cyr6tda2rkhr3" path="res://character/player/pic/right_3.png" id="10_3v2ag"]
 [ext_resource type="Script" uid="uid://d1fpst80073ik" path="res://character/player/camera_2d.gd" id="16_fkbv7"]
+[ext_resource type="PackedScene" uid="uid://bd0uhtdhlfp1s" path="res://scenes/flash_light.tscn" id="17_pedpu"]
+[ext_resource type="Texture2D" uid="uid://cqiyy3d2waw0a" path="res://pic/item/light.png" id="18_i6sc0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2hs0m"]
 animations = [{
@@ -64,6 +66,20 @@ animations = [{
 "loop": true,
 "name": &"idle_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i3pqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a8ls1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oprun")
+}],
+"loop": false,
+"name": &"lie",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -145,9 +161,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(432.41324, 40.62052)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6sc0"]
+
 [node name="player" type="CharacterBody2D" unique_id=2135659133]
 script = ExtResource("1_hqtel")
 move_speed = 600.0
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=834909727]
+position = Vector2(4.096894, 97.375595)
+scale = Vector2(0.70657384, 0.70657384)
+texture = ExtResource("18_i6sc0")
+offset = Vector2(-5.8452396, 383.47778)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1049095053]
 scale = Vector2(0.935, 0.935)
@@ -167,3 +191,11 @@ limit_top = -1250
 limit_right = 1200
 limit_bottom = 1250
 script = ExtResource("16_fkbv7")
+
+[node name="flash light" parent="." unique_id=2064669914 instance=ExtResource("17_pedpu")]
+visible = false
+
+[node name="FlashlightArea" type="Area2D" parent="." unique_id=514357830]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlashlightArea" unique_id=160382284]
+shape = SubResource("RectangleShape2D_i6sc0")

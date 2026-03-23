@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bd0uhtdhlfp1s"]
+
+[ext_resource type="Texture2D" uid="uid://4mjegt24jdk1" path="res://pic/item/flashlight.png" id="1_v7dw0"]
+[ext_resource type="Script" uid="uid://bmu8xann5shbi" path="res://scripts/item/item.gd" id="2_wt4or"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt4or"]
+size = Vector2(58, 62)
+
+[node name="flash light" type="Area2D" unique_id=2064669914]
+script = ExtResource("2_wt4or")
+item_id = "flash_device"
+
+[node name="pic" type="Sprite2D" parent="." unique_id=1345771535]
+texture = ExtResource("1_v7dw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1001778245]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_wt4or")

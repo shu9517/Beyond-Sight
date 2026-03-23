@@ -38,6 +38,7 @@ func interact():
 	can_interact = false
 	
 	#劇本
+	print(PlotManager.elvic_state)
 	await DialogueHelper.elvic(dialogue_resource, PlotManager.elvic_plot())
 	
 	player.can_move = true

@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://djavsea1078al"]
+
+[ext_resource type="Texture2D" uid="uid://csqpkj24gdwgk" path="res://pic/doll house/inside_house.png" id="1_f74lx"]
+[ext_resource type="Script" uid="uid://crexhvkr6s8rj" path="res://scripts/forest/house.gd" id="1_ptc3g"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_ptc3g"]
+[ext_resource type="Texture2D" uid="uid://pvskc5pe4v5p" path="res://pic/doll house/picture.png" id="3_wcu0q"]
+[ext_resource type="Script" uid="uid://dx2xmuv7660oq" path="res://scripts/forest/picture.gd" id="4_bwc8c"]
+[ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="5_mhx8p"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="6_65la3"]
+[ext_resource type="Script" uid="uid://dj1dke7op6x1q" path="res://scripts/forest/enter_room.gd" id="8_wcu0q"]
+[ext_resource type="Script" uid="uid://cnb8jlpdkmek" path="res://scripts/forest/level_1.gd" id="9_bwc8c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uk1i"]
+size = Vector2(295, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wm8p"]
+size = Vector2(1829, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i21v"]
+size = Vector2(23, 844)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrr1a"]
+size = Vector2(239.83672, 457)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0n3l"]
+size = Vector2(171, 323)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cpf6"]
+size = Vector2(266.5, 218)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptc3g"]
+size = Vector2(285, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcu0q"]
+size = Vector2(1648.5, 23)
+
+[node name="house" type="Node2D" unique_id=107917797]
+script = ExtResource("1_ptc3g")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1054792320]
+texture = ExtResource("1_f74lx")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("2_ptc3g")]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=799499083]
+position = Vector2(163, 157)
+
+[node name="outside" type="Marker2D" parent="SpawnPoints" unique_id=425797147]
+position = Vector2(140, 383)
+
+[node name="room" type="Marker2D" parent="SpawnPoints" unique_id=1786581813]
+position = Vector2(351, -157)
+
+[node name="picture" type="Sprite2D" parent="." unique_id=271036553]
+position = Vector2(246, -489)
+texture = ExtResource("3_wcu0q")
+script = ExtResource("4_bwc8c")
+dialogue_resource = ExtResource("5_mhx8p")
+
+[node name="Area2D" type="Area2D" parent="picture" unique_id=1739275928]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="picture/Area2D" unique_id=746259054]
+position = Vector2(5.5, 416.5)
+shape = SubResource("RectangleShape2D_7uk1i")
+
+[node name="collision" type="Node2D" parent="." unique_id=998551375]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collision" unique_id=238198420]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1333215225]
+position = Vector2(-1.5, -137)
+shape = SubResource("RectangleShape2D_4wm8p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1850519699]
+position = Vector2(-1.5, 705)
+shape = SubResource("RectangleShape2D_4wm8p")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=570260622]
+position = Vector2(-905, 293)
+shape = SubResource("RectangleShape2D_1i21v")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=326624066]
+position = Vector2(907, 293)
+shape = SubResource("RectangleShape2D_1i21v")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1390998675]
+position = Vector2(-207, -27.000004)
+rotation = -0.29161376
+shape = SubResource("RectangleShape2D_jrr1a")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=364285169]
+position = Vector2(-804, -68)
+shape = SubResource("RectangleShape2D_k0n3l")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=873991677]
+position = Vector2(-864.99994, 272.00003)
+scale = Vector2(1.12, 1.1200012)
+shape = SubResource("RectangleShape2D_k0n3l")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1232472319]
+position = Vector2(-790, 395)
+scale = Vector2(1, 0.35999942)
+shape = SubResource("RectangleShape2D_k0n3l")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1930385840]
+position = Vector2(780, 79)
+shape = SubResource("RectangleShape2D_6cpf6")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1451630076]
+position = Vector2(819, -103)
+shape = SubResource("RectangleShape2D_6cpf6")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=751445914]
+position = Vector2(850, 664)
+shape = SubResource("RectangleShape2D_6cpf6")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=17429985]
+position = Vector2(252, -185)
+scale = Vector2(1.28, 1)
+shape = SubResource("RectangleShape2D_6cpf6")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=304081062]
+position = Vector2(973.99994, 498.99997)
+rotation = 0.35364962
+shape = SubResource("RectangleShape2D_6cpf6")
+
+[node name="Portal_outside" parent="." unique_id=1891912080 instance=ExtResource("6_65la3")]
+position = Vector2(308, 703.99994)
+scale = Vector2(22.399996, 2.4800005)
+target_scene = "res://scenes/house_front.tscn"
+target_spawn = "inside"
+
+[node name="enter_room" type="Node2D" parent="." unique_id=169249021]
+script = ExtResource("8_wcu0q")
+dialogue_resource = ExtResource("5_mhx8p")
+target_scene = "res://scenes/secret_room.tscn"
+target_spawn = "house"
+
+[node name="Area2D" type="Area2D" parent="enter_room" unique_id=1797746935]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_room/Area2D" unique_id=1815364000]
+position = Vector2(578, -116)
+shape = SubResource("RectangleShape2D_ptc3g")
+
+[node name="level1" type="Area2D" parent="." unique_id=1150880221]
+script = ExtResource("9_bwc8c")
+dialogue = ExtResource("5_mhx8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level1" unique_id=142095497]
+position = Vector2(89.25, 351.5)
+shape = SubResource("RectangleShape2D_wcu0q")

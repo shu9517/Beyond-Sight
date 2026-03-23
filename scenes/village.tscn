@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vcjtvhucwivc"]
 
-[ext_resource type="Script" uid="uid://dklwmfykytjb5" path="res://scripts/village.gd" id="1_0xiww"]
+[ext_resource type="Script" uid="uid://dklwmfykytjb5" path="res://scripts/village/village.gd" id="1_0xiww"]
 [ext_resource type="Resource" uid="uid://tsxukck3kxbw" path="res://Dialog/village.dialogue" id="2_6ldqi"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_eexne"]
 [ext_resource type="Texture2D" uid="uid://b3g4sn7mh8ovu" path="res://pic/village/village_bg.png" id="2_pldg8"]

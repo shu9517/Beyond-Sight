@@ -6,7 +6,6 @@ extends Node2D
 @export var cam_top := -700
 @export var cam_right := 700
 @export var cam_bottom := 700
-@export var dialogue: DialogueResource
 
 func _ready():
 	player.modulate = Color(0.047, 0.18, 0.286, 1.0)
@@ -18,7 +17,9 @@ func _ready():
 		spawn_node = spawn_points.get_node(GameManager.next_spawn)
 	else:
 		spawn_node = spawn_points.get_node_or_null("default")
-
+		
+	GameManager.save_game(get_tree().current_scene.scene_file_path)
+	
 	if spawn_node == null:
 		push_error("Spawn node not found: " + GameManager.next_spawn + " and no default spawn exists")
 		return

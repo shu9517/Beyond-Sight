@@ -24,6 +24,7 @@ func interect():
 	is_talking = true
 
 	await DialogueHelper.luke(dialogue_resource, PlotManager.luke_plot())
+	print(PlotManager.luke_state)
 
 	player.can_move = true
 	is_talking = false

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dga3bi0c2ayw1"]
+
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_e3sih"]
+[ext_resource type="Texture2D" uid="uid://k5wuj3ayqckq" path="res://pic/doll house/level_1/bear.png" id="2_2y5yt"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_6dial"]
+[ext_resource type="Texture2D" uid="uid://dr4vbvgs66dbu" path="res://pic/doll house/level_1/boy.png" id="3_2os1m"]
+[ext_resource type="Texture2D" uid="uid://dx6f3eeohck2r" path="res://pic/doll house/level_1/butterfly.png" id="4_go7sj"]
+[ext_resource type="Texture2D" uid="uid://clp0i0fh6eahs" path="res://pic/doll house/level_1/cat.png" id="5_7gny6"]
+[ext_resource type="Texture2D" uid="uid://c7thcmgoca8bl" path="res://pic/doll house/level_1/dia.png" id="6_2aecg"]
+[ext_resource type="Texture2D" uid="uid://2366sxoe2p56" path="res://pic/doll house/level_1/fox.png" id="7_6dial"]
+[ext_resource type="Texture2D" uid="uid://la1oytexh73g" path="res://pic/doll house/level_1/girl.png" id="8_7nomh"]
+[ext_resource type="Texture2D" uid="uid://bi0cnh874y73u" path="res://pic/doll house/level_1/knife.png" id="9_1s4pk"]
+[ext_resource type="Texture2D" uid="uid://4k2qsmsjjivt" path="res://pic/doll house/level_1/locker.png" id="11_7nomh"]
+[ext_resource type="Texture2D" uid="uid://do830va05tkhv" path="res://pic/doll house/level_1/paper.png" id="12_1s4pk"]
+[ext_resource type="Texture2D" uid="uid://bar7q4jshugrr" path="res://pic/doll house/level_1/pc.png" id="13_x2xxo"]
+[ext_resource type="Texture2D" uid="uid://b5nnw6wxlaodg" path="res://pic/doll house/level_1/projector.png" id="14_2cbcq"]
+[ext_resource type="Texture2D" uid="uid://hbqy47unmf5e" path="res://pic/doll house/level_1/statue.png" id="15_isj1j"]
+
+[node name="level_1" type="Node2D" unique_id=1437287248]
+
+[node name="bg" type="Sprite2D" parent="." unique_id=38566220]
+texture = ExtResource("1_e3sih")
+
+[node name="order" type="Node2D" parent="." unique_id=404817511]
+y_sort_enabled = true
+
+[node name="player" parent="order" unique_id=2135659133 instance=ExtResource("2_6dial")]
+
+[node name="bear" type="Sprite2D" parent="order" unique_id=240960973]
+position = Vector2(-293, -337)
+texture = ExtResource("2_2y5yt")
+
+[node name="boy" type="Sprite2D" parent="order" unique_id=2142280575]
+position = Vector2(-2, -338)
+texture = ExtResource("3_2os1m")
+
+[node name="butterfly" type="Sprite2D" parent="order" unique_id=670884430]
+position = Vector2(-129, -344)
+texture = ExtResource("4_go7sj")
+
+[node name="cat" type="Sprite2D" parent="order" unique_id=1012172161]
+position = Vector2(133, -344)
+texture = ExtResource("5_7gny6")
+
+[node name="dia" type="Sprite2D" parent="order" unique_id=1041407457]
+position = Vector2(293, -128)
+texture = ExtResource("6_2aecg")
+
+[node name="fox" type="Sprite2D" parent="order" unique_id=1500199300]
+position = Vector2(-285, -122)
+texture = ExtResource("7_6dial")
+
+[node name="girl" type="Sprite2D" parent="order" unique_id=1478104310]
+position = Vector2(2, -127)
+texture = ExtResource("8_7nomh")
+
+[node name="knife" type="Sprite2D" parent="order" unique_id=776980731]
+position = Vector2(272, -346)
+texture = ExtResource("9_1s4pk")
+
+[node name="pc" type="Sprite2D" parent="order" unique_id=1292622014]
+position = Vector2(-126, -125)
+texture = ExtResource("13_x2xxo")
+
+[node name="statue" type="Sprite2D" parent="order" unique_id=117331372]
+position = Vector2(141, -136)
+texture = ExtResource("15_isj1j")
+
+[node name="locker" type="Sprite2D" parent="order" unique_id=1418942369]
+position = Vector2(3, 345)
+texture = ExtResource("11_7nomh")
+
+[node name="paper" type="Sprite2D" parent="order" unique_id=1586422553]
+position = Vector2(269, 279)
+texture = ExtResource("12_1s4pk")
+
+[node name="projector" type="Sprite2D" parent="order" unique_id=984575784]
+position = Vector2(-1, 112)
+texture = ExtResource("14_2cbcq")

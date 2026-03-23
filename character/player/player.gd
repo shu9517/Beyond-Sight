@@ -6,9 +6,15 @@ extends CharacterBody2D
 var last_direction = Vector2.DOWN
 var can_move := true #玩家可移動
 var talk := false
+var flashlight_on = false
+
+@onready var light = $PointLight2D
+@onready var flashlight_area = $FlashlightArea
 
 func _ready():
 	add_to_group("player")
+	light.visible = false
+	flashlight_area.monitoring = false
 
 func _physics_process(_delta: float) -> void:
 	#can_move=false時強制暫停
@@ -20,12 +26,19 @@ func _physics_process(_delta: float) -> void:
 	velocity = Input.get_vector("left", "right", "up", "down") * move_speed
 	var direction = velocity
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("flashlight") and State.items.has("flash_device"):
+		flashlight_on = !flashlight_on
+		light.visible = flashlight_on
+		flashlight_area.monitoring = flashlight_on
 
 	if direction != Vector2.ZERO:
-		last_direction = direction
+		last_direction = direction.normalized()
 		play_walk(direction)
 	else:
 		play_idle()
+	
+	light_dir()
 
 func play_walk(dir: Vector2):
 	if abs(dir.x) > abs(dir.y):
@@ -66,6 +79,10 @@ func lie_down():
 	animator.play("lie_down")
 	await animator.animation_finished
 	play_idle()
+
+func lie():
+	animator.play("lie")
+	await animator.animation_finished
 
 func stop_move():
 	velocity = Vector2.ZERO
@@ -116,3 +133,8 @@ func stop_auto_move():
 	velocity = Vector2.ZERO
 	play_idle()
 	move_and_slide()
+
+func light_dir():
+	var angle = last_direction.angle() - deg_to_rad(90)
+	light.rotation = angle
+	flashlight_area.rotation = angle

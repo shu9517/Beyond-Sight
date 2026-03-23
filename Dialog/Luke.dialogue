@@ -1,3 +1,6 @@
+~ default
+It's default
+
 ~ luke_chat_1
 Luke: Having a question?
 - About the village [if !State.luke_village_ask ]

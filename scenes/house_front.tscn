@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://d4dbkx7c8mo0m"]
+
+[ext_resource type="Script" uid="uid://b8jhkvvvjc2to" path="res://scripts/forest/house_front.gd" id="1_6ghbc"]
+[ext_resource type="Texture2D" uid="uid://bka2lwpqvwh0o" path="res://pic/doll house/house.png" id="1_wi8ga"]
+[ext_resource type="Texture2D" uid="uid://bpkquat8cpuu1" path="res://pic/doll house/entrance.png" id="2_6ghbc"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_23brs"]
+[ext_resource type="Texture2D" uid="uid://dmq3eyyw3cb3k" path="res://pic/doll house/tree_1.png" id="3_m3ahg"]
+[ext_resource type="Texture2D" uid="uid://b20gcbilb4ys3" path="res://pic/doll house/tree_10.png" id="4_56ymq"]
+[ext_resource type="Script" uid="uid://dq23u8ngopwk7" path="res://scripts/forest/house_enter.gd" id="4_8424i"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="5_m3ahg"]
+[ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="6_swtdy"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="8_8424i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23brs"]
+size = Vector2(359, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swtdy"]
+size = Vector2(1476.5, 50.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6ghk"]
+size = Vector2(1915, 35.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsw4y"]
+size = Vector2(29.5, 895.61475)
+
+[node name="house_front" type="Node2D" unique_id=2091664074]
+script = ExtResource("1_6ghbc")
+
+[node name="black" type="Sprite2D" parent="." unique_id=1060231619]
+texture = ExtResource("2_23brs")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1790385214]
+texture = ExtResource("1_wi8ga")
+
+[node name="house" type="Sprite2D" parent="." unique_id=264494590]
+position = Vector2(0, -748)
+texture = ExtResource("2_6ghbc")
+script = ExtResource("4_8424i")
+dialogue_resource = ExtResource("6_swtdy")
+target_scene = "res://scenes/house.tscn"
+target_spawn = "outside"
+
+[node name="Area2D" type="Area2D" parent="house" unique_id=287928046]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="house/Area2D" unique_id=2004413112]
+position = Vector2(-25.5, 261)
+shape = SubResource("RectangleShape2D_23brs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="house" unique_id=819570777]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="house/StaticBody2D" unique_id=658146778]
+position = Vector2(-17, 207)
+shape = SubResource("RectangleShape2D_swtdy")
+
+[node name="tree" type="Sprite2D" parent="." unique_id=1591758864]
+texture = ExtResource("3_m3ahg")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("5_m3ahg")]
+
+[node name="tree_up" type="Sprite2D" parent="." unique_id=1845713456]
+texture = ExtResource("4_56ymq")
+
+[node name="Portal_forest" parent="." unique_id=1891912080 instance=ExtResource("8_8424i")]
+position = Vector2(0, 996.0001)
+scale = Vector2(72.59312, 3.127651)
+target_scene = "res://scenes/forest.tscn"
+target_spawn = "house"
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1104752279]
+
+[node name="inside" type="Marker2D" parent="SpawnPoints" unique_id=442598634]
+position = Vector2(-12, -405)
+
+[node name="forest" type="Marker2D" parent="SpawnPoints" unique_id=871795940]
+position = Vector2(3, 806)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1663159629]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1426069453]
+position = Vector2(-13, 1011)
+shape = SubResource("RectangleShape2D_y6ghk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=387267385]
+position = Vector2(-25, -999)
+shape = SubResource("RectangleShape2D_y6ghk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=621851405]
+position = Vector2(-701.75, -1.8823547)
+scale = Vector2(1, 2.2529383)
+shape = SubResource("RectangleShape2D_dsw4y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=140155770]
+position = Vector2(701, -1.8823547)
+scale = Vector2(1, 2.2529383)
+shape = SubResource("RectangleShape2D_dsw4y")

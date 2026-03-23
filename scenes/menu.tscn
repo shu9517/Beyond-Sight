@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c7nln53gpn5a4"]
+
+[ext_resource type="Script" uid="uid://b10e5p1xuftyn" path="res://scripts/UI/menu.gd" id="1_yqeox"]
+
+[node name="Menu" type="Control" unique_id=510663337]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.5199995, 1.5199995)
+script = ExtResource("1_yqeox")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1649969730]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1979462812]
+layout_mode = 0
+offset_left = 321.0527
+offset_top = 180.2632
+offset_right = 367.0527
+offset_bottom = 281.26318
+
+[node name="NewGame" type="Button" parent="VBoxContainer" unique_id=1516187901]
+layout_mode = 2
+text = "Start"
+
+[node name="Load" type="Button" parent="VBoxContainer" unique_id=878281968]
+layout_mode = 2
+text = "Load"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=765461566]
+layout_mode = 2
+text = "Quit"
