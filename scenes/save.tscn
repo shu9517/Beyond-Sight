@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://c4ksrg2jvbjmk"]
+
+[ext_resource type="Texture2D" uid="uid://c5l3c12jvasuu" path="res://pic/cave/meet.png" id="1_3sv4i"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_7obqq"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_wsf25"]
+[ext_resource type="Script" uid="uid://cpoiau05fsfsk" path="res://scripts/cave/save.gd" id="4_wsf25"]
+[ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="5_jirvc"]
+[ext_resource type="PackedScene" uid="uid://b2ecr3rdgkro1" path="res://character/Elvic/Elvic.tscn" id="5_th0i3"]
+[ext_resource type="Texture2D" uid="uid://dcfvrqo8icwe3" path="res://pic/cave/rock1.png" id="7_guwjb"]
+[ext_resource type="Texture2D" uid="uid://b4js7omo8511s" path="res://pic/cave/rock2.png" id="8_mefow"]
+[ext_resource type="Texture2D" uid="uid://0plw6qcocosd" path="res://pic/cave/rock3.png" id="9_qxu2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sv4i"]
+size = Vector2(358, 896)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5a0y"]
+size = Vector2(1494, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ewjx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_guwjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mefow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qxu2l")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 7.0
+}]
+
+[node name="save" type="Node2D" unique_id=805924252]
+
+[node name="black" type="Sprite2D" parent="." unique_id=984574978]
+position = Vector2(0, -43)
+scale = Vector2(1, 1.4400014)
+texture = ExtResource("1_7obqq")
+
+[node name="meet" type="Sprite2D" parent="." unique_id=260291082]
+texture = ExtResource("1_3sv4i")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("3_wsf25")]
+position = Vector2(0, -604)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1918452470]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=646364703]
+position = Vector2(578.99994, -589)
+rotation = -0.3939622
+scale = Vector2(1, 1.3529254)
+shape = SubResource("RectangleShape2D_3sv4i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=396791449]
+position = Vector2(-566, -694.00006)
+rotation = 0.5783714
+scale = Vector2(1, 1.3529254)
+shape = SubResource("RectangleShape2D_3sv4i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=664912725]
+position = Vector2(4.000004, -782.00006)
+rotation = 1.5707964
+scale = Vector2(0.17844117, 1.3529254)
+shape = SubResource("RectangleShape2D_3sv4i")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1151187466]
+script = ExtResource("4_wsf25")
+dialogue = ExtResource("5_jirvc")
+spawn_path = NodePath("../save/spawn")
+walk_0 = NodePath("../save/run")
+npc_path = NodePath("../Elvic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1297442890]
+position = Vector2(22, -90)
+shape = SubResource("RectangleShape2D_r5a0y")
+
+[node name="rock" type="AnimatedSprite2D" parent="Area2D" unique_id=103317174]
+position = Vector2(31, -573)
+sprite_frames = SubResource("SpriteFrames_5ewjx")
+animation = &"fall"
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1141227651]
+
+[node name="exit" type="Marker2D" parent="SpawnPoints" unique_id=1142566538]
+position = Vector2(12, -554)
+
+[node name="Elvic" parent="." unique_id=557349221 instance=ExtResource("5_th0i3")]
+position = Vector2(0, 741)
+
+[node name="save" type="Node2D" parent="." unique_id=780165971]
+
+[node name="spawn" type="Marker2D" parent="save" unique_id=1555305309]
+position = Vector2(-6, 884)
+
+[node name="run" type="Marker2D" parent="save" unique_id=114552793]
+position = Vector2(0, 128)

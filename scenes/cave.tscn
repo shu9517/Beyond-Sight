@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://isl0eifhvdp"]
+
+[ext_resource type="Texture2D" uid="uid://ckfqou7rp05j" path="res://pic/cave/enter.png" id="1_rawnq"]
+[ext_resource type="Script" uid="uid://bfdg83ck5iw3d" path="res://scripts/cave/cave.gd" id="1_rtd55"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_ip074"]
+[ext_resource type="Texture2D" uid="uid://duyg0m3rp5ykt" path="res://pic/cave/hidden_ent.png" id="2_ywssb"]
+[ext_resource type="Script" uid="uid://c4bfq5tk417l6" path="res://scripts/item/hidden.gd" id="3_rtd55"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="4_ywssb"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="6_6sqbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rawnq"]
+size = Vector2(1915, 35.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywssb"]
+size = Vector2(29.5, 895.61475)
+
+[node name="cave" type="Node2D" unique_id=1452428878]
+script = ExtResource("1_rtd55")
+
+[node name="black" type="Sprite2D" parent="." unique_id=1850418148]
+scale = Vector2(1, 1.1200005)
+texture = ExtResource("2_ip074")
+
+[node name="cave" type="Sprite2D" parent="." unique_id=681731881]
+texture = ExtResource("1_rawnq")
+
+[node name="hidden" type="StaticBody2D" parent="." unique_id=854997222]
+position = Vector2(37, 553)
+script = ExtResource("3_rtd55")
+
+[node name="Sprite2D" type="Sprite2D" parent="hidden" unique_id=759201703]
+texture = ExtResource("2_ywssb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hidden" unique_id=334701023]
+position = Vector2(-62, -363)
+shape = SubResource("RectangleShape2D_rawnq")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=664027681]
+
+[node name="cave_path" type="Marker2D" parent="SpawnPoints" unique_id=1314540287]
+position = Vector2(-544, -243)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=179788567]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1570032003]
+position = Vector2(-486.00003, 554.00006)
+rotation = 1.5707964
+scale = Vector2(0.40000093, -12.359999)
+shape = SubResource("RectangleShape2D_rawnq")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1395582797]
+position = Vector2(579.00006, 691)
+rotation = 1.5707964
+scale = Vector2(0.40000093, -12.359999)
+shape = SubResource("RectangleShape2D_rawnq")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=2098442416]
+position = Vector2(-376, 866)
+rotation = 1.5707964
+scale = Vector2(-0.31999916, -12.359999)
+shape = SubResource("RectangleShape2D_rawnq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1588428763]
+position = Vector2(-25, -661)
+shape = SubResource("RectangleShape2D_rawnq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=219606422]
+position = Vector2(-711, -1.8823547)
+scale = Vector2(1, 2.2529383)
+shape = SubResource("RectangleShape2D_ywssb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2040008516]
+position = Vector2(524, -1.8823547)
+scale = Vector2(1, 2.2529383)
+shape = SubResource("RectangleShape2D_ywssb")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("4_ywssb")]
+
+[node name="Portal_inter" parent="." unique_id=1891912080 instance=ExtResource("6_6sqbx")]
+position = Vector2(95, 974)
+scale = Vector2(30.4, 2.4800005)
+target_scene = "res://scenes/light_puzzle.tscn"
+target_spawn = "pt1"
+
+[node name="Portal" parent="." unique_id=309467431 instance=ExtResource("6_6sqbx")]
+position = Vector2(-696, -246)
+scale = Vector2(-2.1791987, 47.989735)
+target_scene = "res://scenes/enter_cave.tscn"
+target_spawn = "cave"

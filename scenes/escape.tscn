@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://baeealu0ui5ss"]
+
+[ext_resource type="Texture2D" uid="uid://b8p7q62g3uphy" path="res://pic/cave/escape.png" id="1_fu77f"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_km0kw"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_35pj8"]
+[ext_resource type="Script" uid="uid://d4brxn3lx3cm6" path="res://scripts/cave/get_out.gd" id="4_35pj8"]
+[ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="5_41gik"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="6_y30qo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41gik"]
+size = Vector2(1915, 35.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y30qo"]
+size = Vector2(23.25, 431.43658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km0kw"]
+size = Vector2(362, 31)
+
+[node name="escape" type="Node2D" unique_id=891168366]
+
+[node name="black" type="Sprite2D" parent="." unique_id=753685267]
+texture = ExtResource("1_km0kw")
+
+[node name="run" type="Sprite2D" parent="." unique_id=629056053]
+texture = ExtResource("1_fu77f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=262261345]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=224481372]
+position = Vector2(11.000005, -316)
+scale = Vector2(0.39999938, 0.92)
+shape = SubResource("RectangleShape2D_41gik")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=273591713]
+position = Vector2(-12.999999, 467)
+scale = Vector2(0.39999938, 0.92)
+shape = SubResource("RectangleShape2D_41gik")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=797958109]
+position = Vector2(-137, -3.999998)
+scale = Vector2(1, 2.2529383)
+shape = SubResource("RectangleShape2D_y30qo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=137815031]
+position = Vector2(200, 5)
+scale = Vector2(1, 2.2529383)
+shape = SubResource("RectangleShape2D_y30qo")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("3_35pj8")]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1652806421]
+
+[node name="pt3" type="Marker2D" parent="SpawnPoints" unique_id=567468097]
+position = Vector2(9, -260)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2010903088]
+script = ExtResource("4_35pj8")
+dialogue = ExtResource("5_41gik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=11439678]
+position = Vector2(31, -143)
+shape = SubResource("RectangleShape2D_km0kw")
+
+[node name="Portal" parent="." unique_id=1891912080 instance=ExtResource("6_y30qo")]
+position = Vector2(35.000004, 460)
+scale = Vector2(20.159998, 2.4800005)
+target_scene = "res://scenes/save.tscn"
+target_spawn = "exit"

@@ -17,7 +17,7 @@ func _ready():
 	flashlight_area.monitoring = false
 
 func _physics_process(_delta: float) -> void:
-	#can_move=false時強制暫停
+	# can_move=false時強制暫停
 	if not can_move:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -31,6 +31,14 @@ func _physics_process(_delta: float) -> void:
 		flashlight_on = !flashlight_on
 		light.visible = flashlight_on
 		flashlight_area.monitoring = flashlight_on
+		State.flashlight_on = flashlight_on
+		
+		# 跟著燈狀態變的物件
+		get_tree().call_group("hidden_objects", "update_flashlight", flashlight_on)
+		
+		# 只有開燈當下才觸發一次型物件
+		if flashlight_on:
+			get_tree().call_group("trigger_objects", "trigger_by_flashlight")
 
 	if direction != Vector2.ZERO:
 		last_direction = direction.normalized()

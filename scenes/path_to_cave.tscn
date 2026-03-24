@@ -36,7 +36,7 @@ texture = ExtResource("5_h70ui")
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1710459083]
 
-[node name="cave" type="Marker2D" parent="SpawnPoints" unique_id=1287154635]
+[node name="cave_enter" type="Marker2D" parent="SpawnPoints" unique_id=1287154635]
 position = Vector2(567, -3)
 
 [node name="forest" type="Marker2D" parent="SpawnPoints" unique_id=1427516956]
@@ -46,6 +46,13 @@ position = Vector2(-583, -3)
 position = Vector2(-694, -1)
 scale = Vector2(1, 27.599998)
 target_scene = "res://scenes/forest.tscn"
+target_spawn = "cave_path"
+
+[node name="Portal_cave_enter" parent="." unique_id=137697376 instance=ExtResource("7_nuo0s")]
+position = Vector2(685, 0)
+rotation = 3.1415927
+scale = Vector2(1.684184, -34.849586)
+target_scene = "res://scenes/enter_cave.tscn"
 target_spawn = "cave_path"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=777018610]

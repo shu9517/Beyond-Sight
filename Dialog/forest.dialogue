@@ -88,3 +88,31 @@ It seems to uncover things that shouldn't be seen?
 Finally back here...
 Something feels off. When did this collapse?
 => END
+
+~ cave_dark
+A cave... this might be the only way out...
+However, it's too dark.
+=> END
+
+~ cave_light
+A cave... this might be the only way out...
+Enter?
+- Enter
+	do State.cave = true
+- Leave
+=> END
+
+~ sign_dark
+"Follow the light"
+=> END
+
+~ sign_light
+[color=red]"Do not trust the light."[/color]
+=> END
+
+~ get_out
+The cave looks like it's about to collapse. Need to get out quickly!
+=> END
+
+~ save
+Elvic: Hey! Watch out!!!!

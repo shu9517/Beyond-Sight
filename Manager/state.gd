@@ -16,6 +16,8 @@ var flashlight_on = false
 
 #unrelate state
 var project_color: String = ""
+var cave: bool = false
+var loop_ctr: int = 0
 
 func add_item(item_id: String):
 	if not items.has(item_id):

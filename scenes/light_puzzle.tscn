@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://c5tw4yxhsy56e"]
+
+[ext_resource type="Script" uid="uid://dpxgwhbupto2o" path="res://scripts/cave/light_puzzle.gd" id="1_0q4s6"]
+[ext_resource type="Texture2D" uid="uid://d21hll2ukmpxp" path="res://pic/cave/inter.png" id="1_ri51m"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_k5wjg"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="3_72ak7"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_88amx"]
+[ext_resource type="Script" uid="uid://cytuxjgwqiky8" path="res://scripts/cave/pt1.gd" id="4_7rwp2"]
+[ext_resource type="Script" uid="uid://lg06i1nudxl5" path="res://scripts/cave/pt_3.gd" id="5_4qm5y"]
+[ext_resource type="Script" uid="uid://cknfk1mgkguq5" path="res://scripts/cave/warning.gd" id="8_xlxra"]
+[ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="9_rtmlo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rwp2"]
+size = Vector2(1915, 35.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qm5y"]
+size = Vector2(29.5, 895.61475)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72ak7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k5wjg"]
+
+[node name="light_puzzle" type="Node2D" unique_id=848948177]
+script = ExtResource("1_0q4s6")
+
+[node name="black" type="Sprite2D" parent="." unique_id=35442497]
+scale = Vector2(1, 1.1200005)
+texture = ExtResource("2_k5wjg")
+
+[node name="inter" type="Sprite2D" parent="." unique_id=623571934]
+texture = ExtResource("1_ri51m")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("3_88amx")]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=20859625]
+
+[node name="pt1" type="Marker2D" parent="SpawnPoints" unique_id=1976981987]
+position = Vector2(3, -824)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1773594301]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=377987234]
+position = Vector2(45.999966, 860)
+rotation = -0.42025447
+scale = Vector2(0.3144052, -17.359999)
+shape = SubResource("RectangleShape2D_7rwp2")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1997786803]
+position = Vector2(-21.000004, 692)
+scale = Vector2(0.19440551, -17.359999)
+shape = SubResource("RectangleShape2D_7rwp2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1460995002]
+position = Vector2(-547.99994, -612.99994)
+rotation = 2.1224456
+scale = Vector2(0.64000154, -9.719998)
+shape = SubResource("RectangleShape2D_7rwp2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=622961956]
+position = Vector2(640, -546.99994)
+rotation = 1.1469169
+scale = Vector2(0.68000084, -12.359999)
+shape = SubResource("RectangleShape2D_7rwp2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1234358141]
+position = Vector2(-25, -1025)
+shape = SubResource("RectangleShape2D_7rwp2")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1025672793]
+position = Vector2(-25, 1012)
+shape = SubResource("RectangleShape2D_7rwp2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=159048582]
+position = Vector2(-711, -1.8823547)
+scale = Vector2(1, 2.2529383)
+shape = SubResource("RectangleShape2D_4qm5y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=940161813]
+position = Vector2(711, -1.8823547)
+scale = Vector2(1, 2.2529383)
+shape = SubResource("RectangleShape2D_4qm5y")
+
+[node name="Portal" parent="." unique_id=1891912080 instance=ExtResource("3_72ak7")]
+position = Vector2(670, 991.00006)
+scale = Vector2(39.673405, -1.970034)
+target_scene = "res://scenes/escape.tscn"
+target_spawn = "pt3"
+
+[node name="pt1" type="Area2D" parent="." unique_id=78679541]
+position = Vector2(13, -998)
+scale = Vector2(22.72917, -1.4774358)
+script = ExtResource("4_7rwp2")
+target_scene = "res://scenes/light_puzzle.tscn"
+target_spawn = "pt1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pt1" unique_id=552791196]
+shape = SubResource("RectangleShape2D_72ak7")
+
+[node name="pt2" type="Area2D" parent="." unique_id=319854762]
+position = Vector2(-464, 952.9999)
+scale = Vector2(22.72917, -1.4774358)
+script = ExtResource("4_7rwp2")
+target_scene = "res://scenes/light_puzzle.tscn"
+target_spawn = "pt1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pt2" unique_id=40626558]
+shape = SubResource("RectangleShape2D_72ak7")
+
+[node name="pt3" type="Area2D" parent="." unique_id=2135391922]
+position = Vector2(566, 944)
+scale = Vector2(22.72917, -1.4774358)
+script = ExtResource("5_4qm5y")
+target_scene = "res://scenes/light_puzzle.tscn"
+target_spawn = "pt1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pt3" unique_id=1777899900]
+shape = SubResource("RectangleShape2D_72ak7")
+
+[node name="Warning" type="Node2D" parent="." unique_id=2107722127]
+script = ExtResource("8_xlxra")
+dialogue_resource = ExtResource("9_rtmlo")
+
+[node name="Area2D" type="Area2D" parent="Warning" unique_id=948482293]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Warning/Area2D" unique_id=1417225424]
+position = Vector2(45, 178)
+scale = Vector2(12.1668415, 10.091826)
+shape = SubResource("CircleShape2D_k5wjg")
