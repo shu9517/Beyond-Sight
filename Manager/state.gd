@@ -9,9 +9,13 @@ var luke_elvic_ask: bool = false #player ask for elvic's info
 var enter_forest: bool = false #enter forest, disable the collision
 var enter_dollHouse: bool = false
 var enter_room: bool = false
+var get_drive1: bool = false
 
 var items = []
 var flashlight_on = false
+
+#unrelate state
+var project_color: String = ""
 
 func add_item(item_id: String):
 	if not items.has(item_id):

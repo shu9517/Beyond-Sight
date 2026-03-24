@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="5_mhx8p"]
 [ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="6_65la3"]
 [ext_resource type="Script" uid="uid://dj1dke7op6x1q" path="res://scripts/forest/enter_room.gd" id="8_wcu0q"]
-[ext_resource type="Script" uid="uid://cnb8jlpdkmek" path="res://scripts/forest/level_1.gd" id="9_bwc8c"]
+[ext_resource type="Script" uid="uid://cnb8jlpdkmek" path="res://scripts/forest/go_level_1.gd" id="9_bwc8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7uk1i"]
 size = Vector2(295, 33)
@@ -142,10 +142,10 @@ target_spawn = "house"
 position = Vector2(578, -116)
 shape = SubResource("RectangleShape2D_ptc3g")
 
-[node name="level1" type="Area2D" parent="." unique_id=1150880221]
+[node name="go_level1" type="Area2D" parent="." unique_id=1150880221]
 script = ExtResource("9_bwc8c")
 dialogue = ExtResource("5_mhx8p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="level1" unique_id=142095497]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="go_level1" unique_id=142095497]
 position = Vector2(89.25, 351.5)
 shape = SubResource("RectangleShape2D_wcu0q")

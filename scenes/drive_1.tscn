@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ctx37vp5exryb"]
+
+[ext_resource type="Texture2D" uid="uid://baspp4xrdtloc" path="res://pic/item/drive1.png" id="1_8ehoj"]
+[ext_resource type="Script" uid="uid://bmu8xann5shbi" path="res://scripts/item/item.gd" id="1_nc5q8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nc5q8"]
+radius = 761.51495
+
+[node name="drive1" type="Area2D" unique_id=1441083416]
+script = ExtResource("1_nc5q8")
+item_id = "drive1"
+need_lock = true
+
+[node name="pic" type="Sprite2D" parent="." unique_id=467057804]
+texture = ExtResource("1_8ehoj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=37309920]
+shape = SubResource("CircleShape2D_nc5q8")

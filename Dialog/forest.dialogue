@@ -75,6 +75,16 @@ Walk in?
 - No => END
 
 ~ faint
-The world seems like being collasp...
-The vision gradually blurred...
+The world begins to collapse...
+Vision slowly fades into darkness...
+=> END
+
+~ flashlight
+A... flashlight?
+It seems to uncover things that shouldn't be seen?
+=> END
+
+~ back
+Finally back here...
+Something feels off. When did this collapse?
 => END

@@ -30,7 +30,8 @@ func save_game(scene_path: String):
 			"luke_elvic_ask": State.luke_elvic_ask,
 			"enter_forest": State.enter_forest,
 			"enter_dollHouse": State.enter_dollHouse,
-			"enter_room": State.enter_room
+			"enter_room": State.enter_room,
+			"get_drive1": State.get_drive1
 		},
 		"plot": {
 			"elvic_state": PlotManager.elvic_state,
@@ -78,6 +79,7 @@ func load_game():
 	State.enter_forest = state_data.get("enter_forest", false)
 	State.enter_dollHouse = state_data.get("enter_dollHouse", false)
 	State.enter_room = state_data.get("enter_room", false)
+	State.get_drive1 = state_data.get("get_drive1", false)
 
 	var plot_data = data.get("plot", {})
 	PlotManager.elvic_state = plot_data.get("elvic_state", 0)
@@ -108,6 +110,7 @@ func reset_all_data():
 	State.enter_forest = false
 	State.enter_dollHouse = false
 	State.enter_room = false
+	State.get_drive1 = false
 
 	PlotManager.elvic_state = 0
 	PlotManager.luke_state = 0

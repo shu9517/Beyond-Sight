@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dpa1apbj5fhvs" path="res://scripts/forest/block_road.gd" id="8_qm7rg"]
 [ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="9_0nboi"]
 [ext_resource type="Script" uid="uid://3mua55k87poc" path="res://scripts/forest/dialog.gd" id="10_3knxq"]
+[ext_resource type="Script" uid="uid://b3lojdahyq12d" path="res://scripts/forest/portal_house.gd" id="13_dabdc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ercsu"]
 
@@ -23,6 +24,9 @@ size = Vector2(4371.51, 29.964722)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ercsu"]
 size = Vector2(786.5, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf55d"]
+size = Vector2(840, 48.5)
 
 [node name="forest" type="Node2D" unique_id=1799944804]
 script = ExtResource("1_i1yi8")
@@ -88,12 +92,6 @@ position = Vector2(708, -2)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_qm7rg")
 
-[node name="Portal_house" parent="." unique_id=1891912080 instance=ExtResource("7_i1yi8")]
-position = Vector2(-192.99998, -693.99994)
-scale = Vector2(35.321476, 1.4831107)
-target_scene = "res://scenes/house_front.tscn"
-target_spawn = "forest"
-
 [node name="block_road" type="Area2D" parent="." unique_id=1598829129]
 script = ExtResource("8_qm7rg")
 dialogue = ExtResource("9_0nboi")
@@ -118,3 +116,18 @@ position = Vector2(697.00006, -5)
 scale = Vector2(1.9798292, 23.834742)
 target_scene = "res://scenes/path_to_cave.tscn"
 target_spawn = "forest"
+
+[node name="Portal_collapse" parent="." unique_id=1891912080 instance=ExtResource("7_i1yi8")]
+position = Vector2(-194, -704.99994)
+scale = Vector2(39.64, 2.4800005)
+target_scene = "res://scenes/collapse.tscn"
+target_spawn = "forest"
+
+[node name="portal_house" type="Area2D" parent="." unique_id=7579180]
+script = ExtResource("13_dabdc")
+target_scene = "res://scenes/house_front.tscn"
+target_spawn = "forest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal_house" unique_id=828407389]
+position = Vector2(-190, -678.25)
+shape = SubResource("RectangleShape2D_cf55d")

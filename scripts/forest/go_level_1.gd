@@ -27,11 +27,13 @@ func event(player):
 		camera.shake(4,15)
 
 	player.lie()
+	fade()
 	await DialogueHelper.player(dialogue, "faint")
+	await get_tree().create_timer(5.0).timeout
+	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	player.lie_down()
 	
-	player.can_move = true
-	
-func fade_and_change_scene(target_scene: String):
+func fade():
 	var canvas = CanvasLayer.new()
 	add_child(canvas)
 
@@ -42,7 +44,7 @@ func fade_and_change_scene(target_scene: String):
 	canvas.add_child(rect)
 
 	var tween = create_tween()
-	tween.tween_property(rect, "modulate:a", 1.0, 0.5)
+	tween.tween_property(rect, "modulate:a", 1.0, 5)
 	await tween.finished
 
-	get_tree().change_scene_to_file(target_scene)
+	

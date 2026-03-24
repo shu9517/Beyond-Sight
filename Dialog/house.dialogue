@@ -1,0 +1,87 @@
+~ where
+A dark room with no exit...
+There are many things scattered across the floor.
+Each of them seems to have a unique number on it...
+Need to figure something out to get out of here.
+=> END
+
+~ locker
+Enter password\:
+=> END
+
+~ projector
+It's a projector. It looks like the light can be adjusted.
+- White
+	do State.project_color = "white"
+- Red
+	do State.project_color = "red"
+- Orange
+	do State.project_color = "orange"
+- Yellow
+	do State.project_color = "yellow"
+- Green
+	do State.project_color = "green"
+- Blue
+	do State.project_color = "blue"
+- Purple
+	do State.project_color = "purple"
+=> END
+
+~ boy
+A doll.
+Number\: 1
+=> END
+
+~ angel
+An angel statue.
+Number\: 9
+=> END
+
+~ pc
+A computer.
+Number\: 6
+=> END
+
+~ knife
+A knife.
+Number\: 7
+=> END
+
+~ fox
+A fox.
+Number\: 2
+=> END
+
+~ girl
+A doll.
+Number\: 3
+=> END
+
+~ dia
+A dinasour.
+Number\: 4
+=> END
+
+~ cat
+A cat.
+Number\: 5
+=> END
+
+~ but
+A butterfly.
+Number\: 8
+=> END
+
+~ bear
+A bear.
+Number\: 0
+=> END
+
+~ drive
+The drive! Strange that it ended up here?
+Two more still need to be collected.
+=> END
+
+~ back
+The vision slowly fades into darkness once more...
+=> END
