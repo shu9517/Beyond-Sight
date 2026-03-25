@@ -182,6 +182,7 @@ texture = ExtResource("13_ga4m5")
 position = Vector2(645, -882)
 texture = ExtResource("7_ogrjq")
 script = ExtResource("14_spgee")
+dialogue = ExtResource("2_6ldqi")
 
 [node name="Area2D" type="Area2D" parent="non-order/church" unique_id=1531883236]
 
@@ -492,6 +493,12 @@ position = Vector2(-1787, 1685)
 [node name="stair" type="Marker2D" parent="SpawnPoints" unique_id=1910857201]
 position = Vector2(-329, -1251)
 
+[node name="church" type="Marker2D" parent="SpawnPoints" unique_id=1056322135]
+position = Vector2(625, 238)
+
+[node name="cave" type="Marker2D" parent="SpawnPoints" unique_id=691849025]
+position = Vector2(1463, -1809)
+
 [node name="Luke_met" type="Area2D" parent="." unique_id=1534146918]
 script = ExtResource("46_beyr0")
 player_path = NodePath("../order/player")
@@ -535,3 +542,9 @@ position = Vector2(-1010, 855)
 
 [node name="stand" type="Marker2D" parent="luke_met" unique_id=1818090173]
 position = Vector2(1, 600)
+
+[node name="Portal" parent="." unique_id=738590343 instance=ExtResource("42_csdd4")]
+position = Vector2(1465, -1945)
+scale = Vector2(26.8, 2.4800005)
+target_scene = "res://scenes/village_cave.tscn"
+target_spawn = "village"

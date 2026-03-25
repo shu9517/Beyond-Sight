@@ -11,6 +11,9 @@ var enter_dollHouse: bool = false
 var enter_room: bool = false
 var get_drive1: bool = false
 
+var after_collapse: bool = false
+var hit: bool = false
+
 var items = []
 var flashlight_on = false
 
@@ -18,6 +21,9 @@ var flashlight_on = false
 var project_color: String = ""
 var cave: bool = false
 var loop_ctr: int = 0
+var box: bool = false
+var enter_chuch: bool = false
+var enter_fact: bool = false
 
 func add_item(item_id: String):
 	if not items.has(item_id):

@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://sqrck7jvpl0y"]
+
+[ext_resource type="Texture2D" uid="uid://cayc3i0d502y7" path="res://pic/monument/intersect_hidden.png" id="1_5qedq"]
+[ext_resource type="Script" uid="uid://cknnjc6h6tkmh" path="res://scripts/mounment/hidden_road.gd" id="1_gw5ru"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_pwh71"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="3_pwh71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw5ru"]
+size = Vector2(1462, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qedq"]
+size = Vector2(399.95953, 20)
+
+[node name="hidden_road" type="Node2D" unique_id=308575963]
+script = ExtResource("1_gw5ru")
+
+[node name="road" type="Sprite2D" parent="." unique_id=803530216]
+texture = ExtResource("1_5qedq")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("2_pwh71")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=715295921]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1222661888]
+position = Vector2(-10, -706)
+shape = SubResource("RectangleShape2D_gw5ru")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=962784588]
+position = Vector2(12.999998, 621)
+rotation = 0.09622775
+shape = SubResource("RectangleShape2D_gw5ru")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=867279841]
+position = Vector2(708, 0)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_gw5ru")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=552969158]
+position = Vector2(-554, -23.000004)
+rotation = 1.4405209
+shape = SubResource("RectangleShape2D_gw5ru")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1115033288]
+position = Vector2(497.99997, -481.00003)
+rotation = -0.2531769
+scale = Vector2(2.704098, 43.216465)
+shape = SubResource("RectangleShape2D_5qedq")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1703795302]
+position = Vector2(615, -387)
+rotation = -1.3661451
+scale = Vector2(2.704098, 39.171352)
+shape = SubResource("RectangleShape2D_5qedq")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1635362926]
+position = Vector2(-513, 483)
+rotation = 3.1415927
+scale = Vector2(1.8630468, -16.59162)
+
+[node name="inter" type="Marker2D" parent="SpawnPoints" unique_id=690536081]
+position = Vector2(-50.454945, -66.23826)
+
+[node name="mill" type="Marker2D" parent="SpawnPoints" unique_id=1898560465]
+position = Vector2(-564.1297, -6.2682295)
+
+[node name="Portal_inter" parent="." unique_id=1891912080 instance=ExtResource("3_pwh71")]
+position = Vector2(-359, -691)
+scale = Vector2(33.920002, 2.4800005)
+target_scene = "res://scenes/intersect.tscn"
+target_spawn = "hidden"
+
+[node name="Portal_mill" parent="." unique_id=1318340597 instance=ExtResource("3_pwh71")]
+position = Vector2(689, 377)
+scale = Vector2(1, 38.36)
+target_scene = "res://scenes/mill.tscn"
+target_spawn = "hidden"

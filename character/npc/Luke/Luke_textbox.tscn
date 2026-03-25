@@ -119,24 +119,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="TextureRect" type="TextureRect" parent="Balloon" unique_id=1776864070]
-layout_mode = 0
-offset_left = -29.999998
-offset_top = 264.0
-offset_right = 970.0
-offset_bottom = 1464.0
-scale = Vector2(0.32000095, 0.32000095)
-
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=63960307]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -57.0
-offset_top = -208.0
-offset_right = -57.0
-offset_bottom = 11.0
+offset_top = -218.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -148,9 +138,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_156gu")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=458971283]
 layout_mode = 2
-theme_override_constants/margin_left = 44
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 156
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=2107450268]
 layout_mode = 2

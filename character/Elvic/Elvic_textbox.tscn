@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://0220cv1jrbay"]
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_myux4"]
-[ext_resource type="Texture2D" uid="uid://bxdi8ar507x4f" path="res://pic/對話框/Elvic頭像.png" id="2_o8o22"]
 [ext_resource type="Texture2D" uid="uid://x7albwch862p" path="res://pic/對話框/Elvic對話框.png" id="3_mqi1l"]
 [ext_resource type="FontFile" uid="uid://41sxvdyf4mvj" path="res://font/Su-Regular.ttf" id="4_a4kg1"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="5_vxl42"]
@@ -121,25 +120,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
-[node name="TextureRect" type="TextureRect" parent="Balloon" unique_id=1776864070]
-layout_mode = 0
-offset_left = -29.999998
-offset_top = 264.0
-offset_right = 970.0
-offset_bottom = 1464.0
-scale = Vector2(0.32000095, 0.32000095)
-texture = ExtResource("2_o8o22")
-
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=63960307]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 94.0
-offset_top = -208.0
-offset_right = 94.0
-offset_bottom = 11.0
+offset_top = -218.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -152,7 +140,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_156gu")
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=458971283]
 layout_mode = 2
 theme_override_constants/margin_top = 23
-theme_override_constants/margin_right = 120
+theme_override_constants/margin_right = 80
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=2107450268]
 layout_mode = 2

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d0xgqymaql4rq"]
+
+[ext_resource type="Texture2D" uid="uid://bwl2i2e2ij4on" path="res://pic/item/drive2.png" id="1_kx7nl"]
+[ext_resource type="Script" uid="uid://bmu8xann5shbi" path="res://scripts/item/item.gd" id="1_smrtw"]
+[ext_resource type="Resource" uid="uid://xd1vh7qx7k1y" path="res://Dialog/monument.dialogue" id="2_ykq8j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqtpp"]
+radius = 558.0896
+
+[node name="drive2" type="Area2D" unique_id=1970375197]
+script = ExtResource("1_smrtw")
+item_id = "drive2"
+dialogue = ExtResource("2_ykq8j")
+dialogue_tag = "drive2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975136760]
+shape = SubResource("CircleShape2D_sqtpp")
+
+[node name="pic" type="Sprite2D" parent="." unique_id=1715156992]
+texture = ExtResource("1_kx7nl")

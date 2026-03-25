@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://b2jc8q5ax5epc"]
+
+[ext_resource type="Texture2D" uid="uid://cbm4t2jqgmnk7" path="res://pic/monument/drive_room.png" id="1_36trf"]
+[ext_resource type="Script" uid="uid://cpot3mw32g50n" path="res://scripts/mounment/room.gd" id="1_jxe34"]
+[ext_resource type="PackedScene" uid="uid://d0xgqymaql4rq" path="res://scenes/drive_2.tscn" id="2_ffxv4"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_jn645"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_85yof"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="4_14vil"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36trf"]
+size = Vector2(1424, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffxv4"]
+size = Vector2(536.53296, 42.953857)
+
+[node name="room" type="Node2D" unique_id=1513875525]
+script = ExtResource("1_jxe34")
+
+[node name="black" type="Sprite2D" parent="." unique_id=150905231]
+scale = Vector2(1, 1.0399992)
+texture = ExtResource("2_jn645")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=219958222]
+texture = ExtResource("1_36trf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1684655351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1277026133]
+position = Vector2(2, 708)
+shape = SubResource("RectangleShape2D_36trf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=467658908]
+position = Vector2(2, -708)
+shape = SubResource("RectangleShape2D_36trf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1295367841]
+position = Vector2(707, -5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_36trf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1121209811]
+position = Vector2(-703, -5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_36trf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=664063989]
+position = Vector2(611.6302, -526.4752)
+rotation = 1.1176881
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_ffxv4")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1010116356]
+position = Vector2(-620.9998, -606)
+rotation = -1.113042
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_ffxv4")
+
+[node name="drive2" parent="." unique_id=1970375197 instance=ExtResource("2_ffxv4")]
+position = Vector2(-17, -607)
+scale = Vector2(0.119991474, 0.119991474)
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("3_85yof")]
+position = Vector2(4, 447)
+
+[node name="Portal_fact" parent="." unique_id=1891912080 instance=ExtResource("4_14vil")]
+position = Vector2(0, 700)
+scale = Vector2(35.480003, 2.4800005)
+target_scene = "res://scenes/factory.tscn"
+target_spawn = "room"
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=724855540]
+position = Vector2(-513, 483)
+rotation = 3.1415927
+scale = Vector2(1.8630468, -16.59162)
+
+[node name="fact" type="Marker2D" parent="SpawnPoints" unique_id=691575012]
+position = Vector2(-276.42892, 0.84379625)

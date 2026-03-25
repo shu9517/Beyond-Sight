@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://byihcox28p0fm"]
 
 [ext_resource type="Texture2D" uid="uid://c2vkkwmv6m32q" path="res://pic/monument/intersection.png" id="1_4ifye"]
-[ext_resource type="Script" uid="uid://uptf53radgy5" path="res://scripts/intersect.gd" id="1_782sq"]
+[ext_resource type="Script" uid="uid://uptf53radgy5" path="res://scripts/mounment/intersect.gd" id="1_782sq"]
 [ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_5dd0w"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_dt2vt"]
 [ext_resource type="Texture2D" uid="uid://btt8dedp4hghd" path="res://pic/monument/fence_inter.png" id="3_jblet"]
 [ext_resource type="Texture2D" uid="uid://bbbjangw2g45p" path="res://pic/monument/sign.png" id="4_b1u5x"]
-[ext_resource type="Script" uid="uid://8hsga0yai8od" path="res://scripts/sign.gd" id="5_8s8y3"]
+[ext_resource type="Script" uid="uid://8hsga0yai8od" path="res://scripts/mounment/sign.gd" id="5_8s8y3"]
 [ext_resource type="PackedScene" uid="uid://b2ecr3rdgkro1" path="res://character/Elvic/Elvic.tscn" id="5_aj53m"]
 [ext_resource type="Resource" uid="uid://xd1vh7qx7k1y" path="res://Dialog/monument.dialogue" id="6_q3ych"]
 [ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="7_q3ych"]
 [ext_resource type="Script" uid="uid://1xgw8ri5pnaq" path="res://scripts/intersect/cutscene.gd" id="10_5n6pa"]
+[ext_resource type="Script" uid="uid://c4bfq5tk417l6" path="res://scripts/item/hidden.gd" id="12_gomys"]
+[ext_resource type="Texture2D" uid="uid://dscvfqahtv24y" path="res://pic/monument/grass.png" id="13_cs0mk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx1s8"]
 size = Vector2(1046.5, 20)
@@ -22,7 +24,7 @@ size = Vector2(24.5, 456.5)
 size = Vector2(19, 904.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8s8y3"]
-size = Vector2(14.266256, 216.41043)
+size = Vector2(49.903267, 144.43085)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_782sq"]
 size = Vector2(560.63666, 34.12607)
@@ -39,6 +41,9 @@ size = Vector2(137.5, 115.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aj53m"]
 size = Vector2(108.4375, 297)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pooy8"]
+size = Vector2(554.5, 35.5)
+
 [node name="intersect" type="Node2D" unique_id=779080874]
 script = ExtResource("1_782sq")
 
@@ -54,7 +59,8 @@ position = Vector2(-349, 341)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=1601235363]
-position = Vector2(352, 261)
+position = Vector2(142, 262)
+scale = Vector2(0.59999967, 1)
 shape = SubResource("RectangleShape2D_fx1s8")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="wall" unique_id=373849062]
@@ -71,7 +77,7 @@ position = Vector2(862.5, -122.25)
 shape = SubResource("RectangleShape2D_b1u5x")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="wall" unique_id=1904080694]
-position = Vector2(688.5064, 93.56189)
+position = Vector2(755.5, 65)
 rotation = 0.8464604
 scale = Vector2(1.2908697, 1.9199988)
 shape = SubResource("RectangleShape2D_8s8y3")
@@ -145,6 +151,9 @@ position = Vector2(-51.5285, -5.484697)
 [node name="village" type="Marker2D" parent="SpawnPoints" unique_id=1603934486]
 position = Vector2(-501.3293, -29.713802)
 
+[node name="hidden" type="Marker2D" parent="SpawnPoints" unique_id=1676713583]
+position = Vector2(-295.21536, -1.265702)
+
 [node name="Cutscene" type="Area2D" parent="." unique_id=1099319390]
 script = ExtResource("10_5n6pa")
 player_path = NodePath("../order/player")
@@ -167,3 +176,22 @@ position = Vector2(125, 202)
 
 [node name="end" type="Marker2D" parent="." unique_id=2039895931]
 position = Vector2(462, 207)
+
+[node name="hidden" type="StaticBody2D" parent="." unique_id=411416067]
+position = Vector2(36, 561)
+script = ExtResource("12_gomys")
+
+[node name="Sprite2D" type="Sprite2D" parent="hidden" unique_id=337123728]
+position = Vector2(239, 1)
+texture = ExtResource("13_cs0mk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hidden" unique_id=640553457]
+position = Vector2(223, -45)
+rotation = -0.7055579
+shape = SubResource("RectangleShape2D_pooy8")
+
+[node name="Portal_hidden" parent="." unique_id=1618657488 instance=ExtResource("7_q3ych")]
+position = Vector2(301, 682)
+scale = Vector2(20.44, 2.4800005)
+target_scene = "res://scenes/hidden_road.tscn"
+target_spawn = "inter"

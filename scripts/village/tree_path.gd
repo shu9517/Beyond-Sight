@@ -22,7 +22,10 @@ func interect():
 	player.can_move = false
 	is_talking = true
 
-	await DialogueHelper.player(dialogue_resource, "tree_path")
+	if not GameManager.has_flag("block_road"):
+		await DialogueHelper.player(dialogue_resource, "tree_path")
+	else:
+		await DialogueHelper.player(dialogue_resource, "no_way")
 
 	player.can_move = true
 	is_talking = false
@@ -30,6 +33,7 @@ func interect():
 	if not GameManager.has_flag("enter_path"):
 		if State.enter_forest:
 			if has_node("stair_use/CollisionShape2D"):
+				State.enter_forest = false
 				$stair_use/CollisionShape2D.set_deferred("disabled", true)
 
 func _on_body_entered(body):

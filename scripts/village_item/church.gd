@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var dialogue_resource: DialogueResource
+@export var dialogue: DialogueResource
 
 var player_in_range := false
 var is_talking := false
@@ -17,8 +17,22 @@ func enter_church():
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
 		return
-
-	print("teleport!")
+	
+	player.stop_move()
+	player.can_move = false
+	is_talking = true
+	
+	if State.after_collapse:
+		await DialogueHelper.player(dialogue, "church")
+		if State.enter_chuch:
+			State.enter_chuch = false
+			GameManager.next_spawn = "village"
+			get_tree().change_scene_to_file("res://scenes/church.tscn")
+	else:
+		await DialogueHelper.player(dialogue, "church_block")
+	
+	player.can_move = true
+	is_talking = false
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):

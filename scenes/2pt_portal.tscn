@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dv7663xblcbgc"]
+
+[ext_resource type="Script" uid="uid://x8a5x1uf2bvh" path="res://other/2_pt_portal.gd" id="1_si0ob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbm1s"]
+size = Vector2(259, 48)
+
+[node name="2pt_portal" type="Area2D" unique_id=852045693]
+script = ExtResource("1_si0ob")
+target_scene = "res://scenes/factory.tscn"
+flag = "has_drive2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2105864954]
+position = Vector2(-3.5, 14)
+shape = SubResource("RectangleShape2D_sbm1s")

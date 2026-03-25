@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dv3s7i2wsvcvy"
+path="res://.godot/imported/Akira.dialogue-b95fad1e9c7a15cf47a4440584196053.tres"
+
+[deps]
+
+source_file="res://Dialog/Akira.dialogue"
+dest_files=["res://.godot/imported/Akira.dialogue-b95fad1e9c7a15cf47a4440584196053.tres"]
+
+[params]
+
+defaults=true

@@ -13,8 +13,14 @@ var flashlight_on = false
 
 func _ready():
 	add_to_group("player")
+	
+	flashlight_on = false
+	State.flashlight_on = false
+
 	light.visible = false
 	flashlight_area.monitoring = false
+
+	get_tree().call_group("hidden_objects", "update_flashlight", false)
 
 func _physics_process(_delta: float) -> void:
 	# can_move=false時強制暫停

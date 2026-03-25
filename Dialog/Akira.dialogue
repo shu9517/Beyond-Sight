@@ -1,0 +1,30 @@
+~ ask_1
+Akira: Do you need help?
+- What do you mean "Elvic took you out with only one arm"?
+	Akira: Oh... he didn’t tell you?
+	Akira: He lost his left arm in an accident... that’s what he told me.
+	Akira: I don’t really know what happened exactly.
+	Akira: I wasn’t even born back then, and... he doesn’t seem to want to talk about it.
+	Akira: It must be something really painful... so I never asked again.
+	Akira: Oh, have you met Luke yet?
+	Akira: He... likes to make jokes about Elvic’s arm.
+	Akira: I usually hit him when he does that.
+	Akira: So... if he says it again,
+	Akira: Just come and tell me, we’ll hit him together, okay?
+	do State.hit = true
+	=> END
+- Where is Elvic?
+	Akira: Umm... I’m not really sure.
+	Akira: I told him to stay and rest, since he got hurt in the cave too...
+	Akira: But it looks like he had something to do, so he left.
+	Akira: Maybe... he went to check what caused the earthquake?
+	Akira: I’m still a little worried about him...
+	=> END
+- What's in that box? [if State.box == true ]
+	Akira: Hmm... I think it’s a knife?
+	Akira: I’m not really sure why there’s a knife in the church...
+	Akira: Maybe it’s used for some kind of ceremony?
+	=> END
+- Nothing
+	Akira: You can come talk to me anytime if you have questions!
+	=> END

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cefyqiyuv01we" path="res://pic/doll house/stair.png" id="1_7g04l"]
 [ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_hlp6r"]
-[ext_resource type="Script" uid="uid://cymltysas7pix" path="res://scripts/stair.gd" id="1_wudq5"]
+[ext_resource type="Script" uid="uid://cymltysas7pix" path="res://scripts/village/stair.gd" id="1_wudq5"]
 [ext_resource type="Texture2D" uid="uid://bjywcuwlr8clg" path="res://pic/doll house/tree.png" id="2_hlp6r"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_wudq5"]
 [ext_resource type="Texture2D" uid="uid://bvytmev2qfe2b" path="res://pic/doll house/tree_up.png" id="4_aw5a0"]

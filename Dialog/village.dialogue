@@ -36,6 +36,22 @@ It’s filled with straw.
 One row has already been harvested.
 => END
 
+~ church
+A church!
+Enter?
+- Enter
+	do State.enter_chuch = true
+- Leave
+=> END
+
+~ church_block
+A church!
+Enter?
+- Enter
+	It's lock.
+- Leave
+=> END
+
 ~ tree_path
 It seems like there is a path inside...
 Continue enter?
@@ -43,3 +59,47 @@ Continue enter?
 	do State.enter_forest = true
 	=> END
 - No => END
+
+~ box
+Wonder what's inside?
+do State.box = true
+=> END
+
+~ knife
+A knife, looks sharp...
+=> END
+
+~ Akira_first_met
+Oh, hey! You're awake!
+Are you okay...?
+
+- Who are you?
+	Akira: I'm Akira! I take care of parts in the village.
+Akira: Um... Elvic and I were talking about the earthquake earlier.
+Akira: There was another one, and we heard someone running in the cave...
+Akira: Elvic found you. He said you were hit by falling rocks.
+Akira: But... you're really lucky. You don't seem badly hurt.
+Akira: Still... that doesn't mean you're completely fine, right?
+Akira: How are you feeling now?
+- I'm okay
+	Akira: That's great! I'm so glad to heard that!!
+- I can't feel anything
+	Akira: Oh no... that sounds a little scary...
+	Akira: If you need anything at all, please tell me, okay?
+Akira: And... um, please don't go into the cave for now.
+Akira: It collapsed pretty badly...
+Akira: I still don't know how Elvic carried you out with just one arm...
+Akira: I'll stay here with you, just in case you need anything!
+=> END
+
+~ no_way
+There’s no need to go into the forest...
+=> END
+
+~ collapse
+The cave has collapsed. It's dangerous to enter.
+=> END
+
+~ too_dark
+It's a large cave, but it's too dark to go in...
+=> END

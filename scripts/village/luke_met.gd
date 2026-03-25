@@ -49,6 +49,7 @@ func start_cutscene():
 			walk3.global_position,
 			leave1.global_position
 		)
+		player.move_speed = 500
 		npc.hide()
 		npc.can_interact = false
 		npc.collision_enabled(false)

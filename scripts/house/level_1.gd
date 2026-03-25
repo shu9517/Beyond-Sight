@@ -17,8 +17,6 @@ func _ready():
 		spawn_node = spawn_points.get_node(GameManager.next_spawn)
 	else:
 		spawn_node = spawn_points.get_node_or_null("default")
-		
-	GameManager.save_game(get_tree().current_scene.scene_file_path)
 	
 	if spawn_node == null:
 		push_error("Spawn node not found: " + GameManager.next_spawn + " and no default spawn exists")
@@ -34,3 +32,4 @@ func _ready():
 	await DialogueHelper.player(dialogue, "where")
 	player.can_move = true
 	
+	GameManager.save_game(get_tree().current_scene.scene_file_path)

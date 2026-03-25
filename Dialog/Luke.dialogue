@@ -48,3 +48,31 @@ Luke: Having a question?
 - Nothing
 	Luke: Alrighty then see ya! Byyyyyye!
 => END
+
+~ luke_chat_2
+Luke: Hey! It's you again! How's your little village adventure going?
+
+- About earthquake
+	Luke: Whoooa... that was scary, right?
+	Luke: We've never had an earthquake that big before.
+	Luke: I kinda have a bad feeling about this...
+	Luke: But hey, we're still here, right? Still standing!
+
+- The forest
+	Luke: HUHHH?? You went into the FOREST?????
+	Luke: I mean... whoa, seriously?? Did you see anything weird?
+	Luke: I wouldn’t even take one step in there...
+	Luke: But if you made it back safely, I guess it's not that dangerous... right?
+	Luke: ...Yeah, no. Still not going.
+
+- Akira's warning [if State.hit == true]
+	Luke: Wait, what? "Hit me together" if I joke about Elvic?
+	Luke: Woooow... that's actually terrifying.
+	Luke: Akira alone is scary enough...
+	Luke: I do NOT want two people coming after me!
+	Luke: Okay okay, I promise I won’t!
+	Luke: ...at least not in front of you guys :D
+
+- Nothing
+	Luke: Alrighty then, see ya! Byyyye!
+=> END

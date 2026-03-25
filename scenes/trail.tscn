@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8mh1t4edx1gf"]
 
 [ext_resource type="Texture2D" uid="uid://boab7sy3pvwq6" path="res://pic/monument/trail.png" id="1_2tjbc"]
-[ext_resource type="Script" uid="uid://bhgwm5rolrc4b" path="res://scripts/trail.gd" id="1_5fv6i"]
+[ext_resource type="Script" uid="uid://bhgwm5rolrc4b" path="res://scripts/mounment/trail.gd" id="1_5fv6i"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_5fv6i"]
 [ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="4_fb56t"]
 

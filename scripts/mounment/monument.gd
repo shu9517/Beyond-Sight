@@ -4,6 +4,8 @@ extends Node2D
 @onready var npc = $order/Elvic
 @onready var spawn_points = get_node_or_null("SpawnPoints")
 
+@onready var stand = $SpawnPoints/stand
+
 @export var dialogue: DialogueResource
 
 @export var cam_left := -900
@@ -14,7 +16,7 @@ extends Node2D
 func _ready():
 	var spawn_node = null
 	player.set_camera_limits(cam_left, cam_top, cam_right, cam_bottom)
-
+	
 	if not GameManager.has_flag("opening_finished"):
 		await EventManager.play_opening(player, npc, dialogue)
 	else:
@@ -34,11 +36,26 @@ func _ready():
 		spawn_node = spawn_points.get_node(GameManager.next_spawn)
 	else:
 		spawn_node = spawn_points.get_node_or_null("default")
-		
-	GameManager.save_game(get_tree().current_scene.scene_file_path)
 	
 	if spawn_node == null:
 		push_error("Spawn node not found: " + GameManager.next_spawn + " and no default spawn exists")
 		return
 
 	player.global_position = spawn_node.global_position
+	
+	if PlotManager.elvic_state == 1:
+		npc.global_position = stand.global_position
+		npc.play_up()
+		
+		if not GameManager.has_flag("self_talk"):
+			player.can_move = false
+			npc.can_interact = false
+			player.play_up()
+			
+			await DialogueHelper.elvic(dialogue, "self_talk")
+			GameManager.set_flag("self_talk")
+			
+			player.can_move = true
+			npc.can_interact = true
+	
+	GameManager.save_game(get_tree().current_scene.scene_file_path)

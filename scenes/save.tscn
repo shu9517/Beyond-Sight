@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5l3c12jvasuu" path="res://pic/cave/meet.png" id="1_3sv4i"]
 [ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_7obqq"]
+[ext_resource type="Script" uid="uid://cbxaeqvop1r11" path="res://scripts/cave/save_scenes.gd" id="1_mefow"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_wsf25"]
 [ext_resource type="Script" uid="uid://cpoiau05fsfsk" path="res://scripts/cave/save.gd" id="4_wsf25"]
 [ext_resource type="Resource" uid="uid://do3c2uf7l5thm" path="res://Dialog/forest.dialogue" id="5_jirvc"]
@@ -45,6 +46,7 @@ animations = [{
 }]
 
 [node name="save" type="Node2D" unique_id=805924252]
+script = ExtResource("1_mefow")
 
 [node name="black" type="Sprite2D" parent="." unique_id=984574978]
 position = Vector2(0, -43)
@@ -77,18 +79,18 @@ rotation = 1.5707964
 scale = Vector2(0.17844117, 1.3529254)
 shape = SubResource("RectangleShape2D_3sv4i")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1151187466]
+[node name="event" type="Area2D" parent="." unique_id=1151187466]
 script = ExtResource("4_wsf25")
 dialogue = ExtResource("5_jirvc")
 spawn_path = NodePath("../save/spawn")
 walk_0 = NodePath("../save/run")
 npc_path = NodePath("../Elvic")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1297442890]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="event" unique_id=1297442890]
 position = Vector2(22, -90)
 shape = SubResource("RectangleShape2D_r5a0y")
 
-[node name="rock" type="AnimatedSprite2D" parent="Area2D" unique_id=103317174]
+[node name="rock" type="AnimatedSprite2D" parent="event" unique_id=103317174]
 position = Vector2(31, -573)
 sprite_frames = SubResource("SpriteFrames_5ewjx")
 animation = &"fall"

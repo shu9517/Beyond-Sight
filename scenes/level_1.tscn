@@ -386,7 +386,7 @@ position = Vector2(-293, 348.00006)
 rotation = -0.9744789
 scale = Vector2(0.07999514, 0.07999514)
 dialogue = ExtResource("18_x2fux")
-dialogue_tag = "drive"
+dialogue_tag = "drive1"
 
 [node name="finish" type="Area2D" parent="." unique_id=1281752987]
 script = ExtResource("47_y0ove")

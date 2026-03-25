@@ -31,7 +31,7 @@ func _ready():
 	if spawn_node == null:
 		push_error("Spawn node not found: " + GameManager.next_spawn + " and no default spawn exists")
 		return
-		
-	GameManager.save_game(get_tree().current_scene.scene_file_path)
 
 	player.global_position = spawn_node.global_position
+	
+	GameManager.save_game(get_tree().current_scene.scene_file_path)

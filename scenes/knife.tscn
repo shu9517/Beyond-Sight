@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://irglugp36xu4"]
+
+[ext_resource type="Script" uid="uid://bmu8xann5shbi" path="res://scripts/item/item.gd" id="1_syuqf"]
+[ext_resource type="Texture2D" uid="uid://djhrjnw6yawuy" path="res://pic/item/knife.png" id="1_ufhdc"]
+[ext_resource type="Resource" uid="uid://tsxukck3kxbw" path="res://Dialog/village.dialogue" id="2_amocf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufhdc"]
+radius = 478.13806
+
+[node name="knife" type="Area2D" unique_id=1146202335]
+script = ExtResource("1_syuqf")
+item_id = "knife"
+need_lock = true
+dialogue = ExtResource("2_amocf")
+dialogue_tag = "knife"
+
+[node name="pic" type="Sprite2D" parent="." unique_id=182300983]
+texture = ExtResource("1_ufhdc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1817467248]
+shape = SubResource("CircleShape2D_ufhdc")

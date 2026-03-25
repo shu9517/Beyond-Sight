@@ -12,4 +12,5 @@ func elvic_plot() -> String:
 func luke_plot() -> String:
 	match int(luke_state):
 		0: return "luke_chat_1"
+		1: return "luke_chat_2"
 	return "default"

@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://clwhwuqu8moos"]
+
+[ext_resource type="Script" uid="uid://c175vxybkg4xr" path="res://scripts/mounment/factory.gd" id="1_6h0me"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_lmr8u"]
+[ext_resource type="Texture2D" uid="uid://cwhqrt6fsf5xb" path="res://pic/monument/factory.png" id="2_1adwy"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_1adwy"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="4_quloc"]
+[ext_resource type="Script" uid="uid://ckpfg8jh0rbl" path="res://scripts/mounment/portal_outside.gd" id="5_k2tyu"]
+[ext_resource type="Texture2D" uid="uid://c5tvkq0y6h4an" path="res://pic/monument/pic.png" id="7_ayg0a"]
+[ext_resource type="PackedScene" uid="uid://dv7663xblcbgc" path="res://scenes/2pt_portal.tscn" id="8_5g2so"]
+[ext_resource type="Script" uid="uid://d1x2lw15f2cqt" path="res://scripts/mounment/wood.gd" id="9_1gd16"]
+[ext_resource type="Texture2D" uid="uid://bkafnvdjlkfgi" path="res://pic/monument/wood.png" id="9_h6i3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quloc"]
+size = Vector2(1462, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2tyu"]
+size = Vector2(875, 52)
+
+[node name="factory" type="Node2D" unique_id=823829399]
+script = ExtResource("1_6h0me")
+
+[node name="black" type="Sprite2D" parent="." unique_id=664673991]
+scale = Vector2(1, 2.6799998)
+texture = ExtResource("1_lmr8u")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1363717439]
+texture = ExtResource("2_1adwy")
+
+[node name="hidden" type="Node2D" parent="." unique_id=665051173]
+script = ExtResource("9_1gd16")
+
+[node name="Sprite2D" type="Sprite2D" parent="hidden" unique_id=1879135990]
+position = Vector2(0, -869)
+texture = ExtResource("9_h6i3v")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("3_1adwy")]
+position = Vector2(-16, 1762)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1043842094]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=674740562]
+position = Vector2(-4, -2015)
+shape = SubResource("RectangleShape2D_quloc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=180430478]
+position = Vector2(-4, 2011)
+shape = SubResource("RectangleShape2D_quloc")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1113300049]
+position = Vector2(412, -47.000004)
+rotation = 1.5707964
+scale = Vector2(3.0400012, 1)
+shape = SubResource("RectangleShape2D_quloc")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1659815375]
+position = Vector2(-410, -47.000004)
+rotation = 1.5707964
+scale = Vector2(3.0400012, 1)
+shape = SubResource("RectangleShape2D_quloc")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=856055891]
+position = Vector2(-513, 483)
+rotation = 3.1415927
+scale = Vector2(1.8630468, -16.59162)
+
+[node name="mill" type="Marker2D" parent="SpawnPoints" unique_id=268111462]
+position = Vector2(-271.06143, 80.52258)
+
+[node name="room" type="Marker2D" parent="SpawnPoints" unique_id=2036026294]
+position = Vector2(-274.28177, -143.56645)
+
+[node name="PointA" type="Marker2D" parent="SpawnPoints" unique_id=98135881]
+position = Vector2(-269.9879, 81.30611)
+
+[node name="PointB" type="Marker2D" parent="SpawnPoints" unique_id=1396265866]
+position = Vector2(-271.59802, -138.56392)
+
+[node name="Portal_room" parent="." unique_id=1891912080 instance=ExtResource("4_quloc")]
+position = Vector2(-5, -1983)
+scale = Vector2(46.16, 2.4800005)
+target_scene = "res://scenes/room.tscn"
+target_spawn = "fact"
+
+[node name="Portal_outside" type="Area2D" parent="." unique_id=1154678736]
+script = ExtResource("5_k2tyu")
+target_scene = "res://scenes/mill.tscn"
+target_spawn = "inside"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_outside" unique_id=34704240]
+position = Vector2(-6.5, 1996)
+shape = SubResource("RectangleShape2D_k2tyu")
+
+[node name="pic" type="Sprite2D" parent="." unique_id=290933780]
+position = Vector2(316, 1897)
+rotation = 0.65751433
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("7_ayg0a")
+
+[node name="portal" type="Node2D" parent="." unique_id=215757048]
+
+[node name="2pt_portal" parent="portal" unique_id=852045693 instance=ExtResource("8_5g2so")]
+position = Vector2(401, 1588.0001)
+scale = Vector2(2.9964051, 1.372831)
+
+[node name="2pt_portal3" parent="portal" unique_id=658353123 instance=ExtResource("8_5g2so")]
+position = Vector2(250.00002, 1041)
+scale = Vector2(2.9964051, 1.6528358)
+
+[node name="2pt_portal4" parent="portal" unique_id=1688762489 instance=ExtResource("8_5g2so")]
+position = Vector2(166.00002, 154)
+scale = Vector2(2.9964051, 1.6528358)
+
+[node name="2pt_portal8" parent="portal" unique_id=336183781 instance=ExtResource("8_5g2so")]
+position = Vector2(253.99998, -666)
+rotation = -0.24714229
+scale = Vector2(2.9964051, 1.6528358)
+
+[node name="2pt_portal9" parent="portal" unique_id=44152705 instance=ExtResource("8_5g2so")]
+position = Vector2(-569, -454.99997)
+rotation = -0.24714229
+scale = Vector2(1.9093666, 1.6528358)
+
+[node name="2pt_portal6" parent="portal" unique_id=28356323 instance=ExtResource("8_5g2so")]
+position = Vector2(-217, -193.00002)
+scale = Vector2(1.7164065, 2.200437)
+
+[node name="2pt_portal10" parent="portal" unique_id=1669642573 instance=ExtResource("8_5g2so")]
+position = Vector2(-302, -970)
+scale = Vector2(1.7164065, 1.6804321)
+
+[node name="2pt_portal11" parent="portal" unique_id=1129333637 instance=ExtResource("8_5g2so")]
+position = Vector2(336, -970)
+scale = Vector2(1.7164065, 1.6804321)
+
+[node name="2pt_portal12" parent="portal" unique_id=802927243 instance=ExtResource("8_5g2so")]
+position = Vector2(163.99997, -1210.9999)
+rotation = 0.32780135
+scale = Vector2(2.0568008, 1.9620503)
+
+[node name="2pt_portal14" parent="portal" unique_id=1609305287 instance=ExtResource("8_5g2so")]
+position = Vector2(-233.99997, -1627)
+rotation = 0.13062589
+scale = Vector2(2.1719441, 1.7923335)
+
+[node name="2pt_portal15" parent="portal" unique_id=1617844042 instance=ExtResource("8_5g2so")]
+position = Vector2(506.9999, -1530)
+rotation = 0.13062589
+scale = Vector2(2.1719441, 1.7923335)
+
+[node name="2pt_portal13" parent="portal" unique_id=361667620 instance=ExtResource("8_5g2so")]
+position = Vector2(-475.00006, -1432.9999)
+rotation = 0.32780135
+scale = Vector2(1.5626013, 1.7930127)
+
+[node name="2pt_portal7" parent="portal" unique_id=708156790 instance=ExtResource("8_5g2so")]
+position = Vector2(385, -193.00002)
+scale = Vector2(1.7164065, 2.200437)
+
+[node name="2pt_portal5" parent="portal" unique_id=1294944393 instance=ExtResource("8_5g2so")]
+position = Vector2(385, 577)
+rotation = 1.5707964
+scale = Vector2(2.0267076, 1.6528358)
+
+[node name="2pt_portal16" parent="portal" unique_id=1802220448 instance=ExtResource("8_5g2so")]
+position = Vector2(-24.000015, 648)
+rotation = 1.5707964
+scale = Vector2(1.9067076, 12.412838)
+
+[node name="2pt_portal2" parent="portal" unique_id=1399958084 instance=ExtResource("8_5g2so")]
+position = Vector2(-243.00002, 1472)
+rotation = -0.4239687
+scale = Vector2(2.9964051, 1.372831)

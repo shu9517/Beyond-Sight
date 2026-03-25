@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jhdnfr8xeir3"]
 
-[ext_resource type="Script" uid="uid://de7djsl6mnuco" path="res://scripts/forest.gd" id="1_i1yi8"]
+[ext_resource type="Script" uid="uid://de7djsl6mnuco" path="res://scripts/forest/forest.gd" id="1_i1yi8"]
 [ext_resource type="Texture2D" uid="uid://n1mxry7jydsi" path="res://pic/doll house/intersect2.png" id="1_xr56k"]
 [ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_ercsu"]
 [ext_resource type="Texture2D" uid="uid://cwn52qvqt0idv" path="res://pic/doll house/forest.png" id="2_sek5r"]

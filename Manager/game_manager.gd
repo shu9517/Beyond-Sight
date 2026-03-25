@@ -31,7 +31,10 @@ func save_game(scene_path: String):
 			"enter_forest": State.enter_forest,
 			"enter_dollHouse": State.enter_dollHouse,
 			"enter_room": State.enter_room,
-			"get_drive1": State.get_drive1
+			"get_drive1": State.get_drive1,
+			"after_collapse": State.after_collapse,
+			"box": State.box,
+			"hit": State.hit
 		},
 		"plot": {
 			"elvic_state": PlotManager.elvic_state,
@@ -80,6 +83,9 @@ func load_game():
 	State.enter_dollHouse = state_data.get("enter_dollHouse", false)
 	State.enter_room = state_data.get("enter_room", false)
 	State.get_drive1 = state_data.get("get_drive1", false)
+	State.after_collapse = state_data.get("after_collapse", false)
+	State.box = state_data.get("box", false)
+	State.hit = state_data.get("hit", false)
 
 	var plot_data = data.get("plot", {})
 	PlotManager.elvic_state = plot_data.get("elvic_state", 0)
@@ -111,6 +117,9 @@ func reset_all_data():
 	State.enter_dollHouse = false
 	State.enter_room = false
 	State.get_drive1 = false
+	State.after_collapse = false
+	State.box = false
+	State.hit = false
 
 	PlotManager.elvic_state = 0
 	PlotManager.luke_state = 0

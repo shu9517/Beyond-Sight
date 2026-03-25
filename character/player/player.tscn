@@ -165,7 +165,7 @@ size = Vector2(432.41324, 40.62052)
 
 [node name="player" type="CharacterBody2D" unique_id=2135659133]
 script = ExtResource("1_hqtel")
-move_speed = 600.0
+move_speed = 500.0
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=834909727]
 position = Vector2(4.096894, 97.375595)

@@ -15,3 +15,21 @@ Elvic: Do you still have questions?
 - Nothing
 	Elvic: Then I hope you find what you’re looking for.
 => END
+
+
+~ elvic_chat_1
+Elvic: ...Hey... You're here...
+Elvic: ...How do you feel now?
+Elvic: Such a huge rock had fallen on you,
+Elvic: I would have run away as fast as I could if I hadn't seen so many things before.
+
+- I'm okay
+	Elvic: What a miracle...
+	Elvic: Can't you feel anything?
+	Elvic: I mean... It's nice to see you were unharmed.
+- I feel bad
+	Elvic: Oh... I'm sorry... if I can get faster then that wouldn't happened.
+	Elvic: 
+- Nothing
+	Elvic: Then I hope you find what you’re looking for.
+=> END

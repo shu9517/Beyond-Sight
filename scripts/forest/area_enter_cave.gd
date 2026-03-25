@@ -35,7 +35,7 @@ func enter():
 	
 	if State.cave == true:
 		GameManager.next_spawn = target_spawn
-		State.enter_dollHouse = false
+		State.cave = false
 		call_deferred("_go_to_target_scene")
 
 func _go_to_target_scene():

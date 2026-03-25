@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://bbfvfry4sqpb4"]
+
+[ext_resource type="Script" uid="uid://cjdhctgcipdhf" path="res://scripts/village/church.gd" id="1_loj03"]
+[ext_resource type="Texture2D" uid="uid://b0pw7gvak15ul" path="res://pic/village/church_inside.png" id="1_ua547"]
+[ext_resource type="Resource" uid="uid://dv3s7i2wsvcvy" path="res://Dialog/Akira.dialogue" id="2_f2u4x"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="2_yh3iq"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_br6of"]
+[ext_resource type="PackedScene" uid="uid://irglugp36xu4" path="res://scenes/knife.tscn" id="4_br6of"]
+[ext_resource type="Texture2D" uid="uid://dublvtgjpokbv" path="res://character/npc/Akira/Akira.png" id="5_7tph1"]
+[ext_resource type="Texture2D" uid="uid://c2y5bj1qwycqh" path="res://pic/village/box.png" id="5_g2eii"]
+[ext_resource type="Script" uid="uid://hlhrafsc0jrb" path="res://scripts/village_item/box.gd" id="6_qe1s6"]
+[ext_resource type="Resource" uid="uid://tsxukck3kxbw" path="res://Dialog/village.dialogue" id="7_6q2i4"]
+[ext_resource type="Script" uid="uid://clqlf78u8bj8b" path="res://character/npc/Akira/akira.gd" id="7_f2u4x"]
+[ext_resource type="Texture2D" uid="uid://b6g268wnx5ie4" path="res://character/npc/npc1.png" id="12_ihb42"]
+[ext_resource type="Script" uid="uid://cm4uw3hg3inq4" path="res://scripts/npc/npc_church.gd" id="13_skcbg"]
+[ext_resource type="Resource" uid="uid://dkoerhejrn7ey" path="res://Dialog/npc.dialogue" id="14_5i1gd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2eii"]
+size = Vector2(81, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tph1"]
+size = Vector2(110, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2u4x"]
+size = Vector2(113, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihb42"]
+size = Vector2(148, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua547"]
+size = Vector2(1491, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20jv8"]
+size = Vector2(517, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh3iq"]
+size = Vector2(230.5, 268)
+
+[node name="church" type="Node2D" unique_id=832948754]
+script = ExtResource("1_loj03")
+dialogue = ExtResource("7_6q2i4")
+
+[node name="inside" type="Sprite2D" parent="." unique_id=1865072546]
+texture = ExtResource("1_ua547")
+
+[node name="Portal_village" parent="." unique_id=1891912080 instance=ExtResource("2_yh3iq")]
+position = Vector2(7, 995)
+scale = Vector2(33.480003, 2.4800005)
+target_scene = "res://scenes/village.tscn"
+target_spawn = "church"
+
+[node name="knife" parent="." unique_id=1366022049 instance=ExtResource("4_br6of")]
+position = Vector2(66.00001, -718.0001)
+rotation = -0.82712185
+scale = Vector2(0.05535635, 0.05535635)
+
+[node name="box" type="Sprite2D" parent="." unique_id=334675335]
+position = Vector2(67, -715)
+texture = ExtResource("5_g2eii")
+script = ExtResource("6_qe1s6")
+dialogue_resource = ExtResource("7_6q2i4")
+
+[node name="Area2D" type="Area2D" parent="box" unique_id=1609208656]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box/Area2D" unique_id=1966353256]
+position = Vector2(-1.5, 50.5)
+shape = SubResource("RectangleShape2D_g2eii")
+
+[node name="order" type="Node2D" parent="." unique_id=1131196626]
+y_sort_enabled = true
+
+[node name="player" parent="order" unique_id=2135659133 instance=ExtResource("3_br6of")]
+position = Vector2(-134, -518)
+
+[node name="Akira" type="Sprite2D" parent="order" unique_id=683115855]
+position = Vector2(-138, -634)
+texture = ExtResource("5_7tph1")
+script = ExtResource("7_f2u4x")
+dialogue_resource = ExtResource("2_f2u4x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="order/Akira" unique_id=507393393]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/Akira/StaticBody2D" unique_id=802048797]
+position = Vector2(6, 124)
+shape = SubResource("RectangleShape2D_7tph1")
+
+[node name="Area2D" type="Area2D" parent="order/Akira" unique_id=2050216614]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/Akira/Area2D" unique_id=600995583]
+position = Vector2(6, 158)
+shape = SubResource("RectangleShape2D_f2u4x")
+
+[node name="npc" type="Sprite2D" parent="order" unique_id=242691798]
+position = Vector2(-160, 148)
+texture = ExtResource("12_ihb42")
+script = ExtResource("13_skcbg")
+dialogue = ExtResource("14_5i1gd")
+
+[node name="Area2D" type="Area2D" parent="order/npc" unique_id=361033989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/npc/Area2D" unique_id=1325867327]
+position = Vector2(2, 25.5)
+shape = SubResource("RectangleShape2D_ihb42")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1704998612]
+
+[node name="village" type="Marker2D" parent="SpawnPoints" unique_id=133254825]
+position = Vector2(3, 803)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=177210213]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1355619321]
+position = Vector2(0.5, -794)
+shape = SubResource("RectangleShape2D_ua547")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=318690392]
+position = Vector2(0.5, 1007)
+shape = SubResource("RectangleShape2D_ua547")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=734151110]
+position = Vector2(-669, -2)
+rotation = 1.5707964
+scale = Vector2(1.4400003, 1.4400003)
+shape = SubResource("RectangleShape2D_ua547")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=366806333]
+position = Vector2(687, -2)
+rotation = 1.5707964
+scale = Vector2(1.4400003, 1.4400003)
+shape = SubResource("RectangleShape2D_ua547")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1778996540]
+position = Vector2(368.5, -128)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1058101872]
+position = Vector2(-352, -128)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=985269250]
+position = Vector2(368.5, 65)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1192710267]
+position = Vector2(-352, 65)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D" unique_id=2004565825]
+position = Vector2(368.5, 250)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D" unique_id=1901481049]
+position = Vector2(-352, 250)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=963824790]
+position = Vector2(368.5, 443)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D" unique_id=1737866076]
+position = Vector2(-352, 443)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D" unique_id=534139727]
+position = Vector2(368.5, 650)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D" unique_id=1181232990]
+position = Vector2(-352, 650)
+shape = SubResource("RectangleShape2D_20jv8")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D" unique_id=2001253206]
+position = Vector2(555.75, -672)
+shape = SubResource("RectangleShape2D_yh3iq")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D" unique_id=1229127712]
+position = Vector2(-569, -672)
+shape = SubResource("RectangleShape2D_yh3iq")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D" unique_id=1533911149]
+position = Vector2(672, 1026)
+shape = SubResource("RectangleShape2D_yh3iq")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D" unique_id=827232301]
+position = Vector2(-674, 1026)
+shape = SubResource("RectangleShape2D_yh3iq")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D" unique_id=1741199163]
+position = Vector2(-20.000002, -679)
+scale = Vector2(1.4508349, 0.39668953)
+shape = SubResource("RectangleShape2D_yh3iq")

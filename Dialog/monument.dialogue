@@ -51,3 +51,23 @@ Elvic: You must not know your way around yet.
 Elvic: Umm, you might need some help getting around.
 Elvic: Come with me,
 Elvic: I know someone who can tell you more about this village.
+=> END
+
+~ self_talk
+Elvic: There’s no time left... What should I do...?
+Elvic: Was everything I’ve done... really the right choice...?
+=> END
+
+~ enter
+There's a gap at the bottom of this metal roller shutter.
+Enter?
+- Enter
+	do State.enter_fact = true
+- Leave
+=> END
+
+~ drive2
+Oh, the second drive!
+One more left to complete the mission!
+do GameManager.set_flag("has_drive2")
+=> END
