@@ -65,10 +65,6 @@ Wonder what's inside?
 do State.box = true
 => END
 
-~ knife
-A knife, looks sharp...
-=> END
-
 ~ Akira_first_met
 Oh, hey! You're awake!
 Are you okay...?

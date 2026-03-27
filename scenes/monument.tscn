@@ -14,36 +14,36 @@
 [ext_resource type="Resource" uid="uid://xd1vh7qx7k1y" path="res://Dialog/monument.dialogue" id="9_xy20g"]
 [ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="15_gmwgv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jryhg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cn87m"]
 size = Vector2(176.8947, 153.72992)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8lci"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2r8a"]
 size = Vector2(181.78354, 126.35149)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7no3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmwgv"]
 size = Vector2(730.11646, 27.383728)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_51hww"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ij5m"]
 size = Vector2(47.500122, 2470.0625)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_18f3d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7je2v"]
 size = Vector2(908.6931, 99.37494)
 
 [node name="monument" type="Node2D" unique_id=905791269]
 script = ExtResource("1_xy20g")
 dialogue = ExtResource("9_xy20g")
 
-[node name="background" type="Sprite2D" parent="." unique_id=1660035156]
+[node name="background" type="Sprite2D" parent="." unique_id=958814812]
 texture = ExtResource("1_r0tja")
 
-[node name="road" type="Sprite2D" parent="." unique_id=2038293496]
+[node name="road" type="Sprite2D" parent="." unique_id=992732764]
 position = Vector2(170, 785)
 texture = ExtResource("3_80bfl")
 
-[node name="tree" type="Sprite2D" parent="." unique_id=178257864]
+[node name="tree" type="Sprite2D" parent="." unique_id=855649040]
 texture = ExtResource("3_uwq0p")
 
-[node name="order" type="Node2D" parent="." unique_id=46221690]
+[node name="order" type="Node2D" parent="." unique_id=626884753]
 y_sort_enabled = true
 scale = Vector2(0.6417013, 0.6417013)
 
@@ -55,7 +55,7 @@ scale = Vector2(1.3740067, 1.3740067)
 position = Vector2(191.67796, 144.92725)
 scale = Vector2(1.3740077, 1.3740077)
 
-[node name="statue" type="Sprite2D" parent="order" unique_id=398509452]
+[node name="statue" type="Sprite2D" parent="order" unique_id=545560823]
 position = Vector2(-3.116684, -51.425827)
 scale = Vector2(1.7916732, 1.7916732)
 texture = ExtResource("5_b8lci")
@@ -63,77 +63,77 @@ offset = Vector2(4.729744, -108.10815)
 script = ExtResource("7_jryhg")
 dialogue_resource = ExtResource("9_xy20g")
 
-[node name="Area2D" type="Area2D" parent="order/statue" unique_id=651044576]
+[node name="Area2D" type="Area2D" parent="order/statue" unique_id=1685009001]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="order/statue/Area2D" unique_id=1076015816]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/statue/Area2D" unique_id=44422858]
 position = Vector2(-5.2647443, 42.1178)
-shape = SubResource("RectangleShape2D_jryhg")
+shape = SubResource("RectangleShape2D_cn87m")
 
-[node name="staticBody2D" type="StaticBody2D" parent="order/statue" unique_id=1751370077]
+[node name="staticBody2D" type="StaticBody2D" parent="order/statue" unique_id=147536882]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="order/statue/staticBody2D" unique_id=332130024]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/statue/staticBody2D" unique_id=517479864]
 position = Vector2(-3.0442348, 13.046687)
 scale = Vector2(1.0000001, 1.0000001)
-shape = SubResource("RectangleShape2D_b8lci")
+shape = SubResource("RectangleShape2D_a2r8a")
 
-[node name="fence" type="Sprite2D" parent="order" unique_id=858659342]
+[node name="fence" type="Sprite2D" parent="order" unique_id=1682044803]
 position = Vector2(864.8884, 813.4626)
 scale = Vector2(1.3740048, 1.3740048)
 texture = ExtResource("5_k7no3")
 offset = Vector2(8.278015, 6.6223145)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="order/fence" unique_id=412405400]
+[node name="StaticBody2D" type="StaticBody2D" parent="order/fence" unique_id=1656886586]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="order/fence/StaticBody2D" unique_id=1047149411]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/fence/StaticBody2D" unique_id=498067706]
 position = Vector2(13.2447405, 97.67992)
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_k7no3")
+shape = SubResource("RectangleShape2D_gmwgv")
 
-[node name="tree_up" type="Sprite2D" parent="." unique_id=1296633470]
+[node name="tree_up" type="Sprite2D" parent="." unique_id=1098916281]
 texture = ExtResource("4_t3axa")
 
-[node name="wall_tree" type="Node2D" parent="." unique_id=686727873]
+[node name="wall_tree" type="Node2D" parent="." unique_id=1655930997]
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall_tree" unique_id=185775065]
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_tree" unique_id=1999959373]
 position = Vector2(56, -62)
 scale = Vector2(0.80115056, 0.89536494)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=903860626]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=990150237]
 position = Vector2(-1238.2192, -1)
-shape = SubResource("RectangleShape2D_51hww")
+shape = SubResource("RectangleShape2D_3ij5m")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=447518287]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=380223505]
 position = Vector2(1092.899, 0.906662)
-shape = SubResource("RectangleShape2D_51hww")
+shape = SubResource("RectangleShape2D_3ij5m")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=910100192]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=365023100]
 position = Vector2(3, 1198.394)
 rotation = 1.5707964
-shape = SubResource("RectangleShape2D_51hww")
+shape = SubResource("RectangleShape2D_3ij5m")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=149618972]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=742405948]
 position = Vector2(-54.131626, -541.6786)
 rotation = -1.5707963
-shape = SubResource("RectangleShape2D_51hww")
+shape = SubResource("RectangleShape2D_3ij5m")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=216417302]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="wall_tree/StaticBody2D" unique_id=258410149]
 position = Vector2(-835.049, -461.8099)
-shape = SubResource("RectangleShape2D_18f3d")
+shape = SubResource("RectangleShape2D_7je2v")
 
-[node name="框" type="Sprite2D" parent="." unique_id=272127674]
+[node name="框" type="Sprite2D" parent="." unique_id=899922158]
 position = Vector2(0, -8)
 scale = Vector2(1.179, 1.18)
 texture = ExtResource("7_18f3d")
 
-[node name="SpawnPoints" type="Node2D" parent="." unique_id=298087743]
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1583691863]
 position = Vector2(4, -45)
 
-[node name="trail" type="Marker2D" parent="SpawnPoints" unique_id=632659512]
+[node name="trail" type="Marker2D" parent="SpawnPoints" unique_id=434175119]
 position = Vector2(801, 810)
 
-[node name="stand" type="Marker2D" parent="SpawnPoints" unique_id=1310043461]
-position = Vector2(-7, 227)
+[node name="stand" type="Marker2D" parent="SpawnPoints" unique_id=563944459]
+position = Vector2(-8, 316)
 
 [node name="Portal_to_trail" parent="." unique_id=1891912080 instance=ExtResource("15_gmwgv")]
 position = Vector2(905, 813.99994)

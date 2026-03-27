@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dpepetifall"
+path="res://.godot/imported/talk.dialogue-8253b549285fba3fb96411811ef41ec9.tres"
+
+[deps]
+
+source_file="res://Dialog/talk.dialogue"
+dest_files=["res://.godot/imported/talk.dialogue-8253b549285fba3fb96411811ef41ec9.tres"]
+
+[params]
+
+defaults=true

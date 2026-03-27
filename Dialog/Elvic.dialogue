@@ -3,7 +3,8 @@ Elvic: Hey, you’re still here.
 Elvic: Do you still have questions?
 
 - Talk about the statue [if !State.elvic_statue ]
-	Elvic: It’s an angel statue. The villagers come here to pray. Some for peace, others just out of habit.
+	Elvic: It’s an angel statue as you see.
+	Elvic: The villagers usually come here to pray. Some for peace, others just out of habit.
 	Elvic: It’s become... something like a tradition I think?
 	Elvic: Well, people don’t always need a reason for things like this.
 	Elvic: As long as it gives them a sense of comfort, I suppose that’s enough.
@@ -13,23 +14,119 @@ Elvic: Do you still have questions?
 	Elvic: See that trail over there?
 	Elvic: Just follow it straight ahead. You’ll find the village soon enough.
 - Nothing
-	Elvic: Then I hope you find what you’re looking for.
+	Elvic: Okay, then see you around.
 => END
 
 
 ~ elvic_chat_1
 Elvic: ...Hey... You're here...
-Elvic: ...How do you feel now?
-Elvic: Such a huge rock had fallen on you,
-Elvic: I would have run away as fast as I could if I hadn't seen so many things before.
+Elvic: ...How are you feeling?
+Elvic: Such a huge rock fell right on you,
+Elvic: If I hadn’t seen things like this before, I would've run already.
 
 - I'm okay
 	Elvic: What a miracle...
-	Elvic: Can't you feel anything?
-	Elvic: I mean... It's nice to see you were unharmed.
+	Elvic: You really don’t feel anything?
+	Elvic: I mean... It's nice to see you were safe.
 - I feel bad
-	Elvic: Oh... I'm sorry... if I can get faster then that wouldn't happened.
-	Elvic: 
-- Nothing
-	Elvic: Then I hope you find what you’re looking for.
+	Elvic: Oh... I'm sorry...
+	Elvic: If I had gotten there sooner, maybe this wouldn't have happened.
+	Elvic: But... at least you're still alive.
+
+Elvic: Just in case... if anything feels off, you can go find Akira.
+Elvic: ....
+Elvic: ...Is there something you want to tell me?
+
+- What are you talking about?
+	Elvic: ...Nothing?
+    Elvic: Maybe the impact hit you harder than I thought.
+Elvic: I was just watching the statue.
+
+- You were different than other people
+	Elvic: ...?
+	Elvic: Sorry, I don't understand?
+	
+- I can help you
+	Elvic: ...Help me? I don’t need help.
+    Elvic: If you were saying how busy I am, I'll just say that’s my responsibility.
+Elvic: Don't worry about me, little one.
+
+- You know the truth of this world, don’t you?
+	Elvic: I didn't get it, what truth?
+Elvic: The earthquake?
+
+- You’re pretending, aren’t you?
+    Elvic: ...
+    Elvic: ...Why are you asking me this?
+Elvic: What do you want?
+
+- I don't want to destory this world
+	Elvic: ...Yeah?
+Elvic: Then just leave. Leaving is the best way.
+
+- There must be another way to save it
+    Elvic: ...If there was, I would've taken it already.
+Elvic: ...
+Elvic: Do whatever you want.
+
+- You did trust me, right?
+	Elvic: ...I guess I just wanted to believe that.
+	Elvic: I don't know if I trust you or not.
+- You don't trust me?
+	Elvic: ...It's hard to say.
+
+Elvic: ...
+Elvic: If you really can do it,
+Elvic: then prove it to me.
+Elvic: Next time we meet...
+Elvic: I’ll test you.
+Elvic: ...So don’t disappoint me.
+do PlotManager.elvic_state = 2
+do State.friend = true
+do State.talk = true
 => END
+
+~ elvic_chat_2
+Elvic: Having more question?
+- About your left arm
+	Elvic: Akira told you this right?
+	Elvic: This is from the last "destory."
+	Elvic: Something I don't know try to destory this world.
+	Elvic: To protect the village, I did something and...
+	Elvic: But at least my sacrafy did safe the world.
+	- Luke
+		Elvic: Actually, I don't mind that.
+		Elvic: He seems like just making joke and than nothing.
+		Elvic: I told Akira it's okay, but she still keep being mad at Luke.
+		Elvic: Well, I think I did enjoy seeing him bitten by Akira.
+		=> END
+- Akira says you got injured too
+	Elvic: Oh, yeah... um, don't worry about me.
+	Elvic: It was just some minor scratches.
+	Elvic: I'm fine. Thanks.
+	=> END
+- When did you know about the truth?
+	Elvic: Oh... It's Dr. Denf...
+	Elvic: He live in the forest just beside the village.
+	Elvic: He told me this when I was young.
+	Elvic: I don't even trust him at that time...
+	Elvic: But, you know, after the "first destory," I had no choice but to believe it.
+	Elvic: He disappear one day, I don't know where he goes, I just can't find him anymore.
+	=> END
+	
+~ elvic_chat_3
+	Elvic: You have done all the thing...
+	Elvic: The world is collapsing, and I can't do anything with that...
+	Elvic: You said you don't want the world to be destory...
+	Elvic: Well, I don't know if it is truth or not,
+	Elvic: But I do want to trust you for once...
+	Elvic: This is what you're finding right?
+	Elvic: The drive...
+	Elvic: Now, the entrance is under the statue.
+	Elvic: Our world is on you...
+	do PlotManager.elvic_state = 4
+	=> END
+	
+~ elvic_chat_4
+	Elvic: Our world is on you...
+	=> END

@@ -18,4 +18,5 @@ dialogue_tag = "knife"
 texture = ExtResource("1_ufhdc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1817467248]
+scale = Vector2(3.1599991, 3.1599991)
 shape = SubResource("CircleShape2D_ufhdc")

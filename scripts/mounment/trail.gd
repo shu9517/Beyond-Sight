@@ -9,8 +9,6 @@ extends Node2D
 
 func _ready():
 	player.set_camera_limits(cam_left, cam_top, cam_right, cam_bottom)
-	
-	Test.test()
 
 	var spawn_node = null
 	if GameManager.next_spawn != "" and spawn_points.has_node(GameManager.next_spawn):

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dakgt0nuprld3"]
+
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_4snj4"]
+[ext_resource type="Script" uid="uid://bhvtfk4r2elm6" path="res://scripts/enterGame.gd" id="1_ktyro"]
+[ext_resource type="Resource" uid="uid://dpepetifall" path="res://Dialog/talk.dialogue" id="2_kc1f0"]
+[ext_resource type="Texture2D" uid="uid://3nlgg3auwgf" path="res://pic/對話框/me.png" id="4_plysd"]
+
+[node name="me" type="Node2D" unique_id=343682020]
+script = ExtResource("1_ktyro")
+dialogue = ExtResource("2_kc1f0")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=718685952]
+position = Vector2(550, 303)
+texture = ExtResource("1_4snj4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1229159848]
+position = Vector2(571, 293)
+scale = Vector2(0.7599988, 0.7599988)
+texture = ExtResource("4_plysd")

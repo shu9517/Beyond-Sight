@@ -71,3 +71,11 @@ Oh, the second drive!
 One more left to complete the mission!
 do GameManager.set_flag("has_drive2")
 => END
+
+~ what
+What's happened??
+=> END
+
+~ run
+Better run now...
+=> END

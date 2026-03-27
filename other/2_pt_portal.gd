@@ -17,4 +17,7 @@ func _on_body_entered(body):
 	else:
 		GameManager.next_spawn = spawn_before
 
+	call_deferred("scene")
+
+func scene():
 	get_tree().change_scene_to_file(target_scene)

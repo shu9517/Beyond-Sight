@@ -1,6 +1,6 @@
 extends Control
 
-@export var first_scene: String = "res://scenes/monument.tscn"
+@export var first_scene: String = "res://scenes/me.tscn"
 @export var first_spawn: String = "default"
 
 func _ready():

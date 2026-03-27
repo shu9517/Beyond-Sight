@@ -23,3 +23,9 @@ func _ready():
 	player.global_position = spawn_node.global_position
 	
 	GameManager.save_game(get_tree().current_scene.scene_file_path)
+
+func _process(_delta):
+	if State.items.has("drive2"):
+		var camera = player.get_node_or_null("Camera2D")
+		if camera:
+			camera.shake(2,15)

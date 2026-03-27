@@ -5,7 +5,6 @@
 [ext_resource type="Resource" uid="uid://dv3s7i2wsvcvy" path="res://Dialog/Akira.dialogue" id="2_f2u4x"]
 [ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="2_yh3iq"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_br6of"]
-[ext_resource type="PackedScene" uid="uid://irglugp36xu4" path="res://scenes/knife.tscn" id="4_br6of"]
 [ext_resource type="Texture2D" uid="uid://dublvtgjpokbv" path="res://character/npc/Akira/Akira.png" id="5_7tph1"]
 [ext_resource type="Texture2D" uid="uid://c2y5bj1qwycqh" path="res://pic/village/box.png" id="5_g2eii"]
 [ext_resource type="Script" uid="uid://hlhrafsc0jrb" path="res://scripts/village_item/box.gd" id="6_qe1s6"]
@@ -48,11 +47,6 @@ position = Vector2(7, 995)
 scale = Vector2(33.480003, 2.4800005)
 target_scene = "res://scenes/village.tscn"
 target_spawn = "church"
-
-[node name="knife" parent="." unique_id=1366022049 instance=ExtResource("4_br6of")]
-position = Vector2(66.00001, -718.0001)
-rotation = -0.82712185
-scale = Vector2(0.05535635, 0.05535635)
 
 [node name="box" type="Sprite2D" parent="." unique_id=334675335]
 position = Vector2(67, -715)

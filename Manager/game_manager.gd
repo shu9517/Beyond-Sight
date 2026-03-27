@@ -34,7 +34,8 @@ func save_game(scene_path: String):
 			"get_drive1": State.get_drive1,
 			"after_collapse": State.after_collapse,
 			"box": State.box,
-			"hit": State.hit
+			"hit": State.hit,
+			"talk": State.talk
 		},
 		"plot": {
 			"elvic_state": PlotManager.elvic_state,
@@ -86,6 +87,7 @@ func load_game():
 	State.after_collapse = state_data.get("after_collapse", false)
 	State.box = state_data.get("box", false)
 	State.hit = state_data.get("hit", false)
+	State.talk = state_data.get("talk", false)
 
 	var plot_data = data.get("plot", {})
 	PlotManager.elvic_state = plot_data.get("elvic_state", 0)
@@ -120,6 +122,7 @@ func reset_all_data():
 	State.after_collapse = false
 	State.box = false
 	State.hit = false
+	State.talk = false
 
 	PlotManager.elvic_state = 0
 	PlotManager.luke_state = 0

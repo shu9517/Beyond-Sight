@@ -6,12 +6,48 @@
 [ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="2_jn645"]
 [ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="3_85yof"]
 [ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="4_14vil"]
+[ext_resource type="Script" uid="uid://d1oy5wcltrdy1" path="res://scripts/mounment/wolf_chase.gd" id="7_qvc4m"]
+[ext_resource type="Texture2D" uid="uid://b68khh2lwcown" path="res://pic/monument/wolf1.png" id="8_qtoah"]
+[ext_resource type="Texture2D" uid="uid://c86ocrakxjwpi" path="res://pic/monument/down1.png" id="8_tk5fv"]
+[ext_resource type="Resource" uid="uid://xd1vh7qx7k1y" path="res://Dialog/monument.dialogue" id="8_w68ji"]
+[ext_resource type="Texture2D" uid="uid://l4baubfhkxc0" path="res://pic/monument/wolf2.png" id="9_eom3m"]
+[ext_resource type="Texture2D" uid="uid://p1jvenrw35j7" path="res://pic/monument/down2.png" id="9_w68ji"]
+[ext_resource type="Texture2D" uid="uid://ytsoccy3p8wd" path="res://pic/monument/wolf3.png" id="10_tk5fv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36trf"]
 size = Vector2(1424, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffxv4"]
 size = Vector2(536.53296, 42.953857)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtoah"]
+size = Vector2(1648.5, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w68ji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tk5fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w68ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qtoah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eom3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tk5fv")
+}],
+"loop": false,
+"name": &"stand",
+"speed": 7.0
+}]
 
 [node name="room" type="Node2D" unique_id=1513875525]
 script = ExtResource("1_jxe34")
@@ -58,6 +94,21 @@ shape = SubResource("RectangleShape2D_ffxv4")
 [node name="drive2" parent="." unique_id=1970375197 instance=ExtResource("2_ffxv4")]
 position = Vector2(-17, -607)
 scale = Vector2(0.119991474, 0.119991474)
+
+[node name="wolf_chase" type="Area2D" parent="." unique_id=545732037]
+position = Vector2(-4, 31)
+script = ExtResource("7_qvc4m")
+dialogue = ExtResource("8_w68ji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wolf_chase" unique_id=1217326935]
+position = Vector2(89.25, 507)
+shape = SubResource("RectangleShape2D_qtoah")
+
+[node name="wolf" type="AnimatedSprite2D" parent="wolf_chase" unique_id=348535913]
+position = Vector2(5, 78)
+scale = Vector2(0.8799993, 0.8799993)
+sprite_frames = SubResource("SpriteFrames_w68ji")
+animation = &"stand"
 
 [node name="player" parent="." unique_id=2135659133 instance=ExtResource("3_85yof")]
 position = Vector2(4, 447)

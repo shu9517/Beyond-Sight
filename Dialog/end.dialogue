@@ -1,0 +1,58 @@
+~ back
+Better stay outside...
+=> END
+
+~ late
+...
+....
+Seems like the monster cannot cause harm.
+It looks like it's getting late...
+Where is the third one...
+=> END
+
+~ knife
+A knife, looks sharp...
+=> END
+
+~ statue
+It’s an angel statue.
+One of its wings is broken.
+There is something written on it.
+"Guarding the truth,
+Carry the hope.
+To be eternal is to be alone."
+...
+Hiding the truth... That's what Elvic did... to protect the people here?
+...
+Seems like the entrance to the system is here?
+- Enter
+	do State.statue = true
+- Leave
+=> END
+
+~ final
+This is it, the system room.
+=> END
+
+~ The_end
+A huge computer system is working right now.
+Plug in three drive to "turn off."
+Is that the only ending to this world?
+- Plug in
+	do State.destory = true
+	=> END
+
+- No [if State.friend == true]
+	This isn't the only way right?
+	=> Truth
+
+~ Truth
+Elvic: It is possible... to create a new world.
+Elvic: You have the choice, to destory... or, looking towards the future...
+Elvic: The fate of this world in on your hand.
+- Plug in
+	do State.destory = true
+	=> END
+- There is another way...
+	do State.friend = true
+	=> END

@@ -1,0 +1,423 @@
+[gd_scene format=3 uid="uid://cu4sqwsvdxvmv"]
+
+[ext_resource type="Script" uid="uid://chskiaxjd6m5q" path="res://scripts/end/vill.gd" id="1_1b7y0"]
+[ext_resource type="Texture2D" uid="uid://dm17x7stuov5c" path="res://pic/end/village.png" id="1_xwv7e"]
+[ext_resource type="Texture2D" uid="uid://dbbmd4gf3sxw7" path="res://pic/village/grass_1.png" id="2_1b7y0"]
+[ext_resource type="Texture2D" uid="uid://b76ob4mj7ibn2" path="res://pic/village/grass_2.png" id="3_lqwga"]
+[ext_resource type="Texture2D" uid="uid://4esojy7nrhgx" path="res://pic/village/house_5.png" id="4_285ic"]
+[ext_resource type="Texture2D" uid="uid://crs06rqb6sq1i" path="res://pic/village/house_4_down.png" id="5_4g0if"]
+[ext_resource type="Texture2D" uid="uid://dvteiv6xtk1tf" path="res://pic/village/house_2d.png" id="6_wlac7"]
+[ext_resource type="Texture2D" uid="uid://rhs82wvs84yy" path="res://pic/village/house_1d.png" id="7_nood8"]
+[ext_resource type="Texture2D" uid="uid://bjb7unyw1pr85" path="res://pic/village/well_d.png" id="8_ug1l4"]
+[ext_resource type="Texture2D" uid="uid://drtcwe5apa75v" path="res://pic/village/house_2.0.png" id="9_snwbu"]
+[ext_resource type="Texture2D" uid="uid://6gkrj7hc7r2b" path="res://pic/village/farm_d.png" id="10_oeov0"]
+[ext_resource type="Texture2D" uid="uid://buof8px7b0c58" path="res://pic/village/church_d.png" id="11_ne2hy"]
+[ext_resource type="Script" uid="uid://ttywmx6b7bg1" path="res://scripts/end/church.gd" id="13_1b7y0"]
+[ext_resource type="Resource" uid="uid://tsxukck3kxbw" path="res://Dialog/village.dialogue" id="13_g5ddq"]
+[ext_resource type="Texture2D" uid="uid://c1veudwhunnmu" path="res://pic/village/chair.png" id="14_8jj6r"]
+[ext_resource type="Script" uid="uid://bmgjk17b4xhng" path="res://scripts/village_item/chair.gd" id="15_1b54t"]
+[ext_resource type="Texture2D" uid="uid://c4prb0wbnak7b" path="res://pic/village/fountain_10.png" id="16_iovkp"]
+[ext_resource type="Texture2D" uid="uid://0y8dbcj27xlk" path="res://pic/village/fountain_20.png" id="17_hvcyn"]
+[ext_resource type="Script" uid="uid://c68wvl11vhkmj" path="res://scripts/village_item/fountain.gd" id="18_axmr5"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="19_d06od"]
+[ext_resource type="Texture2D" uid="uid://b0553334i8fv4" path="res://pic/village/grass_1.0.png" id="20_d6tpj"]
+[ext_resource type="Texture2D" uid="uid://ckcwu2udmirqk" path="res://pic/village/grass_2.0.png" id="21_r1mbn"]
+[ext_resource type="Texture2D" uid="uid://2p03iythdyff" path="res://pic/village/house_1.png" id="22_1ov17"]
+[ext_resource type="Texture2D" uid="uid://bejs8gckr2xca" path="res://pic/village/fountain_2.png" id="23_e70h3"]
+[ext_resource type="Texture2D" uid="uid://dpgqmb5vrtt6y" path="res://pic/village/fountain_1.png" id="24_qoxd8"]
+[ext_resource type="Texture2D" uid="uid://yhm5571xdjg" path="res://pic/village/church.png" id="25_os68v"]
+[ext_resource type="Texture2D" uid="uid://d0vbnimobsqwd" path="res://pic/village/house_4_up.png" id="26_46b1t"]
+[ext_resource type="Texture2D" uid="uid://dh1fy4gy4ew3s" path="res://pic/village/grass.png" id="27_cyduj"]
+[ext_resource type="Texture2D" uid="uid://bi8hla04gu8hu" path="res://pic/end/house1.png" id="29_1b7y0"]
+[ext_resource type="Texture2D" uid="uid://bxxayitul6v5j" path="res://pic/village/well_3.png" id="29_regfi"]
+[ext_resource type="Texture2D" uid="uid://dvvqt66bgms5i" path="res://pic/village/well_4.png" id="30_l7uno"]
+[ext_resource type="Script" uid="uid://bc6wvcklrrdx1" path="res://scripts/village_item/house.gd" id="32_c4jx6"]
+[ext_resource type="Texture2D" uid="uid://dnav8hc2mnmik" path="res://pic/end/house2.png" id="32_lqwga"]
+[ext_resource type="Texture2D" uid="uid://be6d3dadk61g8" path="res://pic/village/farm.png" id="33_lwxdt"]
+[ext_resource type="Script" uid="uid://8kf4w14nufmh" path="res://scripts/village_item/farm.gd" id="34_kk488"]
+[ext_resource type="Texture2D" uid="uid://crck4vthdrf01" path="res://pic/village/well.png" id="35_kwew4"]
+[ext_resource type="Script" uid="uid://c64ocv33sfs27" path="res://scripts/village_item/well.gd" id="36_8lw7c"]
+[ext_resource type="Texture2D" uid="uid://14mmmri8rs27" path="res://pic/village/house_2.png" id="37_if6lx"]
+[ext_resource type="Texture2D" uid="uid://diqna0p6nli4k" path="res://pic/village/house_50.png" id="38_gtmbr"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="39_10rc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifica"]
+size = Vector2(53.45394, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5heu"]
+size = Vector2(220, 109)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wj58r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_iovkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hvcyn")
+}],
+"loop": true,
+"name": &"water base",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubva4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbe1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_e70h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qoxd8")
+}],
+"loop": true,
+"name": &"water",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcv47"]
+size = Vector2(231, 97.51355)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53odo"]
+size = Vector2(1001, 441)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7787x"]
+radius = 138.52527
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc6tg"]
+size = Vector2(212.26138, 13.290346)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n67qi"]
+size = Vector2(825.67444, 331.6151)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65l4p"]
+size = Vector2(234.5, 75.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqft1"]
+size = Vector2(184.86807, 176.72415)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpmx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gtx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afa4g"]
+size = Vector2(34.134613, 57.09305)
+
+[node name="vill" type="Node2D" unique_id=519502707]
+script = ExtResource("1_1b7y0")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=759891930]
+texture = ExtResource("1_xwv7e")
+
+[node name="non-order" type="Node2D" parent="." unique_id=939689060]
+
+[node name="item_bg" type="Node2D" parent="non-order" unique_id=1540841035]
+
+[node name="grass1" type="Sprite2D" parent="non-order/item_bg" unique_id=1943238031]
+position = Vector2(-1068.5, 1687.5)
+texture = ExtResource("2_1b7y0")
+
+[node name="grass2" type="Sprite2D" parent="non-order/item_bg" unique_id=1512539466]
+position = Vector2(-482.5, 1559.5)
+texture = ExtResource("3_lqwga")
+
+[node name="house_5" type="Sprite2D" parent="non-order/item_bg" unique_id=1167653465]
+position = Vector2(-1568, -338)
+scale = Vector2(1, 1.0016171)
+texture = ExtResource("4_285ic")
+offset = Vector2(-2, -327)
+
+[node name="house4_d" type="Sprite2D" parent="non-order/item_bg" unique_id=29849466]
+position = Vector2(-790, 377)
+texture = ExtResource("5_4g0if")
+
+[node name="house_2d" type="Sprite2D" parent="non-order/item_bg" unique_id=785278510]
+position = Vector2(-1564, 318)
+texture = ExtResource("6_wlac7")
+
+[node name="h3" type="Sprite2D" parent="non-order/item_bg" unique_id=1801002988]
+position = Vector2(-669, 1126)
+texture = ExtResource("7_nood8")
+
+[node name="well" type="Sprite2D" parent="non-order/item_bg" unique_id=1122281945]
+position = Vector2(-847, 1454)
+texture = ExtResource("8_ug1l4")
+
+[node name="house_20" type="Sprite2D" parent="non-order/item_bg" unique_id=303767715]
+position = Vector2(-1555, 485)
+texture = ExtResource("9_snwbu")
+
+[node name="farmd" type="Sprite2D" parent="non-order/item_bg" unique_id=166044480]
+position = Vector2(-560, -724)
+texture = ExtResource("10_oeov0")
+
+[node name="church" type="Sprite2D" parent="non-order" unique_id=1741259406]
+position = Vector2(645, -882)
+texture = ExtResource("11_ne2hy")
+script = ExtResource("13_1b7y0")
+dialogue = ExtResource("13_g5ddq")
+
+[node name="Area2D" type="Area2D" parent="non-order/church" unique_id=278562058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="non-order/church/Area2D" unique_id=189508614]
+position = Vector2(-20, 1063)
+scale = Vector2(6.08, 6.52)
+shape = SubResource("RectangleShape2D_ifica")
+
+[node name="chair_1" type="Sprite2D" parent="non-order" unique_id=1358222890]
+position = Vector2(-918, -344)
+texture = ExtResource("14_8jj6r")
+offset = Vector2(-5, -104)
+script = ExtResource("15_1b54t")
+dialogue_resource = ExtResource("13_g5ddq")
+
+[node name="Area2D" type="Area2D" parent="non-order/chair_1" unique_id=741996158]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="non-order/chair_1/Area2D" unique_id=2131086180]
+position = Vector2(-7, -44.5)
+shape = SubResource("RectangleShape2D_t5heu")
+
+[node name="fount_base" type="AnimatedSprite2D" parent="non-order" unique_id=807094726]
+position = Vector2(-437, -329)
+sprite_frames = SubResource("SpriteFrames_wj58r")
+animation = &"water base"
+autoplay = "water base"
+script = ExtResource("18_axmr5")
+dialogue_resource = ExtResource("13_g5ddq")
+
+[node name="Area2D" type="Area2D" parent="non-order/fount_base" unique_id=2099428298]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="non-order/fount_base/Area2D" unique_id=846631805]
+position = Vector2(12, 77)
+scale = Vector2(-21.90688, 12.800567)
+shape = SubResource("CircleShape2D_ubva4")
+
+[node name="order" type="Node2D" parent="." unique_id=2118464650]
+y_sort_enabled = true
+
+[node name="player" parent="order" unique_id=2135659133 instance=ExtResource("19_d06od")]
+position = Vector2(-1090, -1144)
+
+[node name="item_bg" type="Node2D" parent="order" unique_id=890756222]
+y_sort_enabled = true
+
+[node name="grass1_0" type="Sprite2D" parent="order/item_bg" unique_id=1154357829]
+position = Vector2(-1068.5, 1687.5)
+texture = ExtResource("20_d6tpj")
+
+[node name="grass2_0" type="Sprite2D" parent="order/item_bg" unique_id=874905469]
+position = Vector2(-482.5, 1559.5)
+texture = ExtResource("21_r1mbn")
+
+[node name="house_3" type="Sprite2D" parent="order/item_bg" unique_id=1149154117]
+position = Vector2(-686, 1364)
+texture = ExtResource("22_1ov17")
+offset = Vector2(11, -241)
+
+[node name="fountain" type="AnimatedSprite2D" parent="order/item_bg" unique_id=164291614]
+position = Vector2(-449, -148)
+sprite_frames = SubResource("SpriteFrames_bbe1u")
+animation = &"water"
+autoplay = "water"
+offset = Vector2(12, -180)
+metadata/_edit_lock_ = true
+
+[node name="church" type="Sprite2D" parent="order/item_bg" unique_id=1983011616]
+position = Vector2(631, 187)
+texture = ExtResource("25_os68v")
+offset = Vector2(14, -1065)
+
+[node name="house_4" type="Sprite2D" parent="order/item_bg" unique_id=125004154]
+position = Vector2(-804, 744)
+texture = ExtResource("26_46b1t")
+offset = Vector2(14, -365)
+metadata/_edit_lock_ = true
+
+[node name="grass" type="Sprite2D" parent="order/item_bg" unique_id=1215807548]
+position = Vector2(1752, 1755)
+texture = ExtResource("27_cyduj")
+offset = Vector2(-20, -1508)
+metadata/_edit_lock_ = true
+
+[node name="h1d" type="Sprite2D" parent="order/item_bg" unique_id=1734296698]
+position = Vector2(882, 923)
+texture = ExtResource("29_1b7y0")
+
+[node name="well3" type="Sprite2D" parent="order/item_bg" unique_id=1344384791]
+position = Vector2(-949, 1389)
+texture = ExtResource("29_regfi")
+
+[node name="well4" type="Sprite2D" parent="order/item_bg" unique_id=761997555]
+position = Vector2(-743, 1487)
+texture = ExtResource("30_l7uno")
+
+[node name="house_1" type="Sprite2D" parent="order" unique_id=1505630136]
+position = Vector2(846, 1411)
+texture = ExtResource("32_lqwga")
+offset = Vector2(36, -487)
+script = ExtResource("32_c4jx6")
+dialogue_resource = ExtResource("13_g5ddq")
+
+[node name="Area2D" type="Area2D" parent="order/house_1" unique_id=1169346684]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/house_1/Area2D" unique_id=413409406]
+position = Vector2(435, -90.15991)
+scale = Vector2(1, 1.48)
+shape = SubResource("RectangleShape2D_kcv47")
+
+[node name="farm" type="Sprite2D" parent="order" unique_id=1002890635]
+position = Vector2(-581, -463)
+texture = ExtResource("33_lwxdt")
+offset = Vector2(21, -260)
+script = ExtResource("34_kk488")
+dialogue_resource = ExtResource("13_g5ddq")
+
+[node name="Area2D" type="Area2D" parent="order/farm" unique_id=1019445670]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/farm/Area2D" unique_id=921626898]
+position = Vector2(-16.5, -216.5)
+shape = SubResource("RectangleShape2D_53odo")
+
+[node name="well" type="Sprite2D" parent="order" unique_id=1988551514]
+position = Vector2(-874, 1546)
+texture = ExtResource("35_kwew4")
+offset = Vector2(15, -170)
+script = ExtResource("36_8lw7c")
+dialogue_resource = ExtResource("13_g5ddq")
+
+[node name="Area2D" type="Area2D" parent="order/well" unique_id=1340890859]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="order/well/Area2D" unique_id=684846937]
+position = Vector2(22, -29)
+scale = Vector2(1.4399976, 1.08)
+shape = SubResource("CircleShape2D_7787x")
+
+[node name="order_front" type="Node2D" parent="." unique_id=1466157126]
+
+[node name="house_2" type="Sprite2D" parent="order_front" unique_id=552169794]
+position = Vector2(-1564, 641)
+texture = ExtResource("37_if6lx")
+offset = Vector2(8, -759)
+
+[node name="house5" type="Sprite2D" parent="order_front" unique_id=1325276824]
+position = Vector2(-1571, -847)
+texture = ExtResource("38_gtmbr")
+
+[node name="collision" type="Node2D" parent="." unique_id=2044534030]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="collision" unique_id=512334009]
+
+[node name="church" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1148894276]
+position = Vector2(610.2891, -512.8845)
+scale = Vector2(6.1027756, 102.49775)
+shape = SubResource("RectangleShape2D_lc6tg")
+
+[node name="farm" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1609986817]
+position = Vector2(-540.76886, -677.0661)
+scale = Vector2(1.2916255, -1.2781943)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="h" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1448868933]
+position = Vector2(-793.00006, 483.99997)
+scale = Vector2(0.56342816, -1.5581906)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="well" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1345079567]
+position = Vector2(-851.00006, 1491.9999)
+scale = Vector2(0.28342572, -0.6535144)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="wall1" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1976658954]
+position = Vector2(5, 1848.0001)
+scale = Vector2(4.579587, 0.34756756)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="tree1" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1232570522]
+position = Vector2(-1132, -1674)
+scale = Vector2(1.8358928, 2.004973)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="tree_2" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=796609613]
+position = Vector2(1078.9999, -1667)
+scale = Vector2(1.6983296, 1.8362988)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="tree_3" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1580521944]
+position = Vector2(238.00003, -1669)
+scale = Vector2(1.6983296, 1.8362988)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="wall_2" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=919688377]
+position = Vector2(1752, -6.000122)
+scale = Vector2(0.098326914, 11.950472)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="wall_3" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=8160443]
+position = Vector2(-1891.0004, -6.000122)
+scale = Vector2(0.098326914, 11.950472)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="h2" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1879965481]
+position = Vector2(-677, 1209)
+scale = Vector2(1.0116242, -0.8781942)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="h3" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=272430219]
+position = Vector2(554, 1289)
+scale = Vector2(1.4211676, -0.9266921)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="h45" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=2041460903]
+position = Vector2(-1609.8717, 45.94923)
+scale = Vector2(0.65162367, -6.0781918)
+shape = SubResource("RectangleShape2D_n67qi")
+
+[node name="chair_1" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1710414669]
+position = Vector2(-923.5, -416)
+shape = SubResource("RectangleShape2D_65l4p")
+
+[node name="fountain" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=39334792]
+position = Vector2(-432, -259)
+scale = Vector2(1.4000031, 1.1200005)
+shape = SubResource("RectangleShape2D_hqft1")
+
+[node name="wall_4" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1415154641]
+position = Vector2(1464.0001, -1961)
+scale = Vector2(28.503754, 1.0486803)
+shape = SubResource("RectangleShape2D_fpmx1")
+
+[node name="h extra" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=503713979]
+position = Vector2(-1372, -252)
+scale = Vector2(5.9200015, 66.0426)
+shape = SubResource("RectangleShape2D_0gtx3")
+
+[node name="h3-1" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=811445916]
+position = Vector2(1567.0001, 1307.2999)
+scale = Vector2(8.320002, 5.16)
+shape = SubResource("RectangleShape2D_afa4g")
+
+[node name="h3-2" type="CollisionShape2D" parent="collision/StaticBody2D" unique_id=1031596552]
+position = Vector2(1216, 1187)
+scale = Vector2(27.800007, 4.1999974)
+shape = SubResource("RectangleShape2D_afa4g")
+
+[node name="Portal_to_inter" parent="." unique_id=1891912080 instance=ExtResource("39_10rc2")]
+position = Vector2(-1846, 1637.9999)
+scale = Vector2(1, 15.279994)
+target_scene = "res://scenes/end/inter.tscn"
+target_spawn = "village"
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1042529861]
+
+[node name="inter" type="Marker2D" parent="SpawnPoints" unique_id=1041452561]
+position = Vector2(-1787, 1685)
+
+[node name="church" type="Marker2D" parent="SpawnPoints" unique_id=1448155031]
+position = Vector2(625, 238)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1662217738]
+position = Vector2(-1846, 1637.9999)
+scale = Vector2(1, 15.279994)

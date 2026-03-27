@@ -12,6 +12,8 @@ extends Node2D
 
 func _ready():
 	print("get_drive1 =", State.get_drive1)
+	
+	Test.test()
 
 	player.modulate = Color(0.047, 0.18, 0.286, 1.0)
 	player.set_camera_limits(cam_left, cam_top, cam_right, cam_bottom)

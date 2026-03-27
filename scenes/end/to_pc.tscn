@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ce043xfd0ufep"]
+
+[ext_resource type="Script" uid="uid://b58ctlhtce035" path="res://scripts/end/to_pc.gd" id="1_hf72f"]
+[ext_resource type="Texture2D" uid="uid://dcjahyj5e14t3" path="res://pic/monument/black.png" id="1_ho0at"]
+[ext_resource type="Texture2D" uid="uid://0s8u8jrj5yxk" path="res://pic/end/road_pc.png" id="1_ldn3i"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="3_6cs4a"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="4_6cs4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldn3i"]
+size = Vector2(65, 4359)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8tfr"]
+size = Vector2(403, 78)
+
+[node name="to_pc" type="Node2D" unique_id=1488770882]
+script = ExtResource("1_hf72f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1447963150]
+position = Vector2(0, 89)
+scale = Vector2(1, 2.320001)
+texture = ExtResource("1_ho0at")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1009410341]
+texture = ExtResource("1_ldn3i")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=184595815]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1947767862]
+position = Vector2(172, -77.5)
+shape = SubResource("RectangleShape2D_ldn3i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=458642399]
+position = Vector2(-168, -77.5)
+shape = SubResource("RectangleShape2D_ldn3i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=795474182]
+position = Vector2(-5.5, -2025)
+shape = SubResource("RectangleShape2D_h8tfr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=672628552]
+position = Vector2(-5.5, 2027)
+shape = SubResource("RectangleShape2D_h8tfr")
+
+[node name="Portal_pc" parent="." unique_id=1891912080 instance=ExtResource("3_6cs4a")]
+position = Vector2(0, -1963)
+scale = Vector2(16.560001, 2.8000002)
+target_scene = "res://scenes/end/pc_room.tscn"
+target_spawn = "to_pc"
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("4_6cs4a")]
+position = Vector2(12, 1779)
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1742091216]
+
+[node name="statue" type="Marker2D" parent="SpawnPoints" unique_id=817853646]
+position = Vector2(2, 1872)

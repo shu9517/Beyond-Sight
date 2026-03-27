@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://3pf0ps5bba6"]
+
+[ext_resource type="Script" uid="uid://cpih8lvoh22l" path="res://scripts/end/after_trail.gd" id="1_p8cbv"]
+[ext_resource type="Texture2D" uid="uid://dcglcgk80p228" path="res://pic/end/trail.png" id="2_0jv26"]
+[ext_resource type="PackedScene" uid="uid://cvi0lt87kl3om" path="res://character/player/player.tscn" id="2_p8cbv"]
+[ext_resource type="PackedScene" uid="uid://d173flk0ljpuf" path="res://scenes/Portal.tscn" id="3_0jv26"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8khou"]
+size = Vector2(4241.5, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n525f"]
+size = Vector2(53, 503)
+
+[node name="after_trail" type="Node2D" unique_id=1886225564]
+script = ExtResource("1_p8cbv")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1202257830]
+texture = ExtResource("2_0jv26")
+
+[node name="player" parent="." unique_id=2135659133 instance=ExtResource("2_p8cbv")]
+position = Vector2(-1122.0001, 348.00003)
+scale = Vector2(0.84, 0.84)
+
+[node name="Portal to inter" parent="." unique_id=1891912080 instance=ExtResource("3_0jv26")]
+position = Vector2(1239.0001, 420)
+scale = Vector2(-3.5117967, 21.89342)
+target_scene = "res://scenes/end/inter.tscn"
+target_spawn = "trail"
+
+[node name="Portal to Mon" parent="." unique_id=1511072596 instance=ExtResource("3_0jv26")]
+position = Vector2(-1242, 444)
+scale = Vector2(4.0590935, 23.381596)
+target_scene = "res://scenes/end/final.tscn"
+target_spawn = "trail"
+
+[node name="wall" type="StaticBody2D" parent="." unique_id=432923956]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=1216115438]
+position = Vector2(-4, 585)
+scale = Vector2(0.59999985, 1)
+shape = SubResource("RectangleShape2D_8khou")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall" unique_id=919445102]
+position = Vector2(-1, 264)
+scale = Vector2(0.5999999, 1)
+shape = SubResource("RectangleShape2D_8khou")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="wall" unique_id=1319623423]
+position = Vector2(-1271, 408)
+shape = SubResource("RectangleShape2D_n525f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="wall" unique_id=1299626410]
+position = Vector2(1272, 429)
+shape = SubResource("RectangleShape2D_n525f")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=19542709]
+position = Vector2(-6, -19)
+
+[node name="monument" type="Marker2D" parent="SpawnPoints" unique_id=213218040]
+position = Vector2(-1140, 412)
+scale = Vector2(-1.3459336, 2.0394642)
+
+[node name="inter" type="Marker2D" parent="SpawnPoints" unique_id=1488682011]
+position = Vector2(1129, 386)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=703919961]
+position = Vector2(-1846, 1637.9999)
+scale = Vector2(1, 15.279994)

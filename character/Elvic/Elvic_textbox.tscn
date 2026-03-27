@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://0220cv1jrbay"]
+[gd_scene format=3 uid="uid://ckquamdg3comi"]
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_myux4"]
 [ext_resource type="Texture2D" uid="uid://x7albwch862p" path="res://pic/對話框/Elvic對話框.png" id="3_mqi1l"]
@@ -66,7 +66,6 @@ MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_156gu"]
-content_margin_left = 95.0
 texture = ExtResource("3_mqi1l")
 texture_margin_left = 47.0
 
@@ -139,8 +138,9 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_156gu")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=458971283]
 layout_mode = 2
-theme_override_constants/margin_top = 23
-theme_override_constants/margin_right = 80
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=2107450268]
 layout_mode = 2
@@ -192,10 +192,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -147.5
-offset_top = -22.0
-offset_right = 147.5
-offset_bottom = 22.0
+offset_left = -178.5
+offset_top = -35.5
+offset_right = 116.5
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8

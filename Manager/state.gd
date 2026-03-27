@@ -17,6 +17,10 @@ var hit: bool = false
 var items = []
 var flashlight_on = false
 
+var talk = false
+var destory = false
+var friend = false
+
 #unrelate state
 var project_color: String = ""
 var cave: bool = false
@@ -24,6 +28,7 @@ var loop_ctr: int = 0
 var box: bool = false
 var enter_chuch: bool = false
 var enter_fact: bool = false
+var statue: bool = false
 
 func add_item(item_id: String):
 	if not items.has(item_id):
